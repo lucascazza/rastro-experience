@@ -1,22 +1,40 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Meta from 'vue-meta';
+const Home = () => import('@/views/Home/Home');
+const Experience = () => import('@/views/Experience/Experience');
+const Primera = () => import('@/views/Experience/Primera/Primera');
+const Segunda = () => import('@/views/Experience/Segunda/Segunda');
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+Vue.use(Meta);
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/experience',
+    name: 'Experience',
+    component: Experience,
+    children: [
+      {
+          path: 'primera',
+          name: 'ExperiencePrimera',
+          component: Primera
+      },
+      {
+        path: 'segunda',
+        name: 'ExperienceSegunda',
+        component: Segunda
+    },
+    ],
+    meta: {
+      requiresAuth: true,
+      depth: 1
+    }
   }
 ]
 

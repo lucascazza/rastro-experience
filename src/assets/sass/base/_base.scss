@@ -10,10 +10,27 @@ html {
 body {
     margin: 0;
     padding: 0;
-
+    text-decoration: none;
+    font-size: $size;
+    color: $subtitle-color;
+    user-select: none;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 #app {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    overflow: hidden;
+}
+
+.app-content {
+    overflow: hidden;
 }
 
 h1,
