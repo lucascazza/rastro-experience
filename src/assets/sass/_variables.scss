@@ -1,0 +1,58 @@
+/**
+* Colors
+**/
+$primary: #5852F2;
+$secondary: #1AF55F;
+$terciary: #BBEF29;
+
+$primary-hover: #ABA8F8;
+$primary-pressed: #212572;
+$primary-background: #F2F1FE;
+
+$primary-opacity: #5852F261;
+$secondary-opacity: #8CDD5861;
+
+$grey-dark: #84979B;
+$grey-medium: #C2CBCD;
+$grey: #E7EAEB;
+$grey-lite: #F3F5F5;
+
+$secondary-text: #04BF68;
+
+$title-color: #0A2E36;
+$subtitle-color: #546D72;
+
+$success-color: #04BF68;
+$warning-color: #F2D600;
+$error-color: #FF4949;
+
+$white: #fff;
+$red: #FF4949;
+
+/**
+* Box model commons
+**/
+$main-header-size: 54px;
+$projects-header-size: 65px;
+$project-menu-size: 60px;
+$padding-content: 14px;
+
+/**
+* Font config
+**/
+$title-font: "Montserrat", sans-serif;
+$title-size: 14px;
+$subtitle-font: "Montserrat", sans-serif;
+$subtitle-size: 13px;
+$font: "Roboto", sans-serif;
+$size: 15px;
+
+/**
+* Breakpoints
+**/
+$mobile-width: 600px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$mobile-menu-width: 100%;
+$tablet-menu-width: 22em;
+$desktop-menu-width: 24em;

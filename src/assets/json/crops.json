@@ -1,0 +1,177 @@
+[
+    {
+        "name": "corn",
+        "defaultYield": 12000,
+        "defaultMoisture": 14.5,
+        "nitrogenRequirement": 22.0,
+        "nitrogenIC": 0.68
+    },
+    {
+        "name": "sorghum",
+        "defaultYield": 6000,
+        "defaultMoisture": 14.5,
+        "nitrogenRequirement": 30.0,
+        "nitrogenIC": 0.66
+    },
+    {
+        "name": "wheat",
+        "defaultYield": 1000,
+        "defaultMoisture": 13.5,
+        "nitrogenRequirement": 30.0,
+        "nitrogenIC": 0.69
+    },
+    {
+        "name": "barley",
+        "defaultYield": 6000,
+        "defaultMoisture": 13.5,
+        "nitrogenRequirement": 26.3,
+        "nitrogenIC": 0.68
+    },
+    {
+        "name": "rice",
+        "defaultYield": 9000,
+        "defaultMoisture": 13.0,
+        "nitrogenRequirement": 22.2,
+        "nitrogenIC": 0.7
+    },
+    {
+        "name": "soybeans",
+        "defaultYield": 1000,
+        "defaultMoisture": 13.5,
+        "nitrogenRequirement": 75.0,
+        "nitrogenIC": 0.73
+    },
+    {
+        "name": "sunflower",
+        "defaultYield": 4000,
+        "defaultMoisture": 12.5,
+        "nitrogenRequirement": 40.0,
+        "nitrogenIC": 0.6
+    },
+    {
+        "name": "rape",
+        "defaultYield": 3000,
+        "defaultMoisture": 8.0,
+        "nitrogenRequirement": 60.0,
+        "nitrogenIC": 0.63
+    },
+    {
+        "name": "groundnut",
+        "defaultYield": 1500,
+        "defaultMoisture": 14.5,
+        "nitrogenRequirement": 69.0,
+        "nitrogenIC": 0.64
+    },
+    {
+        "name": "vetch",
+        "defaultYield": 2500,
+        "defaultMoisture": 13.5,
+        "nitrogenRequirement": 42.0,
+        "nitrogenIC": 0.72
+    },
+    {
+        "name": "cottonfiber",
+        "defaultYield": 1000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 150.0,
+        "nitrogenIC": 0.47
+    },
+    {
+        "name": "cottonseed",
+        "defaultYield": 1000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 62.4,
+        "nitrogenIC": 0.36
+    },
+    {
+        "name": "sugarcane",
+        "defaultYield": 100000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 1.43,
+        "nitrogenIC": 0.58
+    },
+    {
+        "name": "sugarbeet",
+        "defaultYield": 4000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 4.0,
+        "nitrogenIC": 0.55
+    },
+    {
+        "name": "tobacco",
+        "defaultYield": 1000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 65.0,
+        "nitrogenIC": 0.49
+    },
+    {
+        "name": "alfalfa",
+        "defaultYield": 15000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 27.0,
+        "nitrogenIC": 0.0
+    },
+    {
+        "name": "tallfescue",
+        "defaultYield": 4000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 25.0,
+        "nitrogenIC": 0.0
+    },
+    {
+        "name": "annualryegrass",
+        "defaultYield": 5000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 25.0,
+        "nitrogenIC": 0.0
+    },
+    {
+        "name": "orchardgrass",
+        "defaultYield": 3000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 26.0,
+        "nitrogenIC": 0.0
+    },
+    {
+        "name": "potato",
+        "defaultYield": 40000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 5.5,
+        "nitrogenIC": 0.64
+    },
+    {
+        "name": "pepper",
+        "defaultYield": 40000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 3.7,
+        "nitrogenIC": 0.65
+    },
+    {
+        "name": "pumpkin",
+        "defaultYield": 30000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 4.2,
+        "nitrogenIC": 0.24
+    },
+    {
+        "name": "lettuce",
+        "defaultYield": 20000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 2.0,
+        "nitrogenIC": 0.75
+    },
+    {
+        "name": "tomato",
+        "defaultYield": 50000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 2.8,
+        "nitrogenIC": 0.68
+    },
+    {
+        "name": "onion",
+        "defaultYield": 30000,
+        "defaultMoisture": 0.0,
+        "nitrogenRequirement": 3.9,
+        "nitrogenIC": 0.64
+    }
+]
