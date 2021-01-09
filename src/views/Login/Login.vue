@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <p>aca es donde comienza la experiencia</p>
-    <v-btn href="/experience/primera">Comenzar experiencia</v-btn>
+    <v-btn @click="loguearse()">Comenzar experiencia</v-btn>
   </div>
 </template>
 
@@ -14,7 +14,15 @@ export default {
       title: 'Login',
     }
   },
-  components: {}
+  components: {
+
+  },
+  methods: {
+    loguearse(){
+      this.$store.commit('user/setToken', 'algo')
+      this.$router.push({ path: 'experience/primera' })
+    }
+  }
 }
 </script>
 
