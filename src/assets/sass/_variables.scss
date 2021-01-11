@@ -7,7 +7,6 @@ $terciary: #BBEF29;
 
 $primary-hover: #ABA8F8;
 $primary-pressed: #212572;
-$primary-background: #F2F1FE;
 
 $primary-opacity: #5852F261;
 $secondary-opacity: #8CDD5861;
@@ -30,12 +29,16 @@ $white: #fff;
 $red: #FF4949;
 
 /**
+* Backgrounds
+**/
+$primary-background: #232323;
+$secondary-background: #fafafa;
+
+
+/**
 * Box model commons
 **/
-$main-header-size: 54px;
-$projects-header-size: 65px;
-$project-menu-size: 60px;
-$padding-content: 14px;
+$padding-content: 16px;
 
 /**
 * Font config
@@ -50,9 +53,8 @@ $size: 15px;
 /**
 * Breakpoints
 **/
-$mobile-width: 600px;
-$tablet-width: 768px;
-$desktop-width: 1024px;
-$mobile-menu-width: 100%;
-$tablet-menu-width: 22em;
-$desktop-menu-width: 24em;
+$width-tablet-tiny: 600px;
+$width-tablet-large: 960px;
+$width-desktop: 1264px;
+$width-desktop-medium: 1600px;
+$width-desktop-large: 1904px;

@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Meta from 'vue-meta';
 const Home = () => import('@/views/Home/Home');
 const Login = () => import('@/views/Login/Login');
+const Register = () => import('@/views/Register/Register');
 const Experience = () => import('@/views/Experience/Experience');
 const Primera = () => import('@/views/Experience/Primera/Primera');
 const Segunda = () => import('@/views/Experience/Segunda/Segunda');
@@ -46,6 +47,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login,
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   },
 ]
 
