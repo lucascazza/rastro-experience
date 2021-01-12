@@ -5,7 +5,6 @@ export default {
             user() {
                 return {
                     get: () => Vue.http.get(`${serverUrl}/user`),
-                    send: (formData) => Vue.http.post(`${serverUrl}/user/message`, formData)
                 }
             }
         };
