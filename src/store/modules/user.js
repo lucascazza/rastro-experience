@@ -15,18 +15,17 @@ const getters = {
 
 // actions
 const actions = {
-    // loadData({ dispatch, commit, getters, rootGetters }, { vm }) {
-    //     return new Promise(async (resolve, reject) => {
-    //         try {
-    //             let responseUser = await vm.$api.user().get();
-    //             vm.$i18n.locale = responseUser.body.data.language || navigator.language.split("-")[0];
-    //             commit('setData', responseUser.body.data);
-    //             resolve(responseUser.body.data);
-    //         } catch(err) {
-    //             reject(err.message || err.body.message);
-    //         }
-    //     });
-    // }
+    register({ dispatch, commit, getters, rootGetters }, { vm, userToSave }) {
+        return new Promise(async (resolve, reject) => {
+            try {          
+                let createResponse = await vm.$api.user().register(userToSave);
+                console.log(createResponse)
+                resolve(createResponse.body);
+            } catch(err) {
+                reject(err.message || err.body.message);
+            }
+        });
+    }
 }
 
 // mutations

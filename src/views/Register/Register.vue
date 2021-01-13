@@ -16,14 +16,14 @@
           </v-text-field>
         </div>
         <div class="register__form--option">
-          <label>Email</label>
+          <label>Usuario</label>
           <v-text-field 
             solo 
             dense 
             outlined
-            :rules="emailRules"
-            v-model="user.email"
-            type="email">
+            :rules="userNameRules"
+            v-model="user.userName"
+            type="text">
           </v-text-field>
         </div>
         <div class="register__form--option">
@@ -78,16 +78,15 @@ export default {
     return {
       user: {
         name: "",
-        email: "",
+        userName: "",
         password: ""
       },
       checkPassword: '',
       nameRules: [
         v => !!v || 'Éste campo obligatorio',
       ],
-      emailRules: [
+      userNameRules: [
         v => !!v || 'Éste campo obligatorio',
-        v => /.+@.+\..+/.test(v) || 'El email no es válido',
       ],
       passwordRules: [
         v => !!v || 'Éste campo obligatorio',
@@ -102,12 +101,18 @@ export default {
   },
   computed: {
     submitEnabled(){
-      return this.user.name.length && this.user.email.length && this.user.password.length >= 6 && this.user.password === this.checkPassword && this.checkPassword.length
+      return this.user.name.length && this.user.userName.length && this.user.password.length >= 6 && this.user.password === this.checkPassword && this.checkPassword.length
     }
   },
   methods: {
-    register(){
+    async register() {
       console.log(this.user)
+      try {
+        let response = await this.$store.dispatch('user/register', { vm: this, userToSave: this.user })
+        console.log(response)
+      } catch (err) {
+        console.log(err);
+      }
     }
   },
   mounted() {}

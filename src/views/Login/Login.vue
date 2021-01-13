@@ -5,14 +5,14 @@
         <h2>Loguearse</h2>
         <p>Por favor ingrese sus datos</p>
         <div class="login__form--option">
-          <label>Email</label>
+          <label>Usuario</label>
           <v-text-field 
             solo 
             dense 
             outlined 
             hide-details
-            v-model="user.email" 
-            type="email">
+            v-model="user.userName" 
+            type="text">
           </v-text-field>
         </div>
         <div class="login__form--option">
@@ -57,7 +57,7 @@ export default {
     return {
       loading: false,
       user: {
-        email: '',
+        userName: '',
         password: '',
       },
       showPassword: false
@@ -65,7 +65,7 @@ export default {
   },
   computed: {
     submitEnabled(){
-      return this.user.email.length && this.user.password
+      return this.user.userName.length && this.user.password
     }
   },
   methods: {
