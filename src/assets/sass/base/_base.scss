@@ -99,7 +99,7 @@ label {
 .dash-content {
     min-height: 100%;
 
-    @media(max-width: 992px) {
+    @media(max-width: 991px) {
         overflow-y: auto;
         max-height: 100vh;
     }
