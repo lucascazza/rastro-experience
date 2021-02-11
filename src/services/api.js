@@ -4,11 +4,10 @@ export default {
         let api = {
             user() {
                 return {
-                    getUser: () => Vue.http.get(`${serverUrl}/user`),
-                    getAllUsers: () => Vue.http.get(`${serverUrl}/user/all`),
+                    get: () => Vue.http.get(`${serverUrl}/user`),
                     register: (formData) => Vue.http.post(`${serverUrl}/user/register`, formData),
-                    update: (UserId) => Vue.http.post(`${serverUrl}/user/${UserId}`),
-                    delete: (UserId) => Vue.http.post(`${serverUrl}/user/${UserId}`)
+                    login: (formData) => Vue.http.post(`${serverUrl}/user/login`, formData),
+                    update: (UserId) => Vue.http.post(`${serverUrl}/user/${UserId}`)
                 }
             }
         };

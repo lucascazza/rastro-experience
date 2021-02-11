@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueResource from 'vue-resource'
+import Token from './services/token'
 import router from './router'
 import store from './store'
 import api from './services/api'
@@ -10,6 +11,7 @@ import vuetify from './plugins/vuetify';
 
 Vue.use(Viewer);
 Vue.use(VueResource);
+Vue.use(Token);
 Vue.use(api);
 
 Vue.config.productionTip = false
