@@ -106,10 +106,8 @@ export default {
   },
   methods: {
     async register() {
-      console.log(this.user)
       try {
-        let response = await this.$store.dispatch('user/register', { vm: this, userToSave: this.user })
-        console.log(response)
+        await this.$store.dispatch('user/register', { vm: this, userToSave: this.user })
       } catch (err) {
         console.log(err);
       }

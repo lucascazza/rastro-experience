@@ -69,11 +69,13 @@ export default {
     }
   },
   methods: {
-    login() {
-      this.$store.commit('user/setToken', 'algo')
-      this.$router.push({
-        path: 'experience/primera'
-      })
+    async login() {
+      try {
+        await this.$store.dispatch('user/login', { vm: this, data: this.user })
+        this.$router.push({ path: 'experience/primera' })
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
 }

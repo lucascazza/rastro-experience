@@ -14,7 +14,19 @@ export default {
       title: 'Primera',
     }
   },
-  components: {}
+  components: {},
+  mounted(){
+    this.loadData()    
+  },
+  methods: {
+    async loadData() {
+      try {
+        await this.$store.dispatch('user/loadData', { vm: this })
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
 }
 </script>
 
