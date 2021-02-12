@@ -7,9 +7,30 @@
 
 <script>
 
+import helperApp from '@/mixins/helperApp';
 export default {
   name: 'Home',
-  components: {}
+  metaInfo() {
+    return {
+      title: 'Home',
+    }
+  },
+  components: {},
+  mixins: [helperApp],
+  mounted() {
+    this.loadData()
+  },
+  methods: {
+    async loadData() {
+      try {
+        await this.$store.dispatch('user/loadData', {
+          vm: this
+        })
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
 }
 </script>
 

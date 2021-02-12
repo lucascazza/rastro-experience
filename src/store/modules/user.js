@@ -45,6 +45,17 @@ const actions = {
                 reject(err.message || err.body.message);
             }
         });
+    },
+    updateStep({ dispatch, commit, getters, rootGetters }, { vm, data }) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                let updateStepResponse = await vm.$api.user().updateStep(getters.data._id, data);
+                commit('setData', updateStepResponse.body.data);
+                resolve(updateStepResponse.body.data);
+            } catch(err) {
+                reject(err.message || err.body.message);
+            }
+        });
     }
 }
 

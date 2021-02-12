@@ -72,7 +72,7 @@ export default {
     async login() {
       try {
         await this.$store.dispatch('user/login', { vm: this, data: this.user })
-        this.$router.push({ path: 'experience/primera' })
+        this.$router.push({ path: '/' })
       } catch (err) {
         console.log(err);
       }

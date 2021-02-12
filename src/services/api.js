@@ -7,7 +7,7 @@ export default {
                     get: () => Vue.http.get(`${serverUrl}/user`),
                     register: (formData) => Vue.http.post(`${serverUrl}/user/register`, formData),
                     login: (formData) => Vue.http.post(`${serverUrl}/user/login`, formData),
-                    update: (UserId) => Vue.http.post(`${serverUrl}/user/${UserId}`)
+                    updateStep: (userId, data) => Vue.http.put(`${serverUrl}/user/${userId}`, data)
                 }
             }
         };

@@ -1,12 +1,12 @@
 <template>
   <div class="primera">
     <p>Esta es la primera</p>
-    <v-btn href="segunda">Segunda</v-btn>
+    <v-btn @click="nextStep('Segunda')" >Segunda</v-btn>
   </div>
 </template>
 
 <script>
-
+import helperApp from '@/mixins/helperApp';
 export default {
   name: 'ExpeciencePrimera',
   metaInfo() {
@@ -15,18 +15,9 @@ export default {
     }
   },
   components: {},
-  mounted(){
-    this.loadData()    
-  },
-  methods: {
-    async loadData() {
-      try {
-        await this.$store.dispatch('user/loadData', { vm: this })
-      } catch (err) {
-        console.log(err);
-      }
-    }
-  }
+  mixins:[helperApp],
+  mounted(){},
+  methods: {}
 }
 </script>
 
