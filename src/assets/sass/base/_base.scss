@@ -53,7 +53,7 @@ label {
 }
 
 .fade-enter-active {
-    transition: opacity .5s !important;
+    transition: opacity 0.5s !important;
 }
 
 .fade-leave-active {
@@ -62,6 +62,19 @@ label {
 
 .fade-enter,
 .fade-leave-active {
+    opacity: 0;
+}
+
+.fade-login-enter-active {
+    transition: opacity 1s !important;
+}
+
+.fade-login-leave-active {
+    transition: opacity 0s !important;
+}
+
+.fade-login-enter,
+.fade-login-leave-active {
     opacity: 0;
 }
 
