@@ -8,7 +8,6 @@ import api from './services/api'
 import Viewer from 'v-viewer'
 import vuetify from './plugins/vuetify';
 
-
 Vue.use(Viewer);
 Vue.use(VueResource);
 Vue.use(Token);
