@@ -1,10 +1,14 @@
 const state = {
+    windowWidth: window.innerWidth,
     data: {},
     token: ''
 }
 
 // getters
 const getters = {
+    windowWidth: state => {
+        return state.windowWidth
+    },
     data: state => {
         return state.data;
     },
@@ -61,6 +65,9 @@ const actions = {
 
 // mutations
 const mutations = {
+    setWindowWidth(state, value) {
+        state.windowWidth = value;
+    },
     setData(state, data) {
         state.data = data;
     },

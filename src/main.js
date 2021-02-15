@@ -7,11 +7,17 @@ import store from './store'
 import api from './services/api'
 import Viewer from 'v-viewer'
 import vuetify from './plugins/vuetify';
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(Viewer);
 Vue.use(VueResource);
 Vue.use(Token);
 Vue.use(api);
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
 Vue.config.productionTip = false
 Vue.http.options.root = process.env.VUE_APP_SERVER

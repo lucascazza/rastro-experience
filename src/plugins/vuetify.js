@@ -16,7 +16,12 @@ export default new Vuetify({
                 error: '#FF4949',
                 warning: '#F2D600',
                 info: '#03a9f4',
-                success: '#04BF68'
+                success: '#04BF68',
+                cyan: '#10fecc',
+                magenta: '#ff445a',
+                yellow: '#ebff29',
+                green: '#4eff45',
+                black: '#232323'
             }
         }
     }

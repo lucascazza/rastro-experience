@@ -15,14 +15,28 @@ export default {
       titleTemplate: "%s | Experiencia Rastro"
     }
   },
-
   components: {},
-
   data: () => ({
     //
   }),
-  mounted(){},
-  methods: {}
+  computed: {
+    windowWidth: {
+      get() {
+        return this.$store.getters['user/windowWidth'];
+      },
+      set(newValue) {
+        this.$store.commit('user/setWindowWidth', newValue);
+      }
+    }
+  },
+  beforeMount(){
+    window.addEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize(){
+      this.windowWidth = window.innerWidth;
+    }
+  }
 };
 </script>
 
