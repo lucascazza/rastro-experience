@@ -9,7 +9,7 @@
     min-height: 100vh;
     width: 100%;
     padding: $padding-content;
-    background-image: url('../../../assets/img/fondos/fondo-5.svg');
+    background-image: url('../../../assets/img/fondos/fondo-4.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: darkgrey;
+        background-color: $cyan;
         border-radius: 6px;
     }
 

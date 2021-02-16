@@ -35,6 +35,7 @@
         <img src="@/assets/img/manifiesto/flecha.svg" alt="Flecha" class="img-flecha">
         <h1 id="codigo">Ingresá el código</h1>
         <v-text-field
+          color="#ff445a"
           maxlength="4"
           hide-details
           rounded

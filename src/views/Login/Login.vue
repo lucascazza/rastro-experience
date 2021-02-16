@@ -38,7 +38,8 @@
               </div>
             </div>
             <div>
-              <v-btn 
+              <v-btn
+                rounded
                 :loading="loading" 
                 color="magenta" 
                 type="submit" 
@@ -80,7 +81,7 @@ export default {
   data() {
     return {
       startVideo: false,
-      showVideo: false,
+      showVideo: true,
       loading: false,
       user: {
         userName: '',
