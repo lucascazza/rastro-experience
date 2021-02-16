@@ -1,5 +1,5 @@
 <template>
-  <div class="webapps">
+  <div class="webapps" :class="{'justify-center': showVideo}">
     <transition name="fade">
       <div v-if="showVideo" class="webapps__video">
         <video ref="video" poster="@/assets/media/poster.jpg" controls autoplay frameborder="0"
