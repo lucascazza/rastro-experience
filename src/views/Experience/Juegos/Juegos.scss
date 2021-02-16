@@ -1,0 +1,68 @@
+@import "@/assets/sass/_variables";
+
+.juegos {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: $padding-content;
+    background-image: url('../../../assets/img/fondos/fondo-5.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &::-webkit-scrollbar {
+        width: .2em;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        border-radius: 6px;
+    }
+
+    &__text {
+        margin: 4rem 0 5rem;
+        max-width: 900px;
+
+        h1,
+        h2 {
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-family: EarlyGameboy;
+        }
+
+        h2 {
+            font-family: FlippsRegular;
+            color: $yellow;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__img{
+        @media (min-width: 768px){
+            max-width: 60%;
+        }
+
+        @media (min-width: 1200px){
+            max-width: 50%;
+        }
+
+        @media (min-width: 1400px){
+            max-width: 40%;
+        }
+    }
+
+}

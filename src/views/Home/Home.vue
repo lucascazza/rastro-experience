@@ -65,6 +65,11 @@ export default {
           path: '/experience/visores'
         })
       }
+      else if (step == 3) {
+        this.$router.push({
+          path: '/experience/juegos'
+        })
+      }
     }
   }
 }

@@ -17,7 +17,34 @@
         <h2>VIDEO <span>SIN</span> VISOR</h2>
         <img src="@/assets/img/visores/qr/qr-sinvisor.svg" alt="Sin visores">
       </div>
+      <div class="col-12 visores__qr--btn">
+        <v-btn 
+          rounded
+          x-large 
+          ripple 
+          color="yellow"
+          @click="dialogCode = true">
+          Seguir
+        </v-btn>
+      </div>
     </div>
+    <dialog-code 
+      :active.sync="dialogCode" 
+      title="¿Te llegó el código?" 
+      content="Mirá en tu celular"
+      confirm-text="Validar código" 
+      @confirm="verifyCode()">
+      <v-text-field 
+        class="dialog-content__input" 
+        color="#ff445a" 
+        maxlength="4" 
+        hide-details 
+        outlined 
+        rounded
+        background-color="#dddddd"
+        v-model="code">
+      </v-text-field>
+    </dialog-code>
   </div>
 </template>
 
@@ -25,6 +52,7 @@
 
 import { mapState } from 'vuex';
 import helperApp from '@/mixins/helperApp';
+import DialogCode from '@/components/Dialogs/DialogCode';
 export default {
   name: 'ExpecienceVisores',
   metaInfo() {
@@ -33,9 +61,14 @@ export default {
     }
   },
   mixins: [helperApp],
+  components: {
+    'dialog-code': DialogCode
+  },
   data() {
     return {
-      loading: true
+      loading: true,
+      dialogCode: false,
+      code: ''
     };
   },
   computed: {
@@ -43,6 +76,13 @@ export default {
       user: state => state.user.data
     })
   },
+  methods: {
+    verifyCode() {
+      if (this.code == '5555') {
+        this.nextStep('juegos')
+      }
+    }
+  }
 }
 </script>
 

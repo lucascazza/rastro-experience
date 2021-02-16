@@ -8,6 +8,7 @@ const Register = () => import('@/views/Register/Register');
 const Experience = () => import('@/views/Experience/Experience');
 const Manifiesto = () => import('@/views/Experience/Manifiesto/Manifiesto');
 const Visores = () => import('@/views/Experience/Visores/Visores');
+const Juegos = () => import('@/views/Experience/Juegos/Juegos');
 
 Vue.use(VueRouter);
 Vue.use(Meta);
@@ -36,7 +37,12 @@ const routes = [
         path: 'visores',
         name: 'ExperienceVisores',
         component: Visores
-    },
+      },
+      {
+        path: 'juegos',
+        name: 'ExperienceJuegos',
+        component: Juegos
+      },
     ],
     meta: {
       requiresAuth: true,
