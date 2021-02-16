@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div class="login" :class="{'padding-content': !showVideo}">
     <transition name="fade-login">
       <div v-if="!showVideo" class="login__row">
         <div class="login__row--text">
@@ -44,7 +44,6 @@
                 type="submit" 
                 large 
                 depressed 
-                rounded
                 class="login__form--submit" 
                 :disabled="!submitEnabled">
                 Iniciar sesión
@@ -58,8 +57,8 @@
     </transition>
     <transition name="fade">
       <div class="login__video" v-if="showVideo">
-        <video ref="video" poster="media/poster.jpg" controls autoplay @ended="ended" frameborder="0" @playing="playing">
-          <source src="media/manifiesto.mp4" type="video/mp4">
+        <video ref="video" poster="@/assets/media/poster.jpg" controls autoplay @ended="ended" frameborder="0" @playing="playing">
+          <source src="@/assets/media/manifiesto.mp4" type="video/mp4">
         </video>
       </div>
     </transition>
@@ -81,7 +80,7 @@ export default {
   data() {
     return {
       startVideo: false,
-      showVideo: true,
+      showVideo: false,
       loading: false,
       user: {
         userName: '',

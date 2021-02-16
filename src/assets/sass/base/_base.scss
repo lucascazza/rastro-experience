@@ -13,6 +13,7 @@ body {
     text-decoration: none;
     font-size: $size;
     color: $subtitle-color;
+    background-color: $primary-background !important;
     user-select: none;
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
@@ -27,6 +28,7 @@ body {
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;
     overflow: hidden;
+    background-color: $primary-background !important;
 }
 
 .app-content {

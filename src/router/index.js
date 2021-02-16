@@ -6,8 +6,8 @@ const Home = () => import('@/views/Home/Home');
 const Login = () => import('@/views/Login/Login');
 const Register = () => import('@/views/Register/Register');
 const Experience = () => import('@/views/Experience/Experience');
-const Primera = () => import('@/views/Experience/Primera/Primera');
-const Segunda = () => import('@/views/Experience/Segunda/Segunda');
+const Manifiesto = () => import('@/views/Experience/Manifiesto/Manifiesto');
+const Visores = () => import('@/views/Experience/Visores/Visores');
 
 Vue.use(VueRouter);
 Vue.use(Meta);
@@ -28,14 +28,14 @@ const routes = [
     component: Experience,
     children: [
       {
-          path: 'primera',
-          name: 'ExperiencePrimera',
-          component: Primera
+          path: 'manifiesto',
+          name: 'ExperienceManifiesto',
+          component: Manifiesto
       },
       {
-        path: 'segunda',
-        name: 'ExperienceSegunda',
-        component: Segunda
+        path: 'visores',
+        name: 'ExperienceVisores',
+        component: Visores
     },
     ],
     meta: {

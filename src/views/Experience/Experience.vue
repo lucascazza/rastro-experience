@@ -1,8 +1,5 @@
 <template>
-  <div class="experience">
-    <p>Header dede </p>
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <script>

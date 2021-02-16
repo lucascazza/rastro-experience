@@ -27,6 +27,10 @@ $error-color: #FF4949;
 
 $white: #fff;
 $red: #FF4949;
+$cyan: #10fecc;
+$magenta: #ff445a;
+$yellow: #ebff29;
+$green: #4eff45;
 
 /**
 * Backgrounds
@@ -43,11 +47,11 @@ $padding-content: 16px;
 /**
 * Font config
 **/
-$title-font: "Montserrat", sans-serif;
+$title-font: SprintSansBold;
 $title-size: 14px;
-$subtitle-font: "Montserrat", sans-serif;
+$subtitle-font: SprintSansBold;
 $subtitle-size: 13px;
-$font: "Roboto", sans-serif;
+$font: SprintSansRegular;
 $size: 15px;
 
 /**
