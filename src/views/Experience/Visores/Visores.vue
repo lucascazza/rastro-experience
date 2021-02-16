@@ -18,14 +18,20 @@
         <img src="@/assets/img/visores/qr/qr-sinvisor.svg" alt="Sin visores">
       </div>
       <div class="col-12 visores__qr--btn">
-        <v-btn 
-          rounded
-          x-large 
-          ripple 
-          color="yellow"
-          @click="dialogCode = true">
-          Seguir
-        </v-btn>
+        <v-tooltip top>
+          <template v-slot:activator="{ on }">
+            <v-btn 
+              rounded
+              x-large 
+              ripple 
+              color="yellow"
+              @click="dialogCode = true"
+              v-on="on">
+              Seguir
+            </v-btn>
+          </template>
+          <span>¿Ya tenés tú código?</span>
+        </v-tooltip>
       </div>
     </div>
     <dialog-code 

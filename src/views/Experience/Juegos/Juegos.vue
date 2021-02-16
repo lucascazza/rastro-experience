@@ -7,6 +7,22 @@
     <div class="juegos__img">
       <img class="img-fluid" src="@/assets/img/juegos/rastrojuegos.png" alt="Rastro juegos">
     </div>
+    <div class="juegos__btn">
+      <v-tooltip top>
+        <template v-slot:activator="{ on }">
+          <v-btn 
+            rounded 
+            x-large 
+            ripple 
+            color="yellow" 
+            @click="nextStep('webapps')" 
+            v-on="on">
+            Seguir
+          </v-btn>
+        </template>
+        <span class="d-flex text-center">¿Te divertiste {{user.name}}? <br> Bueno es hora de seguir</span>
+      </v-tooltip>
+    </div>
   </div>
 </template>
 

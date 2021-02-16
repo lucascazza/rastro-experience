@@ -1,0 +1,37 @@
+@import "@/assets/sass/_variables";
+
+.webapps {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: $padding-content;
+    background-image: url('../../../assets/img/fondos/fondo-3.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &::-webkit-scrollbar {
+        width: .2em;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $cyan;
+        border-radius: 6px;
+    }
+
+    &__video{
+        max-width: 85%;
+        video{
+            outline: none;
+            max-width: 100%;
+        }
+    }
+}

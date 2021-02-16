@@ -1,5 +1,5 @@
 <template>
-  <div class="login" :class="{'padding-content': !showVideo}">
+  <div class="login">
     <transition name="fade-login">
       <div v-if="!showVideo" class="login__row">
         <div class="login__row--text">

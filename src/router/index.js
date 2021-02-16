@@ -9,6 +9,7 @@ const Experience = () => import('@/views/Experience/Experience');
 const Manifiesto = () => import('@/views/Experience/Manifiesto/Manifiesto');
 const Visores = () => import('@/views/Experience/Visores/Visores');
 const Juegos = () => import('@/views/Experience/Juegos/Juegos');
+const WebsApps = () => import('@/views/Experience/WebsApps/WebsApps');
 
 Vue.use(VueRouter);
 Vue.use(Meta);
@@ -43,6 +44,11 @@ const routes = [
         name: 'ExperienceJuegos',
         component: Juegos
       },
+      {
+        path: 'webapps',
+        name: 'ExpecienceWebsApps',
+        component: WebsApps
+      }
     ],
     meta: {
       requiresAuth: true,
