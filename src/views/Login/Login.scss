@@ -77,9 +77,13 @@
     }
 
     &__video {
-        max-width: 85%;
+        max-width: 100%;
         display: flex;
         align-items: center;
+
+        @media (min-width: 1600px){
+            max-width: 85%;
+        }
 
         &--play {
             left: 0;

@@ -28,7 +28,12 @@
     }
 
     &__video{
-        max-width: 85%;
+        max-width: 100%;
+
+        @media (min-width: 1600px){
+            max-width: 85%;
+        }
+        
         video{
             outline: none;
             max-width: 100%;
