@@ -10,41 +10,38 @@
     </transition>
     <transition name="fade">
       <template v-if="!showVideo">
-        <div class="webapps__behance">
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
-          <p>askldjaslkdj</p>
+        <div class="webapps__content">
+          <div class="webapps__text">
+            <h1>¿Cómo te fue en los juegos {{user.name}}? Bueno no importa, todavía <span class="camino">hay camino por
+                recorrer.</span></h1>
+            <h2>Supongo que ya te diste cuenta que la mochila tiene cosas que te pueden ayudar. Ahora vas a necesitar la
+              <span class="libreta">libreta.</span></h2>
+          </div>
+          <div class="webapps__options">
+            <h2>La libreta esta llena de frases. Sólo si descubris cúal es la correcta podrás continuar.</h2>
+            <div class="webapps__options--options row">
+              <div class="col-6 d-flex align-center justify-center">
+                <div class="webapps__options--item item-1">
+                  <i class="ricon-captura-off"></i>
+                </div>
+              </div>
+              <div class="col-6 d-flex align-center justify-center">
+                <div class="webapps__options--item item-2">
+                  <i class="ricon-captura-off"></i>
+                </div>
+              </div> 
+              <div class="col-6 d-flex align-center justify-center">
+                <div class="webapps__options--item item-3">
+                  <i class="ricon-captura-off"></i>
+                </div>
+              </div> 
+              <div class="col-6 d-flex align-center justify-center">
+                <div class="webapps__options--item item-4">
+                  <i class="ricon-captura-off"></i>
+                </div>
+              </div> 
+            </div>
+          </div>
         </div>
       </template>
     </transition>
@@ -66,7 +63,7 @@ export default {
   data() {
     return {
       loading: true,
-      showVideo: true
+      showVideo: false
     };
   },
   computed: {
