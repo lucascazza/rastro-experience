@@ -12,7 +12,7 @@
       <template v-if="!showVideo">
         <div class="webapps__content">
           <div class="webapps__text">
-            <h1>¿Cómo te fue en los juegos {{user.name}}? Bueno no importa, todavía <span class="camino">hay camino por
+            <h1>¿Cómo te fue en los juegos, {{user.name}}? Recordá que todavía <span class="camino">hay camino por
                 recorrer.</span></h1>
             <h2>Supongo que ya te diste cuenta que la mochila tiene cosas que te pueden ayudar. Ahora vas a necesitar la
               <span class="libreta">libreta.</span></h2>
