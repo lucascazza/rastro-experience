@@ -73,7 +73,7 @@
         h3 {
             font-family: EarlyGameboy;
             text-align: center;
-            font-size: 1.15rem;
+            font-size: 1rem;
         }
 
         h4 {

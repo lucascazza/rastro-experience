@@ -66,6 +66,12 @@
             text-transform: uppercase;
             margin-bottom: 1rem;
 
+            .nombre{
+                color: $cyan;
+                font-family: OswaldBold;
+                font-size: 2rem;
+            }
+
             .camino{
                 font-family: SprintSansLight;
                 color: $green;
