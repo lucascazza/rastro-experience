@@ -32,7 +32,7 @@
       className="dialog-juegos"
       title="Ya terminaste con los juegos?" 
       content="Si lo hiciste podes continuar"
-      confirm-text="Continuar" 
+      confirm-text="Confirmar" 
       @confirm="nextStep('webapps')">
     </dialog-confirm>
   </div>
