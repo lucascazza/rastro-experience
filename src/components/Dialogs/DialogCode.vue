@@ -63,5 +63,9 @@
         font-size: 1.15rem;
         color: #232323;
     }
+
+    .v-btn{
+        font-family: SprintSansMedium;
+    }
 }
 </style>

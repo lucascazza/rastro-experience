@@ -5,7 +5,11 @@
       <h2>Es momento de descansar y jugar un poco</h2>
     </div>
     <div class="juegos__img">
-      <img class="img-fluid" src="@/assets/img/juegos/rastrojuegos.png" alt="Rastro juegos">
+      <img class="img-fluid" src="@/assets/img/juegos/logo-pixel.svg" alt="Rastro juegos">
+    </div>
+    <div class="juegos__text">
+      <h2 class="text-2">En la mochila, tenés un USB. La contraseña para abrirlo es:</h2>
+      <h2 class="contrasena">Alpheido</h2>
     </div>
     <div class="juegos__btn">
       <v-tooltip top>
