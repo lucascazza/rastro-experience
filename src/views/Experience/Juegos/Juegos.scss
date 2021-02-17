@@ -46,53 +46,54 @@
 
         h2 {
             font-family: EarlyGameboy;
-            color: $yellow;
+            color: #fff;
             text-transform: uppercase;
             font-size: 1rem;
             line-height: 24px;
 
-            &.text-2{
-                font-family: FlippsRegular;
+            &.text-2 {
+                font-family: EarlyGameboy;
                 line-height: 40px;
                 margin-bottom: 2.5rem;
             }
 
-            &.contrasena{
+            &.contrasena {
                 color: #000;
                 font-size: 2rem;
             }
         }
 
-        @media (min-width: 768px){
-            h1{
+        @media (min-width: 768px) {
+            h1 {
                 font-size: 1.5rem;
             }
 
-            h2{
+            h2 {
                 font-size: 1.25rem;
             }
         }
     }
 
-    &__img{
+    &__img {
         margin-bottom: 1rem;
 
-        img{
+        img {
             width: 200px;
         }
 
-        @media (min-width: 768px){
+        @media (min-width: 768px) {
             max-width: 60%;
-            img{
+
+            img {
                 width: 400px;
             }
         }
 
-        @media (min-width: 1200px){
+        @media (min-width: 1200px) {
             max-width: 50%;
         }
 
-        @media (min-width: 1400px){
+        @media (min-width: 1400px) {
             max-width: 40%;
         }
     }
@@ -100,7 +101,7 @@
     &__btn {
         .v-btn {
             min-width: 250px !important;
-            font-family: SprintSansMedium;
+            font-family: EarlyGameboy;
         }
     }
 
