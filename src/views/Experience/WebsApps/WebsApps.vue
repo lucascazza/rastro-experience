@@ -20,22 +20,22 @@
           <div class="webapps__options">
             <h2>La libreta esta llena de frases. Sólo si descubris cúal es la correcta podrás continuar.</h2>
             <div class="webapps__options--options row">
-              <div class="col-6 d-flex align-center justify-center">
+              <div class="col-6 d-flex align-center justify-center" @click="selectOption()">
                 <div class="webapps__options--item item-1">
                   <i class="ricon-captura-off"></i>
                 </div>
               </div>
-              <div class="col-6 d-flex align-center justify-center">
+              <div class="col-6 d-flex align-center justify-center" @click="selectOption()">
                 <div class="webapps__options--item item-2">
                   <i class="ricon-captura-off"></i>
                 </div>
               </div> 
-              <div class="col-6 d-flex align-center justify-center">
+              <div class="col-6 d-flex align-center justify-center" @click="selectOption()">
                 <div class="webapps__options--item item-3">
                   <i class="ricon-captura-off"></i>
                 </div>
               </div> 
-              <div class="col-6 d-flex align-center justify-center">
+              <div class="col-6 d-flex align-center justify-center" @click="selectOption()">
                 <div class="webapps__options--item item-4">
                   <i class="ricon-captura-off"></i>
                 </div>
@@ -72,6 +72,9 @@ export default {
     })
   },
   methods: {
+    selectOption(){
+      this.$toastr.error('no es esta opcion papu');
+    }
   }
 }
 </script>
