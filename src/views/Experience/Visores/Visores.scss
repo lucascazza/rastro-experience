@@ -1,0 +1,155 @@
+@import "@/assets/sass/_variables";
+
+.visores {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: $padding-content;
+    background-image: url('../../../assets/img/fondos/fondo-4.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &::-webkit-scrollbar {
+        width: .2em;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $cyan;
+        border-radius: 6px;
+    }
+
+    &__text {
+        margin-bottom: 4rem;
+        max-width: 900px;
+
+        h1,
+        h2 {
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .name {
+            font-family: ActOfRejection;
+            color: $green;
+            font-size: 3rem;
+            line-height: 100px;
+        }
+
+        .rastro {
+            font-family: SprintSansMedium;
+            color: $yellow;
+            text-transform: uppercase;
+            font-size: 2.25rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-family: SprintSansRegular;
+            color: $yellow;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__qr {
+        width: 100%;
+
+        &--visor,
+        &--sinvisor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+
+            h2 {
+                color: #ddd;
+                text-align: center;
+
+                span {
+                    font-family: ActOfRejection;
+                }
+
+            }
+
+            img {
+                max-width: 280px;
+
+                @media (min-width: 768px) {
+                    max-width: 300px;
+                }
+
+                @media (min-width: 992px) {
+                    max-width: 400px;
+                }
+            }
+        }
+
+        &--text {
+            margin-bottom: 1.5rem;
+
+            h2 {
+                font-family: SprintSansBold;
+                color: #fff;
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            h3 {
+                font-family: SprintSansRegular;
+                color: $green;
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        &--btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .v-btn {
+                min-width: 250px !important;
+                font-family: SprintSansMedium;
+            }
+        }
+    }
+}
+
+.dialog-content {
+    &__input {
+        margin: 1rem 0 !important;
+        border-radius: 50%;
+
+        .v-input__control .v-input__slot {
+            border-radius: 50px !important;
+
+            input {
+                text-align: center;
+                font-size: 1.5rem;
+                font-family: OswaldBold;
+                text-transform: uppercase;
+                font-style: italic;
+                color: #ff445a !important;
+            }
+        }
+
+        &.v-text-field.v-text-field--outlined:not(.v-input--is-readonly).v-input--is-focused .v-input__slot {
+            border-color: #ff445a !important;
+        }
+    }
+}

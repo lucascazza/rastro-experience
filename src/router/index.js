@@ -6,8 +6,14 @@ const Home = () => import('@/views/Home/Home');
 const Login = () => import('@/views/Login/Login');
 const Register = () => import('@/views/Register/Register');
 const Experience = () => import('@/views/Experience/Experience');
-const Primera = () => import('@/views/Experience/Primera/Primera');
-const Segunda = () => import('@/views/Experience/Segunda/Segunda');
+const Instagram = () => import('@/views/Experience/Instagram/Instagram');
+const Manifiesto = () => import('@/views/Experience/Manifiesto/Manifiesto');
+const Visores = () => import('@/views/Experience/Visores/Visores');
+const Juegos = () => import('@/views/Experience/Juegos/Juegos');
+const WebsApps = () => import('@/views/Experience/WebsApps/WebsApps');
+const Fotomontajes = () => import('@/views/Experience/Fotomontajes/Fotomontajes');
+const Piramide = () => import('@/views/Experience/Piramide/Piramide');
+const Final = () => import('@/views/Experience/Final/Final');
 
 Vue.use(VueRouter);
 Vue.use(Meta);
@@ -26,17 +32,47 @@ const routes = [
     path: '/experience',
     name: 'Experience',
     component: Experience,
-    children: [
+    children: [,
       {
-          path: 'primera',
-          name: 'ExperiencePrimera',
-          component: Primera
+        path: 'instagram',
+        name: 'ExperienceInstagram',
+        component: Instagram
       },
       {
-        path: 'segunda',
-        name: 'ExperienceSegunda',
-        component: Segunda
-    },
+          path: 'manifiesto',
+          name: 'ExperienceManifiesto',
+          component: Manifiesto
+      },
+      {
+        path: 'visores',
+        name: 'ExperienceVisores',
+        component: Visores
+      },
+      {
+        path: 'juegos',
+        name: 'ExperienceJuegos',
+        component: Juegos
+      },
+      {
+        path: 'webapps',
+        name: 'ExpecienceWebsApps',
+        component: WebsApps
+      },
+      {
+        path: 'fotomontajes',
+        name: 'ExpecienceFotomontajes',
+        component: Fotomontajes
+      },
+      {
+        path: 'piramide',
+        name: 'ExpeciencePiramide',
+        component: Piramide
+      },
+      {
+        path: 'final',
+        name: 'ExpecienceFinal',
+        component: Final
+      }
     ],
     meta: {
       requiresAuth: true,

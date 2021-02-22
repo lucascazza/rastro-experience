@@ -1,15 +1,19 @@
 <template>
-  <div class="experience">
-    <p>Header dede </p>
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <script>
 
 export default {
   name: 'Experience',
-  components: {}
+  components: {},
+  beforeMount() {
+    if (this.$router.currentRoute.name == 'Experience') {
+      this.$router.push({
+        path: '/'
+      })
+    }
+  }
 }
 </script>
 

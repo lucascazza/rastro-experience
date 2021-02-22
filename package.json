@@ -12,6 +12,7 @@
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
     "material-design-icons": "^3.0.1",
+    "toastr": "^2.1.4",
     "v-viewer": "^1.5.1",
     "vue": "^2.6.11",
     "vue-meta": "^2.4.0",

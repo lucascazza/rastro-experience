@@ -1,0 +1,90 @@
+@import "@/assets/sass/_variables";
+
+.final {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: $padding-content;
+    background-image: url('../../../assets/img/fondos/fondo-2.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: space-around;
+
+    &::-webkit-scrollbar {
+        width: .2em;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $cyan;
+        border-radius: 6px;
+    }
+
+    &__content {
+        min-height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        @media (min-width: 992px) {
+            padding-top: 4rem;
+        }
+    }
+
+    &__text {
+        margin-bottom: 4rem;
+        max-width: 1000px;
+
+        h1,
+        h2 {
+            color: #fff;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 2rem !important;
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+
+            .name{
+                font-family: OswaldBold;
+                color: $magenta;
+            }
+
+            @media (min-width: 992px){
+                font-size: 4rem;
+            }
+        }
+
+        h2 {
+            font-family: SprintSansLight;
+            font-size: 1.5rem;
+
+        }
+    }
+
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .v-btn {
+            min-width: 250px !important;
+            font-family: SprintSansMedium;
+            text-decoration: none;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+}

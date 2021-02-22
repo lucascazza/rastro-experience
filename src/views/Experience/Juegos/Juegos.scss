@@ -1,0 +1,108 @@
+@import "@/assets/sass/_variables";
+
+.juegos {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: $padding-content;
+    background-image: url('../../../assets/img/fondos/fondo-juegos.svg');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+    &::-webkit-scrollbar {
+        width: .2em;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $cyan;
+        border-radius: 6px;
+    }
+
+    &__text {
+        margin: 4rem 0 6rem;
+        max-width: 1000px;
+
+        h1,
+        h2 {
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 1.25rem;
+            font-family: EarlyGameboy;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-family: EarlyGameboy;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 1rem;
+            line-height: 24px;
+
+            &.text-2 {
+                font-family: EarlyGameboy;
+                line-height: 40px;
+                margin-bottom: 2.5rem;
+            }
+
+            &.contrasena {
+                color: #000;
+                font-size: 2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    &__img {
+        margin-bottom: 1rem;
+
+        img {
+            width: 200px;
+        }
+
+        @media (min-width: 768px) {
+            max-width: 60%;
+
+            img {
+                width: 400px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            max-width: 50%;
+        }
+
+        @media (min-width: 1400px) {
+            max-width: 40%;
+        }
+    }
+
+    &__btn {
+        .v-btn {
+            min-width: 250px !important;
+            font-family: EarlyGameboy;
+        }
+    }
+
+}

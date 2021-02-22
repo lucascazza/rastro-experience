@@ -1,0 +1,136 @@
+@import "@/assets/sass/_variables";
+
+.instagram {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 4rem $padding-content;
+    background-image: url('../../../assets/img/fondos/fondo-5.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: space-between;
+
+    &::-webkit-scrollbar {
+        width: .2em;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $cyan;
+        border-radius: 6px;
+    }
+
+    .content {
+        max-width: 1000px;
+    }
+
+    &__text {
+        margin-bottom: 5rem;
+        max-width: 900px;
+
+        h1,
+        h2 {
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-family: SprintSansRegular;
+            color: $yellow;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__logo{
+        max-width: 1000px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        img{
+            min-width: 280px;
+            max-width: fit-content;
+            cursor: pointer;
+        }
+
+        &--img{
+            margin-bottom: 5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        &--text{
+            margin-bottom: 5rem;
+
+            h2{
+                font-family: SprintSansRegular;
+                color: #fff;
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                text-align: center;
+
+                span{
+                    font-family: SprintSansBold;
+                    color: $yellow;
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+        &--btn{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            h3{
+                font-family: SprintSansRegular;
+                font-size: 1rem;
+            }
+
+            .input-code{
+                margin-bottom: 2rem;
+                max-width: 400px;
+
+                .v-input__control{
+                    .v-text-field__slot{
+                        input{
+                            font-size: 38px !important;
+                            text-align: center;
+                            font-family: OswaldBold;
+                            text-transform: uppercase;
+                            font-style: italic;
+                            color: $magenta;
+                        }
+                    }
+                }
+            }
+
+            .v-btn {
+                min-width: 250px !important;
+                font-family: SprintSansMedium;
+            }
+        }
+
+        @media (min-width: 768px){
+            img{
+                min-width: 400px;
+            }
+        }
+    }
+
+}

@@ -93,3 +93,15 @@
     src: url('./SprintSansRegular.otf');
     font-weight: normal;
 }
+
+@font-face {
+    font-family: EarlyGameboy;
+    src: url('./EarlyGameboy.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: FlippsRegular;
+    src: url('./FlippsRegular.otf');
+    font-weight: normal;
+}

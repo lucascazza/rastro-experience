@@ -38,18 +38,18 @@
               </div>
             </div>
             <div>
-              <v-btn 
+              <v-btn
+                rounded
                 :loading="loading" 
                 color="magenta" 
                 type="submit" 
                 large 
                 depressed 
-                rounded
                 class="login__form--submit" 
                 :disabled="!submitEnabled">
                 Iniciar sesión
               </v-btn>
-              <router-link to="/register" class="login__form--register pt-5">No tengo usuario</router-link>
+              <!-- <router-link to="/register" class="login__form--register pt-5">No tengo usuario</router-link> -->
             </div>
           </v-form>
           </div>
@@ -58,8 +58,8 @@
     </transition>
     <transition name="fade">
       <div class="login__video" v-if="showVideo">
-        <video ref="video" poster="media/poster.jpg" controls autoplay @ended="ended" frameborder="0" @playing="playing">
-          <source src="media/manifiesto.mp4" type="video/mp4">
+        <video ref="video" poster="@/assets/media/poster.jpg" controls autoplay @ended="ended" frameborder="0" @playing="playing">
+          <source src="@/assets/media/manifiesto.mp4" type="video/mp4">
         </video>
       </div>
     </transition>

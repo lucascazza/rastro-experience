@@ -21,7 +21,8 @@ export default new Vuetify({
                 magenta: '#ff445a',
                 yellow: '#ebff29',
                 green: '#4eff45',
-                black: '#232323'
+                black: '#232323',
+                disabled: '#c2cbcd'
             }
         }
     }

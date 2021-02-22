@@ -18,8 +18,8 @@ $grey-lite: #F3F5F5;
 
 $secondary-text: #04BF68;
 
-$title-color: #0A2E36;
-$subtitle-color: #546D72;
+$title-color: #fff;
+$subtitle-color: #fff;
 
 $success-color: #04BF68;
 $warning-color: #F2D600;
@@ -27,6 +27,11 @@ $error-color: #FF4949;
 
 $white: #fff;
 $red: #FF4949;
+$cyan: #10fecc;
+$magenta: #ff445a;
+$yellow: #ebff29;
+$green: #4eff45;
+$black: #232323;
 
 /**
 * Backgrounds
@@ -43,11 +48,11 @@ $padding-content: 16px;
 /**
 * Font config
 **/
-$title-font: "Montserrat", sans-serif;
+$title-font: SprintSansBold;
 $title-size: 14px;
-$subtitle-font: "Montserrat", sans-serif;
+$subtitle-font: SprintSansBold;
 $subtitle-size: 13px;
-$font: "Roboto", sans-serif;
+$font: SprintSansRegular;
 $size: 15px;
 
 /**
