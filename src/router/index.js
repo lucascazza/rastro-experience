@@ -6,10 +6,14 @@ const Home = () => import('@/views/Home/Home');
 const Login = () => import('@/views/Login/Login');
 const Register = () => import('@/views/Register/Register');
 const Experience = () => import('@/views/Experience/Experience');
+const Instagram = () => import('@/views/Experience/Instagram/Instagram');
 const Manifiesto = () => import('@/views/Experience/Manifiesto/Manifiesto');
 const Visores = () => import('@/views/Experience/Visores/Visores');
 const Juegos = () => import('@/views/Experience/Juegos/Juegos');
 const WebsApps = () => import('@/views/Experience/WebsApps/WebsApps');
+const Fotomontajes = () => import('@/views/Experience/Fotomontajes/Fotomontajes');
+const Piramide = () => import('@/views/Experience/Piramide/Piramide');
+const Final = () => import('@/views/Experience/Final/Final');
 
 Vue.use(VueRouter);
 Vue.use(Meta);
@@ -28,7 +32,12 @@ const routes = [
     path: '/experience',
     name: 'Experience',
     component: Experience,
-    children: [
+    children: [,
+      {
+        path: 'instagram',
+        name: 'ExperienceInstagram',
+        component: Instagram
+      },
       {
           path: 'manifiesto',
           name: 'ExperienceManifiesto',
@@ -48,6 +57,21 @@ const routes = [
         path: 'webapps',
         name: 'ExpecienceWebsApps',
         component: WebsApps
+      },
+      {
+        path: 'fotomontajes',
+        name: 'ExpecienceFotomontajes',
+        component: Fotomontajes
+      },
+      {
+        path: 'piramide',
+        name: 'ExpeciencePiramide',
+        component: Piramide
+      },
+      {
+        path: 'final',
+        name: 'ExpecienceFinal',
+        component: Final
       }
     ],
     meta: {

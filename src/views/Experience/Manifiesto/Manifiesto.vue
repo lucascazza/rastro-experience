@@ -69,7 +69,8 @@ export default {
   },
   computed: {
     ...mapState({
-      windowWidth: state => state.user.windowWidth
+      windowWidth: state => state.user.windowWidth,
+      user: state => state.user.data
     }),
     isMobile() {
       return this.windowWidth < 992
@@ -82,7 +83,11 @@ export default {
       }
     }
   },
-  mounted(){},
+  beforeMount(){
+    if(this.user.step < 2 ){
+      this.$router.replace({ path: '/' })
+    }
+  },
   methods: {
     scrollBottom() {
       if (!this.endVideo) {
@@ -93,7 +98,10 @@ export default {
     },
     verifyCode(){
       if(this.code == '4507'){
-        this.nextStep('visores')
+        this.nextStep('visores', 3)
+        this.$toastr.success('Contraseña correcta.');
+      } else{
+        this.$toastr.error('Contraseña incorrecta, volve a intentarlo.');
       }
     }
   }

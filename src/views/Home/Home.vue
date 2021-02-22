@@ -1,16 +1,33 @@
 <template>
-  <transition name="fade">
-    <div class="home" v-if="!loading">
-      <div class="home__content">
-        <h1>Hola <span>{{user.name}}</span> ¿Cómo estás?</h1>
-        <p>Te elegimos por tus habilidades.<br> Esta es la experiencia <span>Rastro</span>, queremos mostrarles una
-          aventura que ya recorrimos, y queremos que ustedes también la recorran. Si lo hacen, les daremos la
-          posibilidad de abrir la caja.</p>
-        <v-btn v-if="user.step !== 0" color="yellow" x-large ripple rounded @click="continueExperience()">Continuar recorrido</v-btn>
-        <v-btn v-if="user.step == 0" color="yellow" x-large ripple @click="start()" rounded>Comenzar experiencia</v-btn>
-      </div>
+  <div class="home" v-if="!loading">
+    <div class="home__content">
+      <transition>
+        <div v-if="user.step !== 7">
+          <h1 class="text-center">Hola <span>{{user.name}}</span> ¿Cómo estás?</h1>
+          <p>Te elegimos por tus habilidades.<br> Esta es la experiencia <span>Rastro</span>, queremos mostrarles una
+            aventura que ya recorrimos, y queremos que ustedes también la recorran. Si lo hacen, les daremos la
+            posibilidad de abrir la caja.</p>
+          <div class="d-flex justify-center">
+            <v-btn v-if="user.step !== 0" color="yellow" x-large ripple rounded @click="continueExperience()">Continuar
+              recorrido</v-btn>
+            <v-btn v-if="user.step == 0" color="yellow" x-large ripple @click="nextStep('experience/instagram', 1)"
+              rounded>Comenzar experiencia</v-btn>
+          </div>
+        </div>
+      </transition>
+      <transition>
+        <div v-if="user.step == 7">
+          <h1 class="text-center">Hola <span>{{user.name}}</span> ¿Cómo estás?</h1>
+          <p>Felicidades por haber terminado el recorrido, siempre podrás volver a empezarlo cuando sientas que perdiste
+            el rumbo en cualquier aspecto de tu vida.</p>
+          <div class="d-flex flex-column align-center">
+            <v-btn color="yellow" x-large ripple rounded to="/experience/manifiesto">Ver recorrido</v-btn>
+            <v-btn color="magenta" x-large ripple @click="restartExperience()" rounded>Reiniciar experiencia</v-btn>
+          </div>
+        </div>
+      </transition>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script>
@@ -42,33 +59,36 @@ export default {
   methods: {
     async loadData() {
       try {
-        await this.$store.dispatch('user/loadData', {
-          vm: this
-        })
+        await this.$store.dispatch('user/loadData', { vm: this })
         this.loading = false
       } catch (err) {
         console.log(err);
         this.loading = false
       }
     },
-    start(){
-      this.$router.push({ path: '/experience/manifiesto' })
-    },
     continueExperience() {
-      let step = this.user.step
-      if (step == 1) {
-        this.$router.push({
-          path: '/experience/manifiesto'
-        })
-      } else if (step == 2) {
-        this.$router.push({
-          path: '/experience/visores'
-        })
-      }
-      else if (step == 3) {
-        this.$router.push({
-          path: '/experience/juegos'
-        })
+      switch (this.user.step) {
+        case 1:
+          this.$router.push({ path: '/experience/instagram' });
+          break
+        case 2:
+          this.$router.push({ path: '/experience/manifiesto' });
+          break
+        case 3:
+          this.$router.push({ path: '/experience/visores' });
+          break
+        case 4:
+          this.$router.push({ path: '/experience/juegos' });
+          break
+        case 5:
+          this.$router.push({ path: '/experience/webapps' });
+          break
+        case 6:
+          this.$router.push({ path: '/experience/fotomontajes' });
+          break
+        case 7:
+          this.$router.push({ path: '/experience/piramide' });
+          break
       }
     }
   }

@@ -36,8 +36,8 @@
     </div>
     <dialog-code 
       :active.sync="dialogCode" 
-      title="¿Te llegó el código?" 
-      content="Mirá en tu celular"
+      title="¿Encontraste algún código?" 
+      content="Mirá en el meet"
       confirm-text="Validar código" 
       @confirm="verifyCode()">
       <v-text-field 
@@ -82,10 +82,18 @@ export default {
       user: state => state.user.data
     })
   },
+  beforeMount(){
+    if(this.user.step < 3 ){
+      this.$router.replace({ path: '/' })
+    }
+  },
   methods: {
     verifyCode() {
       if (this.code == '5555') {
-        this.nextStep('juegos')
+        this.nextStep('juegos', 4)
+        this.$toastr.success('Contraseña correcta.');
+      } else {
+        this.$toastr.error('Contraseña incorrecta, volve a intentarlo.');
       }
     }
   }

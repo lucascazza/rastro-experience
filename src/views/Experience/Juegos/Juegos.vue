@@ -33,7 +33,7 @@
       title="Ya terminaste con los juegos?" 
       content="Si lo hiciste podes continuar"
       confirm-text="Confirmar" 
-      @confirm="nextStep('webapps')">
+      @confirm="nextStep('webapps', 5)">
     </dialog-confirm>
   </div>
 </template>
@@ -63,6 +63,11 @@ export default {
     ...mapState({
       user: state => state.user.data
     })
+  },
+  beforeMount(){
+    if(this.user.step < 4 ){
+      this.$router.replace({ path: '/' })
+    }
   },
   methods: {
   }
