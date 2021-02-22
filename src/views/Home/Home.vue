@@ -1,7 +1,7 @@
 <template>
   <div class="home" v-if="!loading">
     <div class="home__content">
-      <transition>
+      <transition name="fade">
         <div v-if="user.step !== 7">
           <h1 class="text-center">Hola <span>{{user.name}}</span> ¿Cómo estás?</h1>
           <p>Te elegimos por tus habilidades.<br> Esta es la experiencia <span>Rastro</span>, queremos mostrarles una
@@ -15,7 +15,7 @@
           </div>
         </div>
       </transition>
-      <transition>
+      <transition name="fade">
         <div v-if="user.step == 7">
           <h1 class="text-center">Hola <span>{{user.name}}</span> ¿Cómo estás?</h1>
           <p>Felicidades por haber terminado el recorrido, siempre podrás volver a empezarlo cuando sientas que perdiste

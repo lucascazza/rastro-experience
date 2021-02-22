@@ -7,22 +7,17 @@
         cansadito y no tenia mas ganas de pensar y por eso tampoco volvi a poner un tilde :D</h2>
     </div>
     <div class="final__btn">
-      <div class="piramide__btn">
-            <v-tooltip top>
-              <template v-slot:activator="{ on }">
-                <v-btn 
-                  rounded 
-                  x-large 
-                  ripple 
-                  color="yellow" 
-                  @click="dialogCode = true" 
-                  v-on="on">
-                  ¿Te olvidaste el código?
-                </v-btn>
-              </template>
-              <span>¡Felicidades! acá esta de nuevo tú código.</span>
-            </v-tooltip>
-          </div>
+      <div class="final__btn">
+        <v-tooltip top>
+          <template v-slot:activator="{ on }">
+            <v-btn rounded x-large ripple color="yellow" @click="dialogCode = true" v-on="on">
+              ¿Te olvidaste el código?
+            </v-btn>
+          </template>
+          <span>¡Felicidades! acá esta de nuevo tú código.</span>
+        </v-tooltip>
+        <v-btn rounded x-large ripple color="green" to="/">Volver al inicio</v-btn>
+      </div>
     </div>
     <dialog-code 
       :active.sync="dialogCode" 
