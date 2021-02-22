@@ -1,0 +1,65 @@
+/**
+* Colors
+**/
+$primary: #5852F2;
+$secondary: #1AF55F;
+$terciary: #BBEF29;
+
+$primary-hover: #ABA8F8;
+$primary-pressed: #212572;
+
+$primary-opacity: #5852F261;
+$secondary-opacity: #8CDD5861;
+
+$grey-dark: #84979B;
+$grey-medium: #C2CBCD;
+$grey: #E7EAEB;
+$grey-lite: #F3F5F5;
+
+$secondary-text: #04BF68;
+
+$title-color: #fff;
+$subtitle-color: #fff;
+
+$success-color: #04BF68;
+$warning-color: #F2D600;
+$error-color: #FF4949;
+
+$white: #fff;
+$red: #FF4949;
+$cyan: #10fecc;
+$magenta: #ff445a;
+$yellow: #ebff29;
+$green: #4eff45;
+$black: #232323;
+
+/**
+* Backgrounds
+**/
+$primary-background: #232323;
+$secondary-background: #fafafa;
+
+
+/**
+* Box model commons
+**/
+$padding-content: 16px;
+
+/**
+* Font config
+**/
+$title-font: SprintSansBold;
+$title-size: 14px;
+$subtitle-font: SprintSansBold;
+$subtitle-size: 13px;
+$font: SprintSansRegular;
+$size: 15px;
+
+/**
+* Breakpoints
+**/
+$width-tablet-tiny: 600px;
+$width-tablet-large: 960px;
+$width-desktop: 1264px;
+$width-desktop-medium: 1600px;
+$width-desktop-large: 1904px;

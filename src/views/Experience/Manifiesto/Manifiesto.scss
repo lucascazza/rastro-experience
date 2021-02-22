@@ -1,0 +1,184 @@
+@import "@/assets/sass/_variables";
+
+.manifiesto {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: $padding-content;
+    background-image: url('../../../assets/img/fondos/fondo-3.svg');
+    background-size: cover;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+
+    &::-webkit-scrollbar {
+        width: .2em;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $cyan;
+        border-radius: 6px;
+    }
+
+    &__content{
+        width: 100%;
+
+        &--video{
+            width: 100%;
+
+            @media (max-width: 991px){
+                display: flex;
+                align-items: flex-end;
+                padding: 0;
+            }
+            
+            @media (min-width: 992px) and (max-width: 1599px) {
+                display: flex;
+                align-items: center;                
+            }
+            
+            video{
+                width: 100%;
+                outline: none;
+                box-shadow: 2px 2px 6px rgba(0, 0, 0, .55);
+            }
+        }
+
+        &--img{
+            display: flex;
+            margin: auto;
+
+            @media (max-width: 992px){
+                margin-top: 1.5rem;
+                justify-content: flex-end;
+                img{
+                    width: 60%;
+                    max-width: 300px;
+                }
+            }
+
+            @media (min-width: 1200px){
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    max-width: 300px;
+                }
+            }
+
+        }
+
+        &--btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            .v-btn{
+                min-width: 250px !important;
+                font-family: SprintSansMedium;
+            }
+
+            .disabled{
+                background-color: #c2cbcd;
+                color: #eeeeee !important;
+                cursor: not-allowed;
+            }
+
+            @media (min-width: 1600px){
+                align-items: flex-start;
+            }
+        }
+    }
+
+    &__video{
+        padding-bottom: 0;
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    &__codigo{
+        padding: $padding-content;
+        padding-top: 0;
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1{
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 2rem;
+            font-family: OswaldBold;
+            font-style: italic;
+            margin-bottom: 1.25rem;
+            text-align: center;
+
+            @media (min-width: 768px){
+                font-size: 3rem;
+                margin-bottom: 3rem;
+            }
+
+            @media (min-width: 1200px){
+                font-size: 3.5rem;
+                margin-bottom: 4rem;
+            }
+        }
+
+        .v-input__control{
+            .v-text-field__slot{
+                input{
+                    font-size: 38px !important;
+                    text-align: center;
+                    font-family: OswaldBold;
+                    text-transform: uppercase;
+                    font-style: italic;
+                    color: $magenta;
+                }
+            }
+        }
+
+        .img-avanzar{
+            position: absolute;
+            width: 100px;
+            left: -20px;
+            z-index: 1;
+
+            @media (min-width: 768px){
+                width: 200px;
+                left: -150px;
+                display: block;
+            }
+
+            @media (min-width: 992px){
+                left: -160px;
+                top: -10px;
+            }
+        }
+
+        .img-flecha{
+            position: absolute;
+            width: 80px;
+            right: -20px;
+            z-index: 1;
+            top: 20px;
+
+            @media (min-width: 768px){
+                display: block;
+                width: 120px;
+                right: -150px;
+            }
+
+            @media (min-width: 992px){
+                right: -160px;
+            }
+        }
+    }
+}

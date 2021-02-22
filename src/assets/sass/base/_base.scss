@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $size;
+    overflow: hidden !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-size: $size;
+    color: $subtitle-color;
+    background-color: $primary-background !important;
+    user-select: none;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+#app {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    overflow: hidden;
+    background-color: $primary-background !important;
+}
+
+.app-content {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $title-font;
+    color: $title-color;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+}
+
+label {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: $subtitle-size;
+    color: $subtitle-color;
+}
+
+.fade-enter-active {
+    transition: opacity 0.5s !important;
+}
+
+.fade-leave-active {
+    transition: opacity 0s !important;
+}
+
+.fade-enter,
+.fade-leave-active {
+    opacity: 0;
+}
+
+.fade-login-enter-active {
+    transition: opacity 1s !important;
+}
+
+.fade-login-leave-active {
+    transition: opacity 0s !important;
+}
+
+.fade-login-enter,
+.fade-login-leave-active {
+    opacity: 0;
+}
+
+.slide-enter-active {
+    transition: all 0.5s;
+}
+
+.slide-enter,
+.slide-leave-active {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.slide-leave-active {
+    position: absolute;
+}
+
+.section-fade-enter-active,
+.section-fade-leave-active {
+    transition: opacity 0.3s !important;
+}
+
+.section-fade-enter {
+    opacity: 0;
+}
+
+.section-fade-leave-active {
+    opacity: 1;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.dash-content {
+    min-height: 100%;
+
+    @media(max-width: 991px) {
+        overflow-y: auto;
+        max-height: 100vh;
+    }
+}

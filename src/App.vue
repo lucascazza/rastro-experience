@@ -1,60 +1,45 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld/>
-    </v-main>
+  <v-app class="app-content">
+    <router-view />
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
 
-  components: {
-    HelloWorld,
+  metaInfo() {
+    return {
+      title: 'Comenzar experiencia',
+      titleTemplate: "%s | Experiencia Rastro"
+    }
   },
-
+  components: {},
   data: () => ({
     //
   }),
+  computed: {
+    windowWidth: {
+      get() {
+        return this.$store.getters['user/windowWidth'];
+      },
+      set(newValue) {
+        this.$store.commit('user/setWindowWidth', newValue);
+      }
+    }
+  },
+  beforeMount(){
+    window.addEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize(){
+      this.windowWidth = window.innerWidth;
+    }
+  }
 };
 </script>
+
+<style lang="scss">
+  @import "@/assets/sass/app";
+</style>

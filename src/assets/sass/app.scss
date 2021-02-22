@@ -1,0 +1,11 @@
+@import '_variables';
+
+// Resources
+@import "~material-design-icons/iconfont/material-icons.css";
+@import '~viewerjs/dist/viewer.css';
+@import "./plugins/_toastr";
+@import './plugins/_vuetify';
+
+// App styles
+@import './mixins/_mediaQuerys';
+@import './base/_base';

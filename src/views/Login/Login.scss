@@ -1,0 +1,213 @@
+@import "@/assets/sass/_variables";
+
+.login {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url('../../assets/img/fondos/fondo-1.svg');
+    background-size: cover;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    padding: $padding-content;
+
+    &::-webkit-scrollbar {
+        width: .2em;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $cyan;
+        border-radius: 6px;
+    }
+
+    &__form {
+        border-radius: 6px;
+        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.25);
+        background-color: $secondary-background;
+        width: 100%;
+        max-width: 350px;
+        min-height: 450px;
+        padding: 20px;
+        display: flex;
+
+        &--option {
+            margin-bottom: 1rem;
+
+            label {
+                display: block;
+                margin-bottom: 0.3rem;
+            }
+        }
+
+        &--submit {
+            color: #fff !important;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        &--register {
+            text-align: center;
+            display: block;
+            color: #ff445a;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100%;
+            width: 100%;
+
+            img {
+                max-width: 80px;
+                margin-bottom: 1rem;
+            }
+
+            h2 {
+                font-family: SprintSansBold;
+                font-size: 1.5rem;
+                color: $black;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &__video {
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+
+        @media (min-width: 1600px){
+            max-width: 85%;
+        }
+
+        &--play {
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            cursor: pointer;
+            background-image: url('../../assets/img/pre-login.svg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+
+            h2 {
+                color: #fff;
+            }
+        }
+
+        video {
+            outline: none;
+            width: 100%;
+        }
+    }
+
+    &__row {
+        display: flex;
+        width: 100%;
+        margin-left: -16px;
+        margin-right: -16px;
+        flex-wrap: wrap;
+
+        @media (min-width: 992px) {
+            align-items: center;
+        }
+
+
+        &--text {
+            width: 100%;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: center;
+
+            @media (max-width: 991px) {
+                align-items: flex-end; 
+            }
+
+            h1 {
+                color: #fff;
+                font-size: 2rem;
+                line-height: 2rem;
+                font-family: OswaldDemiBold;
+                text-transform: uppercase;
+                font-style: italic;
+                text-align: center;
+                max-width: 400px;
+                margin: 0;
+            }
+
+            @media (min-width: 576px) {
+                h1 {
+                    font-size: 3rem;
+                    line-height: 3.5rem;
+                    max-width: 550px;
+                }
+            }
+
+            @media (min-width: 768px) {
+                h1 {
+                    font-size: 3.5rem;
+                    line-height: 4rem;
+                    max-width: 600px;
+                }
+            }
+
+            @media (min-width: 992px) {
+                width: 50%;
+                position: relative;
+
+                h1 {
+                    font-size: 4rem;
+                    line-height: 4.5rem;
+                    text-align: left;
+                }
+
+                img {
+                    position: absolute;
+                    right: 0;
+                    bottom: -14rem;
+                    max-width: 400px;
+                }
+            }
+
+            @media (min-width: 1200px) {
+
+                h1 {
+                    font-size: 5rem;
+                    line-height: 5.5rem;
+                }
+
+                img {
+                    max-width: 500px;
+                }
+            }
+
+            @media (min-width: 1600px) {
+                h1 {
+                    font-size: 5.5rem;
+                    line-height: 6rem;
+                }
+            }
+        }
+
+        &--form {
+            width: 100%;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media (min-width: 992px) {
+                width: 50%;
+            }
+        }
+    }
+}
