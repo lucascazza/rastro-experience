@@ -21,7 +21,7 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
 Vue.config.productionTip = false
-Vue.http.options.root = process.env.VUE_APP_SERVER
+Vue.http.options.root = "http//api:3000"
 
 // Config toastr alert
 toastr.options = {
