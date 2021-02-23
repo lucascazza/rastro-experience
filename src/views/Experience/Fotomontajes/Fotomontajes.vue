@@ -6,7 +6,7 @@
     <div class="fotomontajes__dragdrop">
       <div class="fotomontajes__dragdrop--select">
         <div v-for="(item, i) in fotomontajes" :key="i">
-          <div class="select-fotomontaje" @click="selectFotomontaje(item)" :class="{'disabled': !item.enabled}">
+          <div class="select-fotomontaje" @click="selectFotomontaje(item)" :class="[{'disabled': !item.enabled}, {'active': selectedFoto._id == i +1}]">
             {{i + 1}}
           </div>
         </div>
