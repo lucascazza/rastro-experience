@@ -6,7 +6,7 @@
     <div class="fotomontajes__dragdrop">
       <div class="fotomontajes__dragdrop--select">
         <div v-for="(item, i) in fotomontajes" :key="i">
-          <div class="select-fotomontaje" @click="selectFotomontaje(item)">
+          <div class="select-fotomontaje" @click="selectFotomontaje(item)" :class="{'disabled': !item.enabled}">
             {{i + 1}}
           </div>
         </div>
@@ -87,8 +87,10 @@ export default {
       imgSelected: {},
       fotomontajes: [
         {
+          _id: 1, 
           name: 'alicia',
           type: 'image',
+          enabled: true,
           recursos: [
             {
               src: 'alicia1.jpg',
@@ -118,8 +120,10 @@ export default {
           ]
         },
         {
+          _id: 2,
           name: 'otro1',
           type: 'image',
+          enabled: false,
           recursos: [
             {
               src: 'alicia1.jpg',
@@ -149,8 +153,10 @@ export default {
           ]
         },
         {
+          _id: 3,
           name: 'otro2',
           type: 'image',
+          enabled: false,
           recursos: [
             {
               src: 'alicia1.jpg',
@@ -196,15 +202,24 @@ export default {
     this.selectedFoto = this.fotomontajes[0]
   },
   methods: {
-    selectFotomontaje(item){
+    selectFotomontaje(item) {
+      if (!item.enabled) {
+        return
+      }
       this.imgSelected = {}
       this.selectedFoto = item
     },
     selectImage(img){
-      if (!this.imgSelected.i && img.i > 1 || img.i == this.imgSelected.i){
+      if (!this.imgSelected.i && img.i > 1 || img.i > this.imgSelected.i + 1){
         return
       }
       this.imgSelected = img
+      if (img.i == 5){
+        let index = this.selectedFoto._id
+        if (index < 3){
+          this.fotomontajes[index].enabled = true
+        }
+      }
     },
     verifyCode() {
       if (this.code == '2369') {

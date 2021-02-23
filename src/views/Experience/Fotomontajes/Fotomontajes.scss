@@ -79,6 +79,12 @@
                     height: 140px;
                     font-size: 4.5rem;
                 }
+
+                &.disabled{
+                    background-color: #ccc !important;
+                    background: #ccc !important;
+                    cursor: not-allowed;
+                }
             }
 
             >div:last-child{
