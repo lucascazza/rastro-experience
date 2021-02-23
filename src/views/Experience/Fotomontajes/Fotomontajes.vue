@@ -3,13 +3,30 @@
     <div class="fotomontajes__text content">
       <h2>Texto desafiandolos a a que encuentren el codigo oculto en uno de los trabajos que les vamos a mostrar a continuacion para ver si estan aptos(?</h2>
     </div>
-    <div class="fotomontajes__dragdrop">
-      <div class="fotomontajes__dragdrop--recursos">
-        
+    <div class="fotomontajes__dragdrop content">
+      <div class="fotomontajes__dragdrop--select">
+        <div v-for="(item, i) in fotomontajes" :key="i">
+          <div class="select-fotomontaje" @click="selectFotomontaje(item)">
+            {{i + 1}}
+          </div>
+        </div>
       </div>
-      <div class="fotomontajes__dragdrop--lienzo">
-        
-      </div>
+      <transition name="fade">
+        <div class="selectedFoto" v-if="selectedFoto.name">
+          <div class="selectedFoto__recursos">
+            <div class="selectedFoto__recursos--img" v-for="img in selectedFoto.recursos" :key="img._id">
+              <img :src="`/fotomontajes/${selectedFoto.name}/${img.src}`" :alt="img.name">
+            </div>
+          </div>
+          <div class="selectedFoto__lienzo content">
+            <div class="selectedFoto__lienzo--empty" v-if="arrayFoto.length == 0">
+              <div class="selectedFoto__lienzo--text">
+                <h2>Arrastra las imágenes para ir descubriendo lo que esconden</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
     </div>
     <div class="fotomontajes__btn">
       <v-text-field 
@@ -55,7 +72,104 @@ export default {
   data() {
     return {
       loading: true,
-      code: ''
+      code: '',
+      selectedFoto: {},
+      arrayFoto: [],
+      fotomontajes: [
+        {
+          name: 'alicia',
+          type: 'image',
+          recursos: [
+            {
+              src: 'alicia1.png',
+              _id: 1,
+              name: 'Alicia 1'
+            },
+            {
+              src: 'alicia2.png',
+              _id: 2,
+              name: 'Alicia 2'
+            },
+            {
+              src: 'alicia3.png',
+              _id: 3,
+              name: 'Alicia 3'
+            },
+            {
+              src: 'alicia4.png',
+              _id: 4,
+              name: 'Alicia 4'
+            },
+            {
+              src: 'alicia5.png',
+              _id: 5,
+              name: 'Alicia 5'
+            }
+          ]
+        },
+        {
+          name: 'otro1',
+          type: 'image',
+          recursos: [
+            {
+              src: 'alicia1.png',
+              _id: 1,
+              name: 'Alicia 1'
+            },
+            {
+              src: 'alicia2.png',
+              _id: 2,
+              name: 'Alicia 2'
+            },
+            {
+              src: 'alicia3.png',
+              _id: 3,
+              name: 'Alicia 3'
+            },
+            {
+              src: 'alicia4.png',
+              _id: 4,
+              name: 'Alicia 4'
+            },
+            {
+              src: 'alicia5.png',
+              _id: 5,
+              name: 'Alicia 5'
+            }
+          ]
+        },
+        {
+          name: 'otro2',
+          type: 'image',
+          recursos: [
+            {
+              src: 'alicia1.png',
+              _id: 1,
+              name: 'Alicia 1'
+            },
+            {
+              src: 'alicia2.png',
+              _id: 2,
+              name: 'Alicia 2'
+            },
+            {
+              src: 'alicia3.png',
+              _id: 3,
+              name: 'Alicia 3'
+            },
+            {
+              src: 'alicia4.png',
+              _id: 4,
+              name: 'Alicia 4'
+            },
+            {
+              src: 'alicia5.png',
+              _id: 5,
+              name: 'Alicia 5'
+            }
+          ]
+        }
+      ]
     };
   },
   computed: {
@@ -69,6 +183,10 @@ export default {
     }
   },
   methods: {
+    selectFotomontaje(item){
+      console.log(item)
+      this.selectedFoto = item
+    },
     verifyCode() {
       if (this.code == '2369') {
         this.nextStep('piramide', 7)
