@@ -54,6 +54,9 @@
 
     &__dragdrop {
         margin-bottom: 5rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         &--select{
             display: flex;
             justify-content: center;
@@ -102,6 +105,7 @@
                 align-items: center;
                 justify-content: center;
                 margin: 0 .5rem;
+                cursor: pointer;
 
                 img{
                     max-width: 100%;
@@ -115,6 +119,22 @@
 
                     &:last-child{
                         margin-right: 0 !important;
+                    }
+                }
+
+                @media (min-width: 1200px){
+                    width: 140px;
+                    height: 140px;
+                    margin-right: 1.5rem;
+                }
+
+                &.disabled{
+                    background-color: transparent !important;
+                    background: transparent !important;
+                    cursor: not-allowed;
+
+                    img{
+                        filter: grayscale(1);
                     }
                 }
             }
@@ -159,6 +179,12 @@
                     color: #232323;
                     text-align: center;
                     font-family: SprintSansMedium;
+                    max-width: 600px;
+                    font-size: 1rem;
+
+                    @media (min-width: 768px){
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }

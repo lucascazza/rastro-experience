@@ -3,7 +3,7 @@
     <div class="fotomontajes__text content">
       <h2>Texto desafiandolos a a que encuentren el codigo oculto en uno de los trabajos que les vamos a mostrar a continuacion para ver si estan aptos(?</h2>
     </div>
-    <div class="fotomontajes__dragdrop content">
+    <div class="fotomontajes__dragdrop">
       <div class="fotomontajes__dragdrop--select">
         <div v-for="(item, i) in fotomontajes" :key="i">
           <div class="select-fotomontaje" @click="selectFotomontaje(item)">
@@ -14,15 +14,22 @@
       <transition name="fade">
         <div class="selectedFoto" v-if="selectedFoto.name">
           <div class="selectedFoto__recursos">
-            <div class="selectedFoto__recursos--img" v-for="img in selectedFoto.recursos" :key="img._id">
+            <div class="selectedFoto__recursos--img" 
+              v-for="(img, i) in selectedFoto.recursos" 
+              :key="img._id" 
+              @click="selectImage(img)"
+              :class="{'disabled': arrayFoto.length < i }">
               <img :src="`/fotomontajes/${selectedFoto.name}/${img.src}`" :alt="img.name">
             </div>
           </div>
-          <div class="selectedFoto__lienzo content">
+          <div class="selectedFoto__lienzo">
             <div class="selectedFoto__lienzo--empty" v-if="arrayFoto.length == 0">
               <div class="selectedFoto__lienzo--text">
                 <h2>Arrastra las imágenes para ir descubriendo lo que esconden</h2>
               </div>
+            </div>
+            <div v-else>
+              <img :src="`/fotomontajes/${selectedFoto.name}/${arrayFoto[arrayFoto.length - 1].src}`" alt="">
             </div>
           </div>
         </div>
@@ -82,27 +89,27 @@ export default {
           recursos: [
             {
               src: 'alicia1.png',
-              _id: 1,
+              i: 0,
               name: 'Alicia 1'
             },
             {
               src: 'alicia2.png',
-              _id: 2,
+              i: 1,
               name: 'Alicia 2'
             },
             {
               src: 'alicia3.png',
-              _id: 3,
+              i: 2,
               name: 'Alicia 3'
             },
             {
               src: 'alicia4.png',
-              _id: 4,
+              i: 3,
               name: 'Alicia 4'
             },
             {
               src: 'alicia5.png',
-              _id: 5,
+              i: 4,
               name: 'Alicia 5'
             }
           ]
@@ -113,27 +120,27 @@ export default {
           recursos: [
             {
               src: 'alicia1.png',
-              _id: 1,
+              i: 0,
               name: 'Alicia 1'
             },
             {
               src: 'alicia2.png',
-              _id: 2,
+              i: 1,
               name: 'Alicia 2'
             },
             {
               src: 'alicia3.png',
-              _id: 3,
+              i: 2,
               name: 'Alicia 3'
             },
             {
               src: 'alicia4.png',
-              _id: 4,
+              i: 3,
               name: 'Alicia 4'
             },
             {
               src: 'alicia5.png',
-              _id: 5,
+              i: 4,
               name: 'Alicia 5'
             }
           ]
@@ -144,27 +151,27 @@ export default {
           recursos: [
             {
               src: 'alicia1.png',
-              _id: 1,
+              i: 0,
               name: 'Alicia 1'
             },
             {
               src: 'alicia2.png',
-              _id: 2,
+              i: 1,
               name: 'Alicia 2'
             },
             {
               src: 'alicia3.png',
-              _id: 3,
+              i: 2,
               name: 'Alicia 3'
             },
             {
               src: 'alicia4.png',
-              _id: 4,
+              i: 3,
               name: 'Alicia 4'
             },
             {
               src: 'alicia5.png',
-              _id: 5,
+              i: 4,
               name: 'Alicia 5'
             }
           ]
@@ -182,10 +189,19 @@ export default {
       this.$router.replace({ path: '/' })
     }
   },
+  mounted(){
+    this.selectedFoto = this.fotomontajes[0]
+  },
   methods: {
     selectFotomontaje(item){
-      console.log(item)
+      this.arrayFoto = []
       this.selectedFoto = item
+    },
+    selectImage(img){
+      if (this.arrayFoto.length !== img.i){
+        return
+      }
+      this.arrayFoto.push(img)
     },
     verifyCode() {
       if (this.code == '2369') {
