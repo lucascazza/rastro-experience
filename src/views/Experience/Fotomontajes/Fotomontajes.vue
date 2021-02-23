@@ -16,20 +16,23 @@
           <div class="selectedFoto__recursos">
             <div class="selectedFoto__recursos--img" 
               v-for="(img, i) in selectedFoto.recursos" 
-              :key="img._id" 
+              :key="img.i"
               @click="selectImage(img)"
-              :class="{'disabled': arrayFoto.length < i }">
+              :class="[
+              {'disabled': imgSelected.i < i || (!imgSelected.i && i !== 0)},
+              {'seleccionable': imgSelected.i == i || (!imgSelected.i && i == 0)},
+              {'active':  imgSelected.i && imgSelected.i == i + 1}]">
               <img :src="`/fotomontajes/${selectedFoto.name}/${img.src}`" :alt="img.name">
             </div>
           </div>
           <div class="selectedFoto__lienzo">
-            <div class="selectedFoto__lienzo--empty" v-if="arrayFoto.length == 0">
+            <div class="selectedFoto__lienzo--empty" v-if="!imgSelected.i">
               <div class="selectedFoto__lienzo--text">
                 <h2>Arrastra las imágenes para ir descubriendo lo que esconden</h2>
               </div>
             </div>
-            <div v-else>
-              <img :src="`/fotomontajes/${selectedFoto.name}/${arrayFoto[arrayFoto.length - 1].src}`" alt="">
+            <div v-else class="selectedFoto__lienzo--img">
+              <img :src="`/fotomontajes/${selectedFoto.name}/${imgSelected.src}`" :alt="imgSelected.name">
             </div>
           </div>
         </div>
@@ -81,35 +84,35 @@ export default {
       loading: true,
       code: '',
       selectedFoto: {},
-      arrayFoto: [],
+      imgSelected: {},
       fotomontajes: [
         {
           name: 'alicia',
           type: 'image',
           recursos: [
             {
-              src: 'alicia1.png',
-              i: 0,
+              src: 'alicia1.jpg',
+              i: 1,
               name: 'Alicia 1'
             },
             {
-              src: 'alicia2.png',
-              i: 1,
+              src: 'alicia2.jpg',
+              i: 2,
               name: 'Alicia 2'
             },
             {
-              src: 'alicia3.png',
-              i: 2,
+              src: 'alicia3.jpg',
+              i: 3,
               name: 'Alicia 3'
             },
             {
-              src: 'alicia4.png',
-              i: 3,
+              src: 'alicia4.jpg',
+              i: 4,
               name: 'Alicia 4'
             },
             {
-              src: 'alicia5.png',
-              i: 4,
+              src: 'alicia5.jpg',
+              i: 5,
               name: 'Alicia 5'
             }
           ]
@@ -119,28 +122,28 @@ export default {
           type: 'image',
           recursos: [
             {
-              src: 'alicia1.png',
-              i: 0,
+              src: 'alicia1.jpg',
+              i: 1,
               name: 'Alicia 1'
             },
             {
-              src: 'alicia2.png',
-              i: 1,
+              src: 'alicia2.jpg',
+              i: 2,
               name: 'Alicia 2'
             },
             {
-              src: 'alicia3.png',
-              i: 2,
+              src: 'alicia3.jpg',
+              i: 3,
               name: 'Alicia 3'
             },
             {
-              src: 'alicia4.png',
-              i: 3,
+              src: 'alicia4.jpg',
+              i: 4,
               name: 'Alicia 4'
             },
             {
-              src: 'alicia5.png',
-              i: 4,
+              src: 'alicia5.jpg',
+              i: 5,
               name: 'Alicia 5'
             }
           ]
@@ -150,28 +153,28 @@ export default {
           type: 'image',
           recursos: [
             {
-              src: 'alicia1.png',
-              i: 0,
+              src: 'alicia1.jpg',
+              i: 1,
               name: 'Alicia 1'
             },
             {
-              src: 'alicia2.png',
-              i: 1,
+              src: 'alicia2.jpg',
+              i: 2,
               name: 'Alicia 2'
             },
             {
-              src: 'alicia3.png',
-              i: 2,
+              src: 'alicia3.jpg',
+              i: 3,
               name: 'Alicia 3'
             },
             {
-              src: 'alicia4.png',
-              i: 3,
+              src: 'alicia4.jpg',
+              i: 4,
               name: 'Alicia 4'
             },
             {
-              src: 'alicia5.png',
-              i: 4,
+              src: 'alicia5.jpg',
+              i: 5,
               name: 'Alicia 5'
             }
           ]
@@ -194,14 +197,14 @@ export default {
   },
   methods: {
     selectFotomontaje(item){
-      this.arrayFoto = []
+      this.imgSelected = {}
       this.selectedFoto = item
     },
     selectImage(img){
-      if (this.arrayFoto.length !== img.i){
+      if (!this.imgSelected.i && img.i > 1 || img.i == this.imgSelected.i){
         return
       }
-      this.arrayFoto.push(img)
+      this.imgSelected = img
     },
     verifyCode() {
       if (this.code == '2369') {
