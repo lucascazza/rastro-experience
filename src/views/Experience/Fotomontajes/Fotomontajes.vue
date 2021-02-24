@@ -4,12 +4,39 @@
       <h2>Texto desafiandolos a a que encuentren el codigo oculto en uno de los trabajos que les vamos a mostrar a continuacion para ver si estan aptos(?</h2>
     </div>
     <div class="fotomontajes__dragdrop">
-      <div class="fotomontajes__dragdrop--recursos">
-        
+      <div class="fotomontajes__dragdrop--select">
+        <div v-for="(item, i) in fotomontajes" :key="i">
+          <div class="select-fotomontaje" @click="selectFotomontaje(item)" :class="[{'disabled': !item.enabled}, {'active': selectedFoto._id == i +1}]">
+            {{i + 1}}
+          </div>
+        </div>
       </div>
-      <div class="fotomontajes__dragdrop--lienzo">
-        
-      </div>
+      <transition name="fade">
+        <div class="selectedFoto" v-if="selectedFoto.name">
+          <div class="selectedFoto__recursos">
+            <div class="selectedFoto__recursos--img" 
+              v-for="(img, i) in selectedFoto.recursos" 
+              :key="img.i"
+              @click="selectImage(img)"
+              :class="[
+              {'disabled': imgSelected.i < i || (!imgSelected.i && i !== 0)},
+              {'seleccionable': imgSelected.i == i || (!imgSelected.i && i == 0)},
+              {'active':  imgSelected.i && imgSelected.i == i + 1}]">
+              <img :src="`/fotomontajes/${selectedFoto.name}/${img.src}`" :alt="img.name">
+            </div>
+          </div>
+          <div class="selectedFoto__lienzo">
+            <div class="selectedFoto__lienzo--empty" v-if="!imgSelected.i">
+              <div class="selectedFoto__lienzo--text">
+                <h2>Arrastra las imágenes para ir descubriendo lo que esconden</h2>
+              </div>
+            </div>
+            <div v-else class="selectedFoto__lienzo--img">
+              <img :src="`/fotomontajes/${selectedFoto.name}/${imgSelected.src}`" :alt="imgSelected.name">
+            </div>
+          </div>
+        </div>
+      </transition>
     </div>
     <div class="fotomontajes__btn">
       <v-text-field 
@@ -55,7 +82,110 @@ export default {
   data() {
     return {
       loading: true,
-      code: ''
+      code: '',
+      selectedFoto: {},
+      imgSelected: {},
+      fotomontajes: [
+        {
+          _id: 1, 
+          name: 'alicia',
+          type: 'image',
+          enabled: true,
+          recursos: [
+            {
+              src: 'alicia1.jpg',
+              i: 1,
+              name: 'Alicia 1'
+            },
+            {
+              src: 'alicia2.jpg',
+              i: 2,
+              name: 'Alicia 2'
+            },
+            {
+              src: 'alicia3.jpg',
+              i: 3,
+              name: 'Alicia 3'
+            },
+            {
+              src: 'alicia4.jpg',
+              i: 4,
+              name: 'Alicia 4'
+            },
+            {
+              src: 'alicia5.jpg',
+              i: 5,
+              name: 'Alicia 5'
+            }
+          ]
+        },
+        {
+          _id: 2,
+          name: 'otro1',
+          type: 'image',
+          enabled: false,
+          recursos: [
+            {
+              src: 'alicia1.jpg',
+              i: 1,
+              name: 'Alicia 1'
+            },
+            {
+              src: 'alicia2.jpg',
+              i: 2,
+              name: 'Alicia 2'
+            },
+            {
+              src: 'alicia3.jpg',
+              i: 3,
+              name: 'Alicia 3'
+            },
+            {
+              src: 'alicia4.jpg',
+              i: 4,
+              name: 'Alicia 4'
+            },
+            {
+              src: 'alicia5.jpg',
+              i: 5,
+              name: 'Alicia 5'
+            }
+          ]
+        },
+        {
+          _id: 3,
+          name: 'otro2',
+          type: 'image',
+          enabled: false,
+          recursos: [
+            {
+              src: 'alicia1.jpg',
+              i: 1,
+              name: 'Alicia 1'
+            },
+            {
+              src: 'alicia2.jpg',
+              i: 2,
+              name: 'Alicia 2'
+            },
+            {
+              src: 'alicia3.jpg',
+              i: 3,
+              name: 'Alicia 3'
+            },
+            {
+              src: 'alicia4.jpg',
+              i: 4,
+              name: 'Alicia 4'
+            },
+            {
+              src: 'alicia5.jpg',
+              i: 5,
+              name: 'Alicia 5'
+            }
+          ]
+        }
+      ]
     };
   },
   computed: {
@@ -68,7 +198,29 @@ export default {
       this.$router.replace({ path: '/' })
     }
   },
+  mounted(){
+    this.selectedFoto = this.fotomontajes[0]
+  },
   methods: {
+    selectFotomontaje(item) {
+      if (!item.enabled) {
+        return
+      }
+      this.imgSelected = {}
+      this.selectedFoto = item
+    },
+    selectImage(img){
+      if (!this.imgSelected.i && img.i > 1 || img.i > this.imgSelected.i + 1){
+        return
+      }
+      this.imgSelected = img
+      if (img.i == 5){
+        let index = this.selectedFoto._id
+        if (index < 3){
+          this.fotomontajes[index].enabled = true
+        }
+      }
+    },
     verifyCode() {
       if (this.code == '2369') {
         this.nextStep('piramide', 7)

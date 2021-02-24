@@ -86,14 +86,14 @@ export default {
     })
   },
   beforeMount(){
-    if(this.user.step < 6 ){
+    if(this.user.step < 7 ){
       this.$router.replace({ path: '/' })
     }
   },
   methods: {
     verifyCode() {
       if (this.code == '743') {
-        this.nextStep('final', 7)
+        this.nextStep('final', 8)
         this.$toastr.success('Contraseña correcta.');
       } else {
         this.$toastr.error('Contraseña incorrecta, volve a intentarlo.');
