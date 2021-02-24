@@ -1,6 +1,6 @@
 export default {
     install(Vue) {
-        let serverUrl = "http//api:3000";
+        let serverUrl = process.env.VUE_APP_SERVER;
         let api = {
             user() {
                 return {
