@@ -116,7 +116,6 @@
                 align-items: center;
                 justify-content: center;
                 margin: 0 .5rem;
-                cursor: pointer;
 
                 img{
                     max-width: 100%;
@@ -152,7 +151,6 @@
                 &.active{
                     background-color: transparent !important;
                     background: transparent !important;
-                    cursor: pointer;
 
                     img{
                         border: 2px solid #f6f6f6;
@@ -162,7 +160,6 @@
                 &.seleccionable{
                     background-color: transparent !important;
                     background: transparent !important;
-                    cursor: pointer;
 
                     img{
                         filter: grayscale(.6);

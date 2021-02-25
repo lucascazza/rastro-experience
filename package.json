@@ -15,6 +15,7 @@
     "toastr": "^2.1.4",
     "v-viewer": "^1.5.1",
     "vue": "^2.6.11",
+    "vue-easy-dnd": "^1.10.2",
     "vue-meta": "^2.4.0",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.2.0",

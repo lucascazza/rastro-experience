@@ -14,17 +14,18 @@
       <transition name="fade">
         <div class="selectedFoto" v-if="selectedFoto.name">
           <div class="selectedFoto__recursos">
-            <div class="selectedFoto__recursos--img" 
+              <drag class="selectedFoto__recursos--img drag"
               v-for="(img, i) in selectedFoto.recursos" 
               :key="img.i"
-              @click="selectImage(img)"
+              :data="img"
               :class="[
               {'disabled': imgSelected.i < i || (!imgSelected.i && i !== 0)},
               {'seleccionable': imgSelected.i == i || (!imgSelected.i && i == 0)},
               {'active':  imgSelected.i && imgSelected.i == i + 1}]">
               <img :src="`/fotomontajes/${selectedFoto.name}/${img.src}`" :alt="img.name">
-            </div>
+            </drag>
           </div>
+          <drop @drop="selectImage">
           <div class="selectedFoto__lienzo">
             <div class="selectedFoto__lienzo--empty" v-if="!imgSelected.i">
               <div class="selectedFoto__lienzo--text">
@@ -35,6 +36,7 @@
               <img :src="`/fotomontajes/${selectedFoto.name}/${imgSelected.src}`" :alt="imgSelected.name">
             </div>
           </div>
+          </drop>
         </div>
       </transition>
     </div>
@@ -68,6 +70,7 @@
 
 <script>
 
+import { Drag, Drop, DropMask } from 'vue-easy-dnd';
 import { mapState } from 'vuex';
 import helperApp from '@/mixins/helperApp';
 export default {
@@ -78,7 +81,11 @@ export default {
     }
   },
   mixins: [helperApp],
-  components: {},
+  components: {
+    Drag,
+    Drop,
+    DropMask
+  },
   data() {
     return {
       loading: true,
@@ -210,11 +217,11 @@ export default {
       this.selectedFoto = item
     },
     selectImage(img){
-      if (!this.imgSelected.i && img.i > 1 || img.i > this.imgSelected.i + 1){
+      if (!this.imgSelected.i && img.data.i > 1 || img.data.i > this.imgSelected.i + 1){
         return
       }
-      this.imgSelected = img
-      if (img.i == 5){
+      this.imgSelected = img.data
+      if (img.data.i == 5){
         let index = this.selectedFoto._id
         if (index < 3){
           this.fotomontajes[index].enabled = true
