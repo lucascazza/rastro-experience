@@ -14,42 +14,44 @@
       <transition name="fade">
         <div class="selectedFoto" v-if="selectedFoto.name">
           <div class="selectedFoto__recursos">
-              <drag class="selectedFoto__recursos--img drag"
-              v-for="(img, i) in selectedFoto.recursos" 
-              :key="img.i"
-              :data="img"
-              :class="[
-              {'disabled': imgSelected.i < i || (!imgSelected.i && i !== 0)},
-              {'seleccionable': imgSelected.i == i || (!imgSelected.i && i == 0)},
-              {'active':  imgSelected.i && imgSelected.i == i + 1}]">
-              <img :src="`/fotomontajes/${selectedFoto.name}/${img.src}`" :alt="img.name">
-            </drag>
+              <drag 
+                class="selectedFoto__recursos--img drag"
+                v-for="(img, i) in selectedFoto.recursos" :key="img.i"
+                :data="img" 
+                :class="[
+                {'disabled': imgSelected.i < i || (!imgSelected.i && i !== 0)},
+                {'seleccionable': imgSelected.i == i || (!imgSelected.i && i == 0)},
+                {'active':  imgSelected.i && imgSelected.i == i + 1}]">
+                <img :src="`/fotomontajes/${selectedFoto.name}/${img.src}`" :alt="img.name">
+              </drag>
           </div>
           <drop @drop="selectImage">
-          <div class="selectedFoto__lienzo">
-            <div class="selectedFoto__lienzo--empty" v-if="!imgSelected.i">
-              <div class="selectedFoto__lienzo--text">
-                <h2>Arrastra las imágenes para ir descubriendo lo que esconden</h2>
+            <div class="selectedFoto__lienzo">
+              <div class="selectedFoto__lienzo--empty" v-if="!imgSelected.i">
+                <div class="selectedFoto__lienzo--text">
+                  <h2>Arrastra las imágenes para ir descubriendo lo que esconden</h2>
+                </div>
+              </div>
+              <div v-else class="selectedFoto__lienzo--img">
+                <img :src="`/fotomontajes/${selectedFoto.name}/${imgSelected.src}`" :alt="imgSelected.name">
               </div>
             </div>
-            <div v-else class="selectedFoto__lienzo--img">
-              <img :src="`/fotomontajes/${selectedFoto.name}/${imgSelected.src}`" :alt="imgSelected.name">
-            </div>
-          </div>
           </drop>
         </div>
       </transition>
     </div>
+    <transition name="fade">
+      <div v-if="enableVfx" class="vfx">
+        <div class="vfx__select">
+          <div v-for="(item, i) in fotomontajes" :key="i">
+            <div class="vfx__select--selected">
+              {{i + 1}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
     <div class="fotomontajes__btn">
-      <v-text-field 
-        class="input-code" 
-        color="#ff445a" 
-        maxlength="4" 
-        hide-details 
-        rounded background-color="white"
-        height="60" 
-        v-model="code">
-      </v-text-field>
       <v-tooltip top>
         <template v-slot:activator="{ on }">
           <v-btn 
@@ -57,12 +59,14 @@
             x-large 
             ripple 
             color="yellow" 
-            @click="verifyCode()" 
-            v-on="on">
+            @click="next()" 
+            v-on="on"
+            :class="{'disabled': !completePage}">
             Seguir
           </v-btn>
         </template>
-        <span>¿Ya tenés tú código?</span>
+        <span v-if="completePage">¡Bien hecho! Podés seguir</span>
+        <span v-else>Terminá los desafíos para continuar...</span>
       </v-tooltip>
     </div>
   </div>
@@ -92,6 +96,8 @@ export default {
       code: '',
       selectedFoto: {},
       imgSelected: {},
+      enableVfx: false,
+      completePage: false,
       fotomontajes: [
         {
           _id: 1, 
@@ -209,8 +215,15 @@ export default {
     this.selectedFoto = this.fotomontajes[0]
   },
   methods: {
+    next(){
+      if (!completePage){
+        return 
+      } else {
+        this.nextStep('piramide', 7)
+      }
+    },
     selectFotomontaje(item) {
-      if (!item.enabled) {
+      if (!item.enabled || item._id == this.selectedFoto._id) {
         return
       }
       this.imgSelected = {}
@@ -225,15 +238,9 @@ export default {
         let index = this.selectedFoto._id
         if (index < 3){
           this.fotomontajes[index].enabled = true
+        } else if (index == 3){
+          this.enableVfx = true
         }
-      }
-    },
-    verifyCode() {
-      if (this.code == '2369') {
-        this.nextStep('piramide', 7)
-        this.$toastr.success('Contraseña correcta.');
-      } else {
-        this.$toastr.error('Contraseña incorrecta, volve a intentarlo.');
       }
     }
   }

@@ -24,7 +24,7 @@
               Seguir
             </v-btn>
           </template>
-          <span v-if="!endVideo">Terminá el video para continuar</span>
+          <span v-if="!endVideo">Terminá el video para continuar...</span>
           <span v-else>¿Viste el código? ¡Ingresalo!</span>
         </v-tooltip>
       </div>

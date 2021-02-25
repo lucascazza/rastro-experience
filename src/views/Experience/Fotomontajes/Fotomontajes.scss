@@ -232,27 +232,15 @@
         align-items: center;
         flex-direction: column;
 
-        .input-code {
-            margin-bottom: 2rem;
-            max-width: 400px;
-
-            .v-input__control {
-                .v-text-field__slot {
-                    input {
-                        font-size: 38px !important;
-                        text-align: center;
-                        font-family: OswaldBold;
-                        text-transform: uppercase;
-                        font-style: italic;
-                        color: $magenta;
-                    }
-                }
-            }
-        }
-
         .v-btn {
             min-width: 250px !important;
             font-family: SprintSansMedium;
+        }
+
+        .disabled{
+            background-color: #c2cbcd;
+            color: #eeeeee !important;
+            cursor: not-allowed;
         }
     }
 
