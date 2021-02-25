@@ -98,14 +98,12 @@ export default {
       imgSelected: {},
       enableVfx: false,
       completePage: false,
-      fotomontajes: [
-        {
-          _id: 1, 
+      fotomontajes: [{
+          _id: 1,
           name: 'alicia',
           type: 'image',
           enabled: true,
-          recursos: [
-            {
+          recursos: [{
               src: 'alicia1.jpg',
               i: 1,
               name: 'Alicia 1'
@@ -137,8 +135,7 @@ export default {
           name: 'otro1',
           type: 'image',
           enabled: false,
-          recursos: [
-            {
+          recursos: [{
               src: 'alicia1.jpg',
               i: 1,
               name: 'Alicia 1'
@@ -170,8 +167,7 @@ export default {
           name: 'otro2',
           type: 'image',
           enabled: false,
-          recursos: [
-            {
+          recursos: [{
               src: 'alicia1.jpg',
               i: 1,
               name: 'Alicia 1'
@@ -206,19 +202,17 @@ export default {
       user: state => state.user.data
     })
   },
-  beforeMount(){
-    if(this.user.step < 6 ){
+  beforeMount() {
+    if (this.user.step < 6) {
       this.$router.replace({ path: '/' })
     }
   },
-  mounted(){
+  mounted() {
     this.selectedFoto = this.fotomontajes[0]
   },
   methods: {
-    next(){
-      if (!completePage){
-        return 
-      } else {
+    next() {
+      if (completePage) {
         this.nextStep('piramide', 7)
       }
     },
@@ -229,16 +223,16 @@ export default {
       this.imgSelected = {}
       this.selectedFoto = item
     },
-    selectImage(img){
-      if (!this.imgSelected.i && img.data.i > 1 || img.data.i > this.imgSelected.i + 1){
+    selectImage(img) {
+      if (!this.imgSelected.i && img.data.i > 1 || img.data.i > this.imgSelected.i + 1) {
         return
       }
       this.imgSelected = img.data
-      if (img.data.i == 5){
+      if (img.data.i == 5) {
         let index = this.selectedFoto._id
-        if (index < 3){
+        if (index < 3) {
           this.fotomontajes[index].enabled = true
-        } else if (index == 3){
+        } else if (index == 3) {
           this.enableVfx = true
         }
       }
