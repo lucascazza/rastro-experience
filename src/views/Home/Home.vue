@@ -2,7 +2,7 @@
   <div class="home" v-if="!loading">
     <div class="home__content">
       <transition name="fade">
-        <div v-if="user.step !== 7">
+        <div v-if="user.step !== 8">
           <h1 class="text-center">Hola <span>{{user.name}}</span> ¿Cómo estás?</h1>
           <p>Te elegimos por tus habilidades.<br> Esta es la experiencia <span>Rastro</span>, queremos mostrarles una
             aventura que ya recorrimos, y queremos que ustedes también la recorran. Si lo hacen, les daremos la
@@ -16,7 +16,7 @@
         </div>
       </transition>
       <transition name="fade">
-        <div v-if="user.step == 7">
+        <div v-if="user.step == 8">
           <h1 class="text-center">Hola <span>{{user.name}}</span> ¿Cómo estás?</h1>
           <p>Felicidades por haber terminado el recorrido, siempre podrás volver a empezarlo cuando sientas que perdiste
             el rumbo en cualquier aspecto de tu vida.</p>
