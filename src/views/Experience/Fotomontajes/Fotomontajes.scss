@@ -303,6 +303,10 @@
                 overflow: hidden;
                 border-right: 2px solid;
                 display: flex;
+
+                &:not(.drag-slide){
+                    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+                }
             }
 
             &--sinefectos{
@@ -372,6 +376,8 @@
 
             p{
                 font-family: SprintSansLight;
+                display: flex;
+                justify-content: center;
 
                 i{
                     font-size: 20px;

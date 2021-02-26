@@ -68,7 +68,7 @@
               </div>
             </div>
             <div class="vfx__videos content">
-              <div class="vfx__videos--efectos" :style="{width: slide.val + '%'}">
+              <div class="vfx__videos--efectos" :style="{width: slide.val + '%'}" :class="{'drag-slide': dragSlide}">
                 <video ref="video" loop frameborder="0" muted @loadeddata="loadFinish()">
                   <source src="@/assets/media/vfx/taza/taza-efecto.mp4" type="video/mp4">
                 </video>
@@ -79,8 +79,8 @@
                 </video>
               </div>
             </div>
-            <v-slider hide-details class="slide-vfx" v-model="slide.val" :color="slide.color" :track-color="slide.trackColor"></v-slider>
-            <p class="mb-0 text-center">Mové el slide y descrubrí</p>
+            <v-slider @start="slideStart" @end="slideEnd" hide-details class="slide-vfx" v-model="slide.val" :color="slide.color" :track-color="slide.trackColor"></v-slider>
+            <p class="mb-0 text-center"><i class="icon-compare-arrows mr-2"></i>Mové el slide y descrubrí</p>
           </div>
         </transition>
         <transition name="fade">
@@ -98,7 +98,7 @@
               </div>
             </div>
             <div class="vfx__videos content">
-              <div class="vfx__videos--efectos" :style="{width: slide.val + '%'}">
+              <div class="vfx__videos--efectos" :style="{width: slide.val + '%'}" :class="{'drag-slide': dragSlide}">
                 <video ref="video" loop frameborder="0" muted @loadeddata="loadFinish()">
                   <source src="@/assets/media/vfx/taza/taza-efecto.mp4" type="video/mp4">
                 </video>
@@ -109,8 +109,8 @@
                 </video>
               </div>
             </div>
-            <v-slider hide-details class="slide-vfx" v-model="slide.val" :color="slide.color" :track-color="slide.trackColor"></v-slider>
-            <p class="mb-0 text-center"><i class="icon-arrow-left_circle mr-2"></i>Mové el slide y descrubrí <i class="icon-arrow-right_circle ml-2"></i></p>
+            <v-slider @start="slideStart" @end="slideEnd" hide-details class="slide-vfx" v-model="slide.val" :color="slide.color" :track-color="slide.trackColor"></v-slider>
+            <p class="mb-0 text-center"><i class="icon-compare-arrows mr-2"></i>Mové el slide y descrubrí</p>
           </div>
         </transition>
         <transition name="fade">
@@ -128,7 +128,7 @@
               </div>
             </div>
             <div class="vfx__videos content">
-              <div class="vfx__videos--efectos" :style="{width: slide.val + '%'}">
+              <div class="vfx__videos--efectos" :style="{width: slide.val + '%'}" :class="{'drag-slide': dragSlide}">
                 <video ref="video" loop frameborder="0" muted @loadeddata="loadFinish()">
                   <source src="@/assets/media/vfx/taza/taza-efecto.mp4" type="video/mp4">
                 </video>
@@ -139,8 +139,8 @@
                 </video>
               </div>
             </div>
-            <v-slider hide-details class="slide-vfx" v-model="slide.val" :color="slide.color" :track-color="slide.trackColor"></v-slider>
-            <p class="mb-0 text-center">Mové el slide y descrubrí</p>
+            <v-slider @start="slideStart" @end="slideEnd" hide-details class="slide-vfx" v-model="slide.val" :color="slide.color" :track-color="slide.trackColor"></v-slider>
+            <p class="mb-0 text-center"><i class="icon-compare-arrows mr-2"></i>Mové el slide y descrubrí</p>
           </div>
         </transition>
       </div>
@@ -191,7 +191,8 @@ export default {
       code: '',
       selectedFoto: {},
       imgSelected: {},
-      enableVfx: false,
+      enableVfx: true,
+      dragSlide: false,
       videoPlaying: {},
       videosArray: [
         {
@@ -379,6 +380,12 @@ export default {
       } else if (video._id == 3) {
         this.completePage = true
       }
+    },
+    slideStart(){
+      this.dragSlide = true
+    },
+    slideEnd(){
+      this.dragSlide = false
     }
   }
 }
