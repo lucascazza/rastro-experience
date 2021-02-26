@@ -22,22 +22,22 @@
             <div class="webapps__options--options row">
               <div class="col-6 d-flex align-center justify-center" @click="selectOption(false)">
                 <div class="webapps__options--item item-1">
-                  <i class="ricon-captura-off"></i>
+                  <i class="icon-3d"></i>
                 </div>
               </div>
               <div class="col-6 d-flex align-center justify-center" @click="selectOption(true)">
                 <div class="webapps__options--item item-2">
-                  <i class="ricon-captura-off"></i>
+                  <i class="icon-3d"></i>
                 </div>
               </div> 
               <div class="col-6 d-flex align-center justify-center" @click="selectOption(false)">
                 <div class="webapps__options--item item-3">
-                  <i class="ricon-captura-off"></i>
+                  <i class="icon-3d"></i>
                 </div>
               </div> 
               <div class="col-6 d-flex align-center justify-center" @click="selectOption(false)">
                 <div class="webapps__options--item item-4">
-                  <i class="ricon-captura-off"></i>
+                  <i class="icon-3d"></i>
                 </div>
               </div> 
             </div>
@@ -59,7 +59,7 @@
             <div class="webapps__behance--btn">
               <v-text-field
                 class="input-code"
-                color="#ff445a" 
+                color="magenta" 
                 maxlength="4" 
                 hide-details 
                 rounded 
