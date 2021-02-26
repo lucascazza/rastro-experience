@@ -2,7 +2,7 @@
   <div class="manifiesto" :class="{'overflow-hidden': !scrolleable}">
     <div class="manifiesto__video">
       <div class="manifiesto__video--video">
-        <video ref="video" muted poster="@/assets/media/poster.jpg" controls autoplay frameborder="0"
+        <video ref="video" poster="@/assets/media/poster.jpg" controls autoplay frameborder="0"
           @ended="endVideo = true">
           <source src="@/assets/media/manifiesto.mp4" type="video/mp4">
         </video>
