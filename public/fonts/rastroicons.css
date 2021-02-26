@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'rastroicons';
-  src:  url('rastroicons.eot?q3j9nz');
-  src:  url('rastroicons.eot?q3j9nz#iefix') format('embedded-opentype'),
-    url('rastroicons.ttf?q3j9nz') format('truetype'),
-    url('rastroicons.woff?q3j9nz') format('woff'),
-    url('rastroicons.svg?q3j9nz#rastroicons') format('svg');
+  src:  url('./rastroicons.eot?rcrm5y');
+  src:  url('./rastroicons.eot?rcrm5y#iefix') format('embedded-opentype'),
+    url('./rastroicons.ttf?rcrm5y') format('truetype'),
+    url('./rastroicons.woff?rcrm5y') format('woff'),
+    url('./rastroicons.svg?rcrm5y#rastroicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="ricon-"], [class*=" ricon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'rastroicons' !important;
   speak: never;
@@ -25,258 +25,48 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ricon-gotas:before {
-  content: "\e901";
-}
-.ricon-granizo:before {
-  content: "\e902";
-}
-.ricon-humedad:before {
-  content: "\e903";
-}
-.ricon-llovizna:before {
-  content: "\e904";
-}
-.ricon-lluvia:before {
-  content: "\e905";
-}
-.ricon-nevado:before {
-  content: "\e906";
-}
-.ricon-noche:before {
-  content: "\e907";
-}
-.ricon-noche-nube:before {
-  content: "\e908";
-}
-.ricon-nubes:before {
-  content: "\e909";
-}
-.ricon-nublado:before {
-  content: "\e90a";
-}
-.ricon-nubocidad:before {
-  content: "\e90b";
-}
-.ricon-sol:before {
-  content: "\e90c";
-}
-.ricon-termometro:before {
-  content: "\e90d";
-}
-.ricon-tormenta:before {
+.icon-compare-arrows:before {
   content: "\e90e";
 }
-.ricon-ventoso:before {
-  content: "\e90f";
+.icon-arrow-down:before {
+  content: "\e905";
 }
-.ricon-viento:before {
-  content: "\e910";
+.icon-arrow-down_circle:before {
+  content: "\e906";
 }
-.ricon-captura-off:before {
-  content: "\e911";
+.icon-arrow-left:before {
+  content: "\e907";
 }
-.ricon-empty-alertas:before {
-  content: "\e912";
+.icon-arrow-left_circle:before {
+  content: "\e908";
 }
-.ricon-empty-capturas:before {
-  content: "\e913";
+.icon-arrow-right:before {
+  content: "\e909";
 }
-.ricon-empty-grilla:before {
-  content: "\e914";
+.icon-arrow-right_circle:before {
+  content: "\e90a";
 }
-.ricon-empty-mapa:before {
-  content: "\e915";
+.icon-arrow-up:before {
+  content: "\e90b";
 }
-.ricon-empty-notas:before {
-  content: "\e916";
+.icon-arrow-up_circle:before {
+  content: "\e90c";
 }
-.ricon-empty-prescripcion:before {
-  content: "\e917";
+.icon-vimeo:before {
+  content: "\e90d";
 }
-.ricon-empty-vuelos:before {
-  content: "\e918";
+.icon-email:before {
+  content: "\e902";
 }
-.ricon-alertas:before {
-  content: "\e919";
+.icon-youtube:before {
+  content: "\e904";
 }
-.ricon-buscar:before {
-  content: "\e91a";
+.icon-3d:before {
+  content: "\e900";
 }
-.ricon-capturas:before {
-  content: "\e91b";
+.icon-behance:before {
+  content: "\e901";
 }
-.ricon-carpeta:before {
-  content: "\e91c";
-}
-.ricon-carpeta-move:before {
-  content: "\e91d";
-}
-.ricon-carpeta-new:before {
-  content: "\e91e";
-}
-.ricon-carpeta-shared:before {
-  content: "\e91f";
-}
-.ricon-centrar:before {
-  content: "\e920";
-}
-.ricon-clima:before {
-  content: "\e921";
-}
-.ricon-comparar:before {
-  content: "\e922";
-}
-.ricon-compartir:before {
-  content: "\e923";
-}
-.ricon-configuracion:before {
-  content: "\e924";
-}
-.ricon-cuenta:before {
-  content: "\e925";
-}
-.ricon-cultivo:before {
-  content: "\e926";
-}
-.ricon-editar:before {
-  content: "\e927";
-}
-.ricon-eliminar:before {
-  content: "\e928";
-}
-.ricon-visible:before {
-  content: "\e929";
-}
-.ricon-equipos:before {
-  content: "\e92a";
-}
-.ricon-fertilizacion:before {
-  content: "\e92b";
-}
-.ricon-fumigacion:before {
-  content: "\e92c";
-}
-.ricon-imagenes:before {
-  content: "\e92d";
-}
-.ricon-imagenes-upload:before {
-  content: "\e92e";
-}
-.ricon-adjunto:before {
-  content: "\e92f";
-}
-.ricon-info:before {
-  content: "\e930";
-}
-.ricon-informacion-proyecto:before {
-  content: "\e931";
-}
-.ricon-arrow-down:before {
-  content: "\e932";
-}
-.ricon-localizacion:before {
-  content: "\e933";
-}
-.ricon-mapas:before {
-  content: "\e934";
-}
-.ricon-mapas-upload:before {
-  content: "\e935";
-}
-.ricon-menu:before {
-  content: "\e936";
-}
-.ricon-nota-area:before {
-  content: "\e937";
-}
-.ricon-nota-distancia:before {
-  content: "\e938";
-}
-.ricon-nota-recorte:before {
-  content: "\e939";
-}
-.ricon-notas:before {
-  content: "\e93a";
-}
-.ricon-nota-ubicacion:before {
-  content: "\e93b";
-}
-.ricon-nota-ubicacion-full:before {
-  content: "\e93c";
-}
-.ricon-arrow-left:before {
-  content: "\e93d";
-}
-.ricon-arrow-right:before {
-  content: "\e93e";
-}
-.ricon-offline:before {
-  content: "\e93f";
-}
-.ricon-poligono:before {
-  content: "\e940";
-}
-.ricon-arrow-up:before {
-  content: "\e941";
-}
-.ricon-prescripcion:before {
-  content: "\e942";
-}
-.ricon-proyecto:before {
-  content: "\e943";
-}
-.ricon-proyecto-new:before {
-  content: "\e944";
-}
-.ricon-proyecto-off:before {
-  content: "\e945";
-}
-.ricon-siembra:before {
-  content: "\e946";
-}
-.ricon-temporada:before {
-  content: "\e947";
-}
-.ricon-ubicacion:before {
-  content: "\e948";
-}
-.ricon-vista:before {
-  content: "\e949";
-}
-.ricon-cruz:before {
-  content: "\e94a";
-}
-.ricon-vuelos:before {
-  content: "\e94b";
-}
-.ricon-zoom:before {
-  content: "\e94c";
-}
-.ricon-download:before {
-  content: "\e94d";
-}
-.ricon-enviar:before {
-  content: "\e94e";
-}
-.ricon-guardar:before {
-  content: "\e94f";
-}
-.ricon-invisible-1:before {
-  content: "\e950";
-}
-.ricon-invisible-2:before {
-  content: "\e951";
-}
-.ricon-mas:before {
-  content: "\e952";
-}
-.ricon-ok:before {
-  content: "\e953";
-}
-.ricon-sync:before {
-  content: "\e954";
-}
-.ricon-upload:before {
-  content: "\e955";
+.icon-instagram:before {
+  content: "\e903";
 }

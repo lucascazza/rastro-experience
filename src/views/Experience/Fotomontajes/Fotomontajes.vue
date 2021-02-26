@@ -6,7 +6,7 @@
     <div class="fotomontajes__dragdrop">
       <div class="fotomontajes__dragdrop--select">
         <div v-for="(item, i) in fotomontajes" :key="i">
-          <div class="select-fotomontaje" @click="selectFotomontaje(item)" :class="[{'disabled': !item.enabled}, {'active': selectedFoto._id == i +1}]">
+          <div class="select-fotomontaje" @click="selectFotomontaje(item)" :class="[{'disabled': !item.enabled}, {'active': selectedFoto._id == i + 1}]">
             {{i + 1}}
           </div>
         </div>
@@ -43,12 +43,106 @@
     <transition name="fade">
       <div v-if="enableVfx" class="vfx">
         <div class="vfx__select">
-          <div v-for="(item, i) in fotomontajes" :key="i">
-            <div class="vfx__select--selected">
+          <div v-for="(video, i) in videosArray" :key="i">
+            <div class="vfx__select--selected"
+              @click="selectVideo(video)"
+              :class="[
+              {'disabled': !video.enabled},
+              {'active': videoPlaying._id == (i + 1)}]">
               {{i + 1}}
             </div>
           </div>
         </div>
+        <transition name="fade">
+          <div v-if="videoPlaying.name == 'taza'" class="vfx__selectVideo">
+            <div class="vfx__btns">
+              <div>
+                <v-btn rounded large ripple color="yellow" @click="playVideo()" :disabled="loadVideo != 2"
+                  :class="{'disabled': loadVideo != 2}">
+                  Play
+                </v-btn>
+                <v-btn rounded large ripple color="magenta" @click="pauseVideo()" :disabled="loadVideo != 2"
+                  :class="{'disabled': loadVideo != 2}">
+                  Pausa
+                </v-btn>
+              </div>
+            </div>
+            <div class="vfx__videos content">
+              <div class="vfx__videos--efectos" :style="{width: slide.val + '%'}">
+                <video ref="video" loop frameborder="0" muted @loadeddata="loadFinish()">
+                  <source src="@/assets/media/vfx/taza/taza-efecto.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="vfx__videos--sinefectos">
+                <video ref="videoO" loop frameborder="0" muted @loadeddata="loadFinish()">
+                  <source src="@/assets/media/vfx/taza/taza-sinefecto.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <v-slider hide-details class="slide-vfx" v-model="slide.val" :color="slide.color" :track-color="slide.trackColor"></v-slider>
+            <p class="mb-0 text-center">Mové el slide y descrubrí</p>
+          </div>
+        </transition>
+        <transition name="fade">
+          <div v-if="videoPlaying.name == 'barco'" class="vfx__selectVideo">
+            <div class="vfx__btns">
+              <div>
+                <v-btn rounded large ripple color="yellow" @click="playVideo()" :disabled="loadVideo != 2"
+                  :class="{'disabled': loadVideo != 2}">
+                  Play
+                </v-btn>
+                <v-btn rounded large ripple color="magenta" @click="pauseVideo()" :disabled="loadVideo != 2"
+                  :class="{'disabled': loadVideo != 2}">
+                  Pausa
+                </v-btn>
+              </div>
+            </div>
+            <div class="vfx__videos content">
+              <div class="vfx__videos--efectos" :style="{width: slide.val + '%'}">
+                <video ref="video" loop frameborder="0" muted @loadeddata="loadFinish()">
+                  <source src="@/assets/media/vfx/taza/taza-efecto.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="vfx__videos--sinefectos">
+                <video ref="videoO" loop frameborder="0" muted @loadeddata="loadFinish()">
+                  <source src="@/assets/media/vfx/taza/taza-sinefecto.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <v-slider hide-details class="slide-vfx" v-model="slide.val" :color="slide.color" :track-color="slide.trackColor"></v-slider>
+            <p class="mb-0 text-center"><i class="icon-arrow-left_circle mr-2"></i>Mové el slide y descrubrí <i class="icon-arrow-right_circle ml-2"></i></p>
+          </div>
+        </transition>
+        <transition name="fade">
+          <div v-if="videoPlaying.name == 'milton'" class="vfx__selectVideo">
+            <div class="vfx__btns">
+              <div>
+                <v-btn rounded large ripple color="yellow" @click="playVideo()" :disabled="loadVideo != 2"
+                  :class="{'disabled': loadVideo != 2}">
+                  Play
+                </v-btn>
+                <v-btn rounded large ripple color="magenta" @click="pauseVideo()" :disabled="loadVideo != 2"
+                  :class="{'disabled': loadVideo != 2}">
+                  Pausa
+                </v-btn>
+              </div>
+            </div>
+            <div class="vfx__videos content">
+              <div class="vfx__videos--efectos" :style="{width: slide.val + '%'}">
+                <video ref="video" loop frameborder="0" muted @loadeddata="loadFinish()">
+                  <source src="@/assets/media/vfx/taza/taza-efecto.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="vfx__videos--sinefectos">
+                <video ref="videoO" loop frameborder="0" muted @loadeddata="loadFinish()">
+                  <source src="@/assets/media/vfx/taza/taza-sinefecto.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <v-slider hide-details class="slide-vfx" v-model="slide.val" :color="slide.color" :track-color="slide.trackColor"></v-slider>
+            <p class="mb-0 text-center">Mové el slide y descrubrí</p>
+          </div>
+        </transition>
       </div>
     </transition>
     <div class="fotomontajes__btn">
@@ -92,12 +186,32 @@ export default {
   },
   data() {
     return {
+      slide: { val: 50, color: 'cyan', trackColor: 'magenta' },
       loading: true,
       code: '',
       selectedFoto: {},
       imgSelected: {},
       enableVfx: false,
+      videoPlaying: {},
+      videosArray: [
+        {
+          _id: 1,
+          name: 'taza',
+          enabled: true
+        },
+        {
+          _id: 2,
+          name: 'barco',
+          enabled: true
+        },
+        {
+          _id: 3,
+          name: 'milton',
+          enabled: false
+        }
+      ],
       completePage: false,
+      loadVideo: 0,
       fotomontajes: [{
           _id: 1,
           name: 'alicia',
@@ -132,7 +246,7 @@ export default {
         },
         {
           _id: 2,
-          name: 'otro1',
+          name: 'alicia',
           type: 'image',
           enabled: false,
           recursos: [{
@@ -164,7 +278,7 @@ export default {
         },
         {
           _id: 3,
-          name: 'otro2',
+          name: 'alicia',
           type: 'image',
           enabled: false,
           recursos: [{
@@ -209,11 +323,26 @@ export default {
   },
   mounted() {
     this.selectedFoto = this.fotomontajes[0]
+    this.videoPlaying = this.videosArray[0]
   },
   methods: {
+    loadFinish() {
+      this.loadVideo += 1
+    },
+    playVideo() {
+      this.$refs.video.play()
+      this.$refs.videoO.play()
+    },
+    pauseVideo() {
+      this.$refs.video.pause()
+      this.$refs.videoO.pause()
+    },
     next() {
-      if (completePage) {
+      if (this.completePage) {
+        this.$toastr.success('¡Bien hecho, pudiste terminar!');
         this.nextStep('piramide', 7)
+      } else{
+        this.$toastr.error('Primero tenés que terminar los desafíos.');
       }
     },
     selectFotomontaje(item) {
@@ -235,6 +364,20 @@ export default {
         } else if (index == 3) {
           this.enableVfx = true
         }
+      }
+    },
+    selectVideo(video) {
+      let index = video._id
+      if (index == this.videoPlaying._id || !video.enabled) {
+        return
+      }
+      this.slide.val = 50
+      this.loadVideo = 0
+      this.videoPlaying = this.videosArray[index - 1]
+      if (video._id == 2) {
+        this.videosArray[index].enabled = true
+      } else if (video._id == 3) {
+        this.completePage = true
       }
     }
   }
