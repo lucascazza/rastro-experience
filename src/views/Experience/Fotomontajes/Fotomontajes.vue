@@ -100,12 +100,12 @@
             <div class="vfx__videos content">
               <div class="vfx__videos--efectos" :style="{width: slide.val + '%'}" :class="{'drag-slide': dragSlide}">
                 <video ref="video" loop frameborder="0" muted @loadeddata="loadFinish()">
-                  <source src="@/assets/media/vfx/taza/taza-efecto.mp4" type="video/mp4">
+                  <source src="@/assets/media/vfx/barco/barco-efecto.mp4" type="video/mp4">
                 </video>
               </div>
               <div class="vfx__videos--sinefectos">
                 <video ref="videoO" loop frameborder="0" muted @loadeddata="loadFinish()">
-                  <source src="@/assets/media/vfx/taza/taza-sinefecto.mp4" type="video/mp4">
+                  <source src="@/assets/media/vfx/barco/barco-sinefecto.mp4" type="video/mp4">
                 </video>
               </div>
             </div>
