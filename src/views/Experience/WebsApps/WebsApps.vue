@@ -38,13 +38,11 @@
     <transition name="fade">
       <template v-if="showBehance">
           <div class="webapps__behance">
-            <div>
-              <div class="webapps__behance--text">
-                <h2>En esta época de tanta virtualidad es importante que dejemos nuestro estilo, nuestra marca, <span>nuestro rastro</span> en cada rincón del internet.</h2>
-              </div>
-              <div class="webapps__behance--img">
-                <img src="@/assets/img/webapps/behance.svg" alt="Behance" @click="goToBehance()">
-              </div>
+            <div class="webapps__behance--text">
+              <h2>En esta época de tanta virtualidad es importante que dejemos nuestro estilo, nuestra marca, <span>nuestro rastro</span> en cada rincón del internet.</h2>
+            </div>
+            <div class="webapps__behance--img">
+              <img src="@/assets/img/webapps/behance.svg" alt="Behance" @click="goToBehance()">
             </div>
             <div class="webapps__behance--btn">
               <v-text-field

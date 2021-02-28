@@ -15,7 +15,8 @@
         <h2>VIDEO <span>SIN</span> VISOR</h2>
         <img src="@/assets/img/visores/qr/qr-sinvisor.svg" alt="Sin visores">
       </div>
-      <div class="col-12 visores__qr--btn">
+    </div>
+    <div class="visores__qr--btn">
         <v-tooltip top>
           <template v-slot:activator="{ on }">
             <v-btn 
@@ -31,7 +32,6 @@
           <span>¿Ya tenés tú código?</span>
         </v-tooltip>
       </div>
-    </div>
     <dialog-code 
       :active.sync="dialogCode" 
       title="¿Encontraste algún código?" 

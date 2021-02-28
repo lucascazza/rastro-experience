@@ -1,14 +1,18 @@
 <template>
   <div class="juegos">
-    <div class="juegos__text">
-      <h2>No todo es buscar codigos y abrir cajas, a veces es necesario <span class="descansar">descansar,</span> jugar un poco y recuperar <span class="energias">energias.</span></h2>
-    </div>
-    <div class="juegos__img">
-      <img class="img-fluid" src="@/assets/img/juegos/logo-pixel.svg" alt="Rastro juegos">
-    </div>
-    <div class="juegos__text">
-      <h2 class="text-2">En la mochila, tenes un pendrive.<br> La <span class="password">password</span> para abrirlo es:</h2>
-      <h2 class="contrasena">ajugarconrastro</h2>
+    <div style="maxWidth:100%">
+      <div class="juegos__text">
+        <h2>No todo es buscar codigos y abrir cajas, a veces es necesario <span class="descansar">descansar,</span>
+          jugar un poco y recuperar <span class="energias">energias.</span></h2>
+      </div>
+      <div class="juegos__img">
+        <img class="img-fluid" src="@/assets/img/juegos/logo-pixel.svg" alt="Rastro juegos">
+      </div>
+      <div class="juegos__text">
+        <h2 class="text-2">En la mochila, tenes un pendrive.<br> La <span class="password">password</span> para abrirlo
+          es:</h2>
+        <h2 class="contrasena">ajugarconrastro</h2>
+      </div>
     </div>
     <div class="juegos__btn">
       <v-tooltip top>
