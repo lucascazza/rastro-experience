@@ -49,7 +49,7 @@
                 :disabled="!submitEnabled">
                 Iniciar sesión
               </v-btn>
-              <router-link to="/register" class="login__form--register pt-5">No tengo usuario</router-link>
+              <!-- <router-link to="/register" class="login__form--register pt-5">No tengo usuario</router-link> -->
             </div>
           </v-form>
           </div>

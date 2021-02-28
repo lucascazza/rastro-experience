@@ -1,16 +1,13 @@
 <template>
   <div class="manifiesto" :class="{'overflow-hidden': !scrolleable}">
-    <div class="manifiesto__video row">
-      <div class="manifiesto__content--video col-lg-9">
+    <div class="manifiesto__video">
+      <div class="manifiesto__video--video">
         <video ref="video" poster="@/assets/media/poster.jpg" controls autoplay frameborder="0"
           @ended="endVideo = true">
           <source src="@/assets/media/manifiesto.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="manifiesto__content--img col-lg-3">
-        <img src="@/assets/img/manifiesto/manifiesto.svg" alt="Manifiesto">
-      </div>
-      <div class="col-12 manifiesto__content--btn">
+      <div class="col-12 manifiesto__video--btn">
         <v-tooltip top>
           <template v-slot:activator="{ on }">
             <v-btn
@@ -24,7 +21,7 @@
               Seguir
             </v-btn>
           </template>
-          <span v-if="!endVideo">Terminá el video para continuar</span>
+          <span v-if="!endVideo">Terminá el video para continuar...</span>
           <span v-else>¿Viste el código? ¡Ingresalo!</span>
         </v-tooltip>
       </div>

@@ -86,6 +86,7 @@ export default {
     })
   },
   beforeMount(){
+    console.log(this.user.step)
     if(this.user.step < 7 ){
       this.$router.replace({ path: '/' })
     }
