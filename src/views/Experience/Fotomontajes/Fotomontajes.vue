@@ -1,7 +1,8 @@
 <template>
   <div class="fotomontajes">
     <div class="fotomontajes__text content">
-      <h2>Texto desafiandolos a a que encuentren el codigo oculto en uno de los trabajos que les vamos a mostrar a continuacion para ver si estan aptos(?</h2>
+      <h2>“El todo es más que la suma de sus partes”</h2>
+      <h3>Es importante siempre tener en cuenta el <span class="esfuerzo">esfuerzo</span> que realizamos para llegar a ese objetivo.</h3>
     </div>
     <div class="fotomontajes__dragdrop">
       <div class="fotomontajes__dragdrop--select">
@@ -29,7 +30,7 @@
             <div class="selectedFoto__lienzo">
               <div class="selectedFoto__lienzo--empty" v-if="!imgSelected.i">
                 <div class="selectedFoto__lienzo--text">
-                  <h2>Arrastra las imágenes para ir descubriendo lo que esconden</h2>
+                  <h2>Arrastrá acá las imágenes para ir descubriendo lo que esconden.</h2>
                 </div>
               </div>
               <div v-else class="selectedFoto__lienzo--img">

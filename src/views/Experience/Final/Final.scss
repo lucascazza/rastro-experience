@@ -1,19 +1,19 @@
 @import "@/assets/sass/_variables";
 
 .final {
+    padding: $padding-content;
     overflow-y: auto;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     min-height: 100vh;
-    width: 100%;
-    padding: $padding-content;
+    min-width: 100vw;
     background-image: url('../../../assets/img/fondos/fondo-2.svg');
     background-size: cover;
-    background-position: center;
+    background-position: left bottom;
     background-repeat: no-repeat;
-    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 
     &::-webkit-scrollbar {
         width: .2em;
@@ -33,42 +33,57 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-
-        @media (min-width: 992px) {
-            padding-top: 4rem;
-        }
     }
 
     &__text {
-        margin-bottom: 4rem;
+        margin-bottom: 3.5rem;
         max-width: 1000px;
 
-        h1,
+        h1 {
+            color: #fff;
+            font-family: SprintSansBold;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+
+            span {
+                color: $cyan;
+                font-family: OswaldDemiBold;
+                font-size: 2.75rem;
+            }
+        }
+
         h2 {
             color: #fff;
-            text-align: center;
-        }
-
-        h1 {
-            margin-bottom: 2rem !important;
-            font-size: 2rem;
+            font-family: SprintSansRegular;
             text-transform: uppercase;
+            max-width: 1000px;
+            font-size: 1.25rem;
+            text-align: center;
             margin-bottom: 1rem;
 
-            .name{
-                font-family: OswaldBold;
-                color: $magenta;
+            .nosotros{
+                color: $yellow;
+                text-transform: uppercase;
+                font-size: 1.35rem;
+                font-family: SprintSansLight;
             }
 
-            @media (min-width: 992px){
-                font-size: 4rem;
+            .caja{
+                color: $yellow;
+                text-transform: uppercase;
+                font-size: 1.35rem;
+                font-family: OswaldDemiBold;
             }
         }
 
-        h2 {
-            font-family: SprintSansLight;
+        p{
+            font-family: oswaldDemiBold;
+            color: $yellow;
+            text-transform: uppercase;
             font-size: 1.5rem;
-
+            text-align: center;
+            margin: 0;
         }
     }
 

@@ -1,9 +1,9 @@
 <template>
   <div class="visores">
     <div class="visores__text">
-      <h2>Otras <span class="prespectivas">perspectivas</span> te dejan ver nuevas realidades, soluciones, o caminos.
-        No sos la única persona en esta <span class="busqueda">búsqueda</span>, alguien te está buscando y parece tener
-        información importante. Mirá el video y enterate. </h2>
+      <h2>Otras <span class="prespectivas">perspectivas</span> te dejan ver nuevas realidades, soluciones, o caminos.</h2>
+      <h3>No sos la única persona en esta <span class="busqueda">búsqueda</span>, alguien te está buscando y parece tener
+        información importante. Mirá el video y enterate. </h3>
       <p>Te recomendamos el uso de <span class="auriculares">auriculares</span> para mejorar la experiencia</p>
     </div>
     <div class="visores__qr row">
