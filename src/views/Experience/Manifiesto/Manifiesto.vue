@@ -41,7 +41,6 @@ export default {
   mixins:[helperApp],
   data() {
     return {
-      endVideo: false,
       scrolleable: false,
       code: ''
     };
@@ -69,7 +68,6 @@ export default {
   },
   methods: {
     scrollBottom() {
-      this.endVideo = true
       this.scrolleable = true
       document.getElementById("codigo").scrollIntoView({ behavior: 'smooth'});
     },
