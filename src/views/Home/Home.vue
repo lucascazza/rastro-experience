@@ -4,9 +4,8 @@
       <transition name="fade">
         <div v-if="user.step !== 8">
           <h1 class="text-center">Hola <span>{{user.name}}</span> ¿Cómo estás?</h1>
-          <p>Te elegimos por tus habilidades.<br> Esta es la experiencia <span>Rastro</span>, queremos mostrarles una
-            aventura que ya recorrimos, y queremos que ustedes también la recorran. Si lo hacen, les daremos la
-            posibilidad de abrir la caja.</p>
+          <h2>Te trajimos acá porque queremos que recuperes algo que puede perderse fácilmente. Ese algo está dentro de esa linda <span class="caja">caja</span>, pero dártelo y ya haría que no le des la importancia que merece. Por eso queremos mostrarte un recorrido que <span class="nosotros">nosotros ya hicimos</span>, y que sabemos que te va a ayudar.</h2>
+          <p>Una vez completado van a ser <span class="merecer">merecedores</span> de abrir la caja</p>
           <div class="d-flex justify-center">
             <v-btn v-if="user.step !== 0" color="yellow" x-large ripple rounded @click="continueExperience()">Continuar
               recorrido</v-btn>
@@ -17,12 +16,11 @@
       </transition>
       <transition name="fade">
         <div v-if="user.step == 8">
-          <h1 class="text-center">Hola <span>{{user.name}}</span> ¿Cómo estás?</h1>
-          <p>Felicidades por haber terminado el recorrido, siempre podrás volver a empezarlo cuando sientas que perdiste
-            el rumbo en cualquier aspecto de tu vida.</p>
+          <h1 class="text-center"><span>{{user.name}},</span>vemos que seguís por acá...</h1>
+          <h2 class="fin">Con el botón <span class="ver">ver recorrido</span> podrás volver a ver cada momento que te perdiste, y con el de <span class="reiniciar">reiniciar experiencia,</span> comenzarás de 0. </h2>
           <div class="d-flex flex-column align-center">
             <v-btn color="yellow" x-large ripple rounded to="/experience/manifiesto">Ver recorrido</v-btn>
-            <v-btn color="magenta" x-large ripple @click="restartExperience()" rounded>Reiniciar experiencia</v-btn>
+            <v-btn color="magenta" outlined x-large ripple @click="restartExperience()" rounded>Reiniciar experiencia</v-btn>
           </div>
         </div>
       </transition>

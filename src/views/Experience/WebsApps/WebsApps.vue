@@ -1,24 +1,14 @@
 <template>
-  <div class="webapps" :class="{'justify-center': showVideo}">
+  <div class="webapps">
     <transition name="fade">
-      <div v-if="showVideo" class="webapps__video">
-        <video ref="video" poster="@/assets/media/poster.jpg" controls autoplay frameborder="0"
-          @ended="showVideo = false">
-          <source src="@/assets/media/manifiesto.mp4" type="video/mp4">
-        </video>
-      </div>
-    </transition>
-    <transition name="fade">
-      <template v-if="!showVideo && !showBehance">
+      <template v-if="!showBehance">
         <div class="webapps__content">
           <div class="webapps__text">
-            <h1>¿Cómo te fue en los juegos, <span class="nombre">{{user.name}}?</span> Recordá que todavía <span class="camino">hay camino por
-                recorrer.</span></h1>
-            <h2>Supongo que ya te diste cuenta que la mochila tiene cosas que te pueden ayudar. Ahora vas a necesitar la
-              <span class="libreta">libreta.</span></h2>
+            <h2>¿Ya descansaste lo suficiente, <span class="nombre">{{user.name}}?</span> No te duermas que la <span class="caja">caja</span> te espera.</h2>
+            <h3>Suponemos que ya te diste cuenta que la mochila tiene cosas útiles para el camino, como la <span class="libreta">libreta</span> que tiene la respuesta para el siguiente paso.</h3>
+            <p>La libreta está llena de <span class="frases">frases.</span> Sólo si descubrís cuál nos representa podrás continuar.</p>
           </div>
           <div class="webapps__options">
-            <h2>La libreta esta llena de frases. Sólo si descubris cúal es la correcta podrás continuar.</h2>
             <div class="webapps__options--options row">
               <div class="col-6 d-flex align-center justify-center" @click="selectOption(false)">
                 <div class="webapps__options--item item-1">
@@ -48,13 +38,11 @@
     <transition name="fade">
       <template v-if="showBehance">
           <div class="webapps__behance">
-            <div>
-              <div class="webapps__behance--img">
-              <img src="@/assets/img/webapps/behance.svg" alt="Behance" @click="goToBehance()">
-            </div>
             <div class="webapps__behance--text">
-              <h2>En épocas de gran virtualidad dejamos nuestro estilo, nuestro toque, nuestra marca y por sobre todo nuestro <span>Rastro</span> en cada web que realizamos.</h2>              
+              <h2>En esta época de tanta virtualidad es importante que dejemos nuestro estilo, nuestra marca, <span>nuestro rastro</span> en cada rincón del internet.</h2>
             </div>
+            <div class="webapps__behance--img">
+              <img src="@/assets/img/webapps/behance.svg" alt="Behance" @click="goToBehance()">
             </div>
             <div class="webapps__behance--btn">
               <v-text-field
@@ -103,7 +91,6 @@ export default {
   data() {
     return {
       loading: true,
-      showVideo: false,
       showBehance: false,
       code: ''
     };
