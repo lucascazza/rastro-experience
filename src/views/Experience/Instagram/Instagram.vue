@@ -1,20 +1,17 @@
 <template>
   <div class="instagram">
     <div class="instagram__text content">
-      <h1>Seguí el <span>Rastro</span> en Instagram.</h1>
-      <h2>No te vayas de Instagram sin tu código.</h2>
+      <h1>¿Quiénes somos? ¿Qué hacemos? <span>¿Qué %$@”!& es esto?</span></h1>
+      <h2>En el camino fuimos dejando algunas respuestas, pero ustedes tienen que <span class="rastro">seguir el rastro</span> por su cuenta. Podés quedarte mirando nuestro Instagram pero no te cuelgues mucho, el camino es largo y seguimos adelante.</h2>
+      <p>Te dejamos algunos <span class="codigos">códigos</span> que te van a permitir seguirnos el ritmo.</p>
     </div>
     <div class="instagram__logo content">
             <div>
               <div class="instagram__logo--img">
               <img src="@/assets/img/instagram/instagram.svg" alt="Instagram" @click="goToInstagram()">
             </div>
-            <!-- <div class="instagram__logo--text">
-              <h2>En épocas de gran virtualidad dejamos nuestro estilo, nuestro toque, nuestra marca y por sobre todo nuestro <span>Rastro</span> en cada web que realizamos.</h2>              
-            </div> -->
             </div>
             <div class="instagram__logo--btn">
-              <h3>Ingresá el código que encontraste en Instagram</h3>
               <v-text-field
                 class="input-code"
                 color="#ff445a" 
@@ -81,6 +78,9 @@ export default {
       } else {
         this.$toastr.error('Contraseña incorrecta, volve a intentarlo.');
       }
+    },
+    goToInstagram(){
+      window.open('https://www.instagram.com/somosrastro/', '_blank');
     }
   }
 }

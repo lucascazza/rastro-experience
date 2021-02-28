@@ -3,27 +3,9 @@
     <div class="manifiesto__video">
       <div class="manifiesto__video--video">
         <video ref="video" poster="@/assets/media/poster.jpg" controls autoplay frameborder="0"
-          @ended="endVideo = true">
+          @ended="scrollBottom()">
           <source src="@/assets/media/manifiesto.mp4" type="video/mp4">
         </video>
-      </div>
-      <div class="col-12 manifiesto__video--btn">
-        <v-tooltip top>
-          <template v-slot:activator="{ on }">
-            <v-btn
-              rounded
-              x-large 
-              :ripple="endVideo" 
-              :class="{'disabled': !endVideo}"
-              :color="!endVideo ? 'disabled' : 'yellow'" 
-              v-on="on"
-              @click="scrollBottom()">
-              Seguir
-            </v-btn>
-          </template>
-          <span v-if="!endVideo">Terminá el video para continuar...</span>
-          <span v-else>¿Viste el código? ¡Ingresalo!</span>
-        </v-tooltip>
       </div>
     </div>
     <div class="manifiesto__codigo">
@@ -87,9 +69,7 @@ export default {
   },
   methods: {
     scrollBottom() {
-      if (!this.endVideo) {
-        return
-      }
+      this.endVideo = true
       this.scrolleable = true
       document.getElementById("codigo").scrollIntoView({ behavior: 'smooth'});
     },

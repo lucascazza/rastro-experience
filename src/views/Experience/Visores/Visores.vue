@@ -1,14 +1,12 @@
 <template>
   <div class="visores">
     <div class="visores__text">
-      <h1><span class="name">{{user.name}}:</span><br> Otras perspectivas te dejan ver nuevas realidades... o <span class="rastro">RASTROS.</span></h1>
-      <h2>No te vayas del estudio sin tu código.</h2>
+      <h2>Otras <span class="prespectivas">perspectivas</span> te dejan ver nuevas realidades, soluciones, o caminos.
+        No sos la única persona en esta <span class="busqueda">búsqueda</span>, alguien te está buscando y parece tener
+        información importante. Mirá el video y enterate. </h2>
+      <p>Te recomendamos el uso de <span class="auriculares">auriculares</span> para mejorar la experiencia</p>
     </div>
     <div class="visores__qr row">
-      <div class="col-12 visores__qr--text">
-        <h2>Alguién te está buscando, tiene información para importante.</h2>
-        <h3>Mirá el video y enterate</h3>
-      </div>
       <div class="visores__qr--visor col-md-6">
         <h2>VIDEO <span>CON</span> VISOR</h2>
         <img src="@/assets/img/visores/qr/qr-visores.svg" alt="Visores">

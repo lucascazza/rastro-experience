@@ -31,25 +31,25 @@
         margin: 4rem 0 6rem;
         max-width: 1000px;
 
-        h1,
         h2 {
             color: #fff;
             text-align: center;
             text-transform: uppercase;
         }
 
-        h1 {
-            font-size: 1.25rem;
-            font-family: EarlyGameboy;
-            margin-bottom: 2rem;
-        }
-
         h2 {
             font-family: EarlyGameboy;
             color: #fff;
             text-transform: uppercase;
-            font-size: 1rem;
-            line-height: 24px;
+            font-size: 1.25rem;
+            line-height: 30px;
+
+            .descansar,
+            .energias,
+            .password{
+                font-weight: 700;
+                color: $yellow;
+            }
 
             &.text-2 {
                 font-family: EarlyGameboy;
