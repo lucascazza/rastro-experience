@@ -167,9 +167,14 @@
         }
 
         &--img{
+            filter: grayscale(1);
             margin-bottom: 4rem;
             display: flex;
             justify-content: center;
+
+            &:hover{
+                filter: grayscale(0);
+            }
         }
 
         &--text{

@@ -63,10 +63,16 @@
               <div>
                 <v-btn rounded large ripple color="yellow" @click="playVideo()" :disabled="loadVideo != 2"
                   :class="{'disabled': loadVideo != 2}">
+                  <v-icon left>
+                    icon-play
+                  </v-icon>
                   Play
                 </v-btn>
                 <v-btn rounded large ripple color="magenta" @click="pauseVideo()" :disabled="loadVideo != 2"
                   :class="{'disabled': loadVideo != 2}">
+                  <v-icon left>
+                    icon-pause
+                  </v-icon>
                   Pausa
                 </v-btn>
               </div>
@@ -93,10 +99,16 @@
               <div>
                 <v-btn rounded large ripple color="yellow" @click="playVideo()" :disabled="loadVideo != 2"
                   :class="{'disabled': loadVideo != 2}">
+                  <v-icon left>
+                    icon-play
+                  </v-icon>
                   Play
                 </v-btn>
                 <v-btn rounded large ripple color="magenta" @click="pauseVideo()" :disabled="loadVideo != 2"
                   :class="{'disabled': loadVideo != 2}">
+                  <v-icon left>
+                    icon-pause
+                  </v-icon>
                   Pausa
                 </v-btn>
               </div>
@@ -123,10 +135,16 @@
               <div>
                 <v-btn rounded large ripple color="yellow" @click="playVideo()" :disabled="loadVideo != 2"
                   :class="{'disabled': loadVideo != 2}">
+                  <v-icon left>
+                    icon-play
+                  </v-icon>
                   Play
                 </v-btn>
                 <v-btn rounded large ripple color="magenta" @click="pauseVideo()" :disabled="loadVideo != 2"
                   :class="{'disabled': loadVideo != 2}">
+                  <v-icon left>
+                    icon-pause
+                  </v-icon>
                   Pausa
                 </v-btn>
               </div>

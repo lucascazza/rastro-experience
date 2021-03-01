@@ -1,5 +1,5 @@
 <template>
-  <div class="home" v-if="!loading">
+  <div class="home">
     <div class="home__content">
       <transition name="fade">
         <div v-if="user.step !== 8">
@@ -7,9 +7,9 @@
           <h2>Te trajimos acá porque queremos que recuperes algo que puede perderse fácilmente. Ese algo está dentro de esa linda <span class="caja">caja</span>, pero dártelo y ya haría que no le des la importancia que merece. Por eso queremos mostrarte un recorrido que <span class="nosotros">nosotros ya hicimos</span>, y que sabemos que te va a ayudar.</h2>
           <p>Una vez completado van a ser <span class="merecer">merecedores</span> de abrir la caja</p>
           <div class="d-flex justify-center">
-            <v-btn v-if="user.step !== 0" color="yellow" x-large ripple rounded @click="continueExperience()">Continuar
+            <v-btn v-if="user.step !== 0" :loading="loading" color="yellow" x-large ripple rounded @click="loading = true; continueExperience()">Continuar
               recorrido</v-btn>
-            <v-btn v-if="user.step == 0" color="yellow" x-large ripple @click="nextStep('experience/instagram', 1)"
+            <v-btn v-if="user.step == 0" :loading="loading" color="yellow" x-large ripple @click="loading = true; nextStep('experience/instagram', 1)"
               rounded>Comenzar experiencia</v-btn>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default {
   mixins: [helperApp],
   data() {
     return {
-      loading: true
+      loading: false
     };
   },
   computed: {
