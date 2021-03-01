@@ -99,8 +99,7 @@
                 }
 
                 &.disabled {
-                    background-color: rgba(246, 246, 246, .5) !important;
-                    background: rgba(246, 246, 246, .5) !important;
+                    filter: grayscale(1);
                     cursor: not-allowed;
                     box-shadow: none;
                 }
@@ -147,8 +146,6 @@
                 }
 
                 @media (min-width: 1200px) {
-                    width: 140px;
-                    height: 140px;
                     margin-right: 1.5rem;
                 }
 
@@ -307,8 +304,7 @@
                 }
 
                 &.disabled {
-                    background-color: rgba(246, 246, 246, .5) !important;
-                    background: rgba(246, 246, 246, .5) !important;
+                    filter: grayscale(1);
                     cursor: not-allowed;
                     box-shadow: none;
                 }

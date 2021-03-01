@@ -8,7 +8,7 @@
       <div class="fotomontajes__dragdrop--select">
         <div v-for="(item, i) in fotomontajes" :key="i">
           <div class="select-fotomontaje" @click="selectFotomontaje(item)" :class="[{'disabled': !item.enabled}, {'active': selectedFoto._id == i + 1}]">
-            {{i + 1}}
+            <img :src="`/fotomontajes/${item.name}/${item.preview}`" :alt="item.name">
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
               :class="[
               {'disabled': !video.enabled},
               {'active': videoPlaying._id == (i + 1)}]">
-              {{i + 1}}
+              <img :src="`/fotomontajes/vfx/${video.preview}`" :alt="video.name">
             </div>
           </div>
         </div>
@@ -203,17 +203,20 @@ export default {
         {
           _id: 1,
           name: 'taza',
-          enabled: true
+          enabled: true,
+          preview: 'taza.jpg'
         },
         {
           _id: 2,
           name: 'barco',
-          enabled: false
+          enabled: false,
+          preview: 'barco.jpg'
         },
         {
           _id: 3,
           name: 'milton',
-          enabled: false
+          enabled: false,
+          preview: 'milton.jpg'
         }
       ],
       completePage: false,
@@ -224,6 +227,7 @@ export default {
           type: 'image',
           format: 'horizontal',
           enabled: true,
+          preview: 'alicia.jpg',
           recursos: [{
               src: 'alicia1.jpg',
               miniSrc: 'alicia1-r.jpg',
@@ -262,6 +266,7 @@ export default {
           type: 'video',
           format: 'vertical',
           enabled: false,
+          preview: 'mari.jpg',
           recursos: [{
               src: 'mari1.jpg',
               miniSrc: 'mari1-r.jpg',
@@ -296,34 +301,40 @@ export default {
         },
         {
           _id: 3,
-          name: 'alicia',
+          name: 'milton',
           type: 'image',
           format: 'vertical',
           enabled: false,
+          preview: 'milton.jpg',
           recursos: [{
-              src: 'alicia1.jpg',
+              src: 'milton1.jpg',
+              miniSrc: 'milton1-r.jpg',
               i: 1,
-              name: 'Alicia 1'
+              name: 'Milton 1'
             },
             {
-              src: 'alicia2.jpg',
+              src: 'milton2.jpg',
+              miniSrc: 'milton2-r.jpg',
               i: 2,
-              name: 'Alicia 2'
+              name: 'Milton 2'
             },
             {
-              src: 'alicia3.jpg',
+              src: 'milton3.jpg',
+              miniSrc: 'milton3-r.jpg',
               i: 3,
-              name: 'Alicia 3'
+              name: 'Milton 3'
             },
             {
-              src: 'alicia4.jpg',
+              src: 'milton4.jpg',
+              miniSrc: 'milton4-r.jpg',
               i: 4,
-              name: 'Alicia 4'
+              name: 'Milton 4'
             },
             {
-              src: 'alicia5.jpg',
+              src: 'milton5.jpg',
+              miniSrc: 'milton5-r.jpg',
               i: 5,
-              name: 'Alicia 5'
+              name: 'Milton 5'
             }
           ]
         }
