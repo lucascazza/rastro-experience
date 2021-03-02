@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'rastroicons';
-  src:  url('./rastroicons.eot?25570u');
-  src:  url('./rastroicons.eot?25570u#iefix') format('embedded-opentype'),
-    url('./rastroicons.ttf?25570u') format('truetype'),
-    url('./rastroicons.woff?25570u') format('woff'),
-    url('./rastroicons.svg?25570u#rastroicons') format('svg');
+  src:  url('./rastroicons.eot?kn58cs');
+  src:  url('./rastroicons.eot?kn58cs#iefix') format('embedded-opentype'),
+    url('./rastroicons.ttf?kn58cs') format('truetype'),
+    url('./rastroicons.woff?kn58cs') format('woff'),
+    url('./rastroicons.svg?kn58cs#rastroicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-ojo:before {
+  content: "\e912";
+}
+.icon-ojocerrado:before {
+  content: "\e913";
+}
 .icon-pause:before {
   content: "\e90f";
 }

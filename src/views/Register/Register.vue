@@ -6,10 +6,12 @@
         <p>Por favor ingrese sus datos</p>
         <div class="register__form--option">
           <label>Nombre</label>
-          <v-text-field 
+          <v-text-field
+            color="magenta"
             solo 
             dense 
             outlined
+            dark
             v-model="user.name"
             :rules="nameRules"  
             type="text">
@@ -18,6 +20,7 @@
         <div class="register__form--option">
           <label>Usuario</label>
           <v-text-field 
+            color="magenta"
             solo 
             dense 
             outlined
@@ -29,6 +32,7 @@
         <div class="register__form--option">
           <label>Contraseña</label>
           <v-text-field 
+            color="magenta"
             solo 
             dense 
             outlined
@@ -41,6 +45,7 @@
         <div class="register__form--option">
           <label>Repetir contraseña</label>
           <v-text-field 
+            color="magenta"
             solo 
             dense 
             outlined
@@ -116,6 +121,6 @@ export default {
   mounted() {}
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
     @import './Register';
 </style>
