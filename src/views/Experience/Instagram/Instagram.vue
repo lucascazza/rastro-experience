@@ -80,7 +80,7 @@ export default {
       }
     },
     goToInstagram(){
-      window.open('https://www.instagram.com/somosrastro/', '_blank');
+      window.open('https://www.instagram.com/somos.rastro/', '_blank');
     }
   }
 }
