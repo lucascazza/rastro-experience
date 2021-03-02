@@ -46,10 +46,18 @@
             font-size: 2.5rem;
             text-transform: uppercase;
 
+            @media (min-width: 1600px){
+                font-size: 3rem;
+            }
+
             span {
                 color: $cyan;
                 font-family: OswaldDemiBold;
                 font-size: 2.75rem;
+
+                @media (min-width: 1600px){
+                    font-size: 3.25rem;
+                }
             }
         }
 

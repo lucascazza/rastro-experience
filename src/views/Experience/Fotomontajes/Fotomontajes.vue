@@ -8,7 +8,7 @@
       <div class="fotomontajes__dragdrop--select">
         <div v-for="(item, i) in fotomontajes" :key="i">
           <div class="select-fotomontaje" @click="selectFotomontaje(item)" :class="[{'disabled': !item.enabled}, {'active': selectedFoto._id == i + 1}]">
-            {{i + 1}}
+            <img :src="`/fotomontajes/${item.name}/${item.preview}`" :alt="item.name">
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
                 {'disabled': imgSelected.i < i || (!imgSelected.i && i !== 0)},
                 {'seleccionable': imgSelected.i == i || (!imgSelected.i && i == 0)},
                 {'active':  imgSelected.i && imgSelected.i == i + 1}]">
-                <img :src="`/fotomontajes/${selectedFoto.name}/${img.src}`" :alt="img.name">
+                <img :src="`/fotomontajes/${selectedFoto.name}/recursos/${img.miniSrc}`" :alt="img.name">
               </drag>
           </div>
           <drop @drop="selectImage">
@@ -33,8 +33,11 @@
                   <h2>Arrastrá acá las imágenes para ir descubriendo lo que esconden.</h2>
                 </div>
               </div>
-              <div v-else class="selectedFoto__lienzo--img">
-                <img :src="`/fotomontajes/${selectedFoto.name}/${imgSelected.src}`" :alt="imgSelected.name">
+              <div v-else class="selectedFoto__lienzo--img" :class="[{'vertical': selectedFoto.format == 'vertical'}, {'mari': selectedFoto.name == 'mari'}]">
+                <img v-if="!showVideoMari" :src="`/fotomontajes/${selectedFoto.name}/${imgSelected.src}`" :alt="imgSelected.name">
+                <video v-if="showVideoMari" ref="video" autoplay loop frameborder="0" muted>
+                  <source :src="`/fotomontajes/${selectedFoto.name}/${imgSelected.src}`" type="video/mp4">
+                </video>
               </div>
             </div>
           </drop>
@@ -50,7 +53,7 @@
               :class="[
               {'disabled': !video.enabled},
               {'active': videoPlaying._id == (i + 1)}]">
-              {{i + 1}}
+              <img :src="`/fotomontajes/vfx/${video.preview}`" :alt="video.name">
             </div>
           </div>
         </div>
@@ -60,10 +63,16 @@
               <div>
                 <v-btn rounded large ripple color="yellow" @click="playVideo()" :disabled="loadVideo != 2"
                   :class="{'disabled': loadVideo != 2}">
+                  <v-icon left>
+                    icon-play
+                  </v-icon>
                   Play
                 </v-btn>
                 <v-btn rounded large ripple color="magenta" @click="pauseVideo()" :disabled="loadVideo != 2"
                   :class="{'disabled': loadVideo != 2}">
+                  <v-icon left>
+                    icon-pause
+                  </v-icon>
                   Pausa
                 </v-btn>
               </div>
@@ -90,10 +99,16 @@
               <div>
                 <v-btn rounded large ripple color="yellow" @click="playVideo()" :disabled="loadVideo != 2"
                   :class="{'disabled': loadVideo != 2}">
+                  <v-icon left>
+                    icon-play
+                  </v-icon>
                   Play
                 </v-btn>
                 <v-btn rounded large ripple color="magenta" @click="pauseVideo()" :disabled="loadVideo != 2"
                   :class="{'disabled': loadVideo != 2}">
+                  <v-icon left>
+                    icon-pause
+                  </v-icon>
                   Pausa
                 </v-btn>
               </div>
@@ -120,10 +135,16 @@
               <div>
                 <v-btn rounded large ripple color="yellow" @click="playVideo()" :disabled="loadVideo != 2"
                   :class="{'disabled': loadVideo != 2}">
+                  <v-icon left>
+                    icon-play
+                  </v-icon>
                   Play
                 </v-btn>
                 <v-btn rounded large ripple color="magenta" @click="pauseVideo()" :disabled="loadVideo != 2"
                   :class="{'disabled': loadVideo != 2}">
+                  <v-icon left>
+                    icon-pause
+                  </v-icon>
                   Pausa
                 </v-btn>
               </div>
@@ -192,24 +213,28 @@ export default {
       code: '',
       selectedFoto: {},
       imgSelected: {},
-      enableVfx: true,
+      enableVfx: false,
       dragSlide: false,
+      showVideoMari: false,
       videoPlaying: {},
       videosArray: [
         {
           _id: 1,
           name: 'taza',
-          enabled: true
+          enabled: true,
+          preview: 'taza.jpg'
         },
         {
           _id: 2,
           name: 'barco',
-          enabled: true
+          enabled: false,
+          preview: 'barco.jpg'
         },
         {
           _id: 3,
           name: 'milton',
-          enabled: false
+          enabled: false,
+          preview: 'milton.jpg'
         }
       ],
       completePage: false,
@@ -218,29 +243,36 @@ export default {
           _id: 1,
           name: 'alicia',
           type: 'image',
+          format: 'horizontal',
           enabled: true,
+          preview: 'alicia.jpg',
           recursos: [{
               src: 'alicia1.jpg',
+              miniSrc: 'alicia1-r.jpg',
               i: 1,
               name: 'Alicia 1'
             },
             {
               src: 'alicia2.jpg',
+              miniSrc: 'alicia2-r.jpg',
               i: 2,
               name: 'Alicia 2'
             },
             {
               src: 'alicia3.jpg',
+              miniSrc: 'alicia3-r.jpg',
               i: 3,
               name: 'Alicia 3'
             },
             {
               src: 'alicia4.jpg',
+              miniSrc: 'alicia4-r.jpg',
               i: 4,
               name: 'Alicia 4'
             },
             {
               src: 'alicia5.jpg',
+              miniSrc: 'alicia5-r.jpg',
               i: 5,
               name: 'Alicia 5'
             }
@@ -248,65 +280,79 @@ export default {
         },
         {
           _id: 2,
-          name: 'alicia',
-          type: 'image',
+          name: 'mari',
+          type: 'video',
+          format: 'vertical',
           enabled: false,
+          preview: 'mari.jpg',
           recursos: [{
-              src: 'alicia1.jpg',
+              src: 'mari1.jpg',
+              miniSrc: 'mari1-r.jpg',
               i: 1,
-              name: 'Alicia 1'
+              name: 'Mari 1'
             },
             {
-              src: 'alicia2.jpg',
+              src: 'mari2.jpg',
+              miniSrc: 'mari2-r.jpg',
               i: 2,
-              name: 'Alicia 2'
+              name: 'Mari 2'
             },
             {
-              src: 'alicia3.jpg',
+              src: 'mari3.jpg',
+              miniSrc: 'mari3-r.jpg',
               i: 3,
-              name: 'Alicia 3'
+              name: 'Mari 3'
             },
             {
-              src: 'alicia4.jpg',
+              src: 'mari4.jpg',
+              miniSrc: 'mari4-r.jpg',
               i: 4,
-              name: 'Alicia 4'
+              name: 'Mari 4'
             },
             {
-              src: 'alicia5.jpg',
+              src: 'mari5.mp4',
+              miniSrc: 'mari5-r.jpg',
               i: 5,
-              name: 'Alicia 5'
+              name: 'Mari 5'
             }
           ]
         },
         {
           _id: 3,
-          name: 'alicia',
+          name: 'milton',
           type: 'image',
+          format: 'vertical',
           enabled: false,
+          preview: 'milton.jpg',
           recursos: [{
-              src: 'alicia1.jpg',
+              src: 'milton1.jpg',
+              miniSrc: 'milton1-r.jpg',
               i: 1,
-              name: 'Alicia 1'
+              name: 'Milton 1'
             },
             {
-              src: 'alicia2.jpg',
+              src: 'milton2.jpg',
+              miniSrc: 'milton2-r.jpg',
               i: 2,
-              name: 'Alicia 2'
+              name: 'Milton 2'
             },
             {
-              src: 'alicia3.jpg',
+              src: 'milton3.jpg',
+              miniSrc: 'milton3-r.jpg',
               i: 3,
-              name: 'Alicia 3'
+              name: 'Milton 3'
             },
             {
-              src: 'alicia4.jpg',
+              src: 'milton4.jpg',
+              miniSrc: 'milton4-r.jpg',
               i: 4,
-              name: 'Alicia 4'
+              name: 'Milton 4'
             },
             {
-              src: 'alicia5.jpg',
+              src: 'milton5.jpg',
+              miniSrc: 'milton5-r.jpg',
               i: 5,
-              name: 'Alicia 5'
+              name: 'Milton 5'
             }
           ]
         }
@@ -334,6 +380,14 @@ export default {
     playVideo() {
       this.$refs.video.play()
       this.$refs.videoO.play()
+
+      if (this.videoPlaying._id == 1) {
+        this.videosArray[1].enabled = true
+      } else if (this.videoPlaying._id == 2) {
+        this.videosArray[2].enabled = true
+      } else if (this.videoPlaying._id == 3) {
+        this.completePage = true
+      }
     },
     pauseVideo() {
       this.$refs.video.pause()
@@ -358,6 +412,13 @@ export default {
       if (!this.imgSelected.i && img.data.i > 1 || img.data.i > this.imgSelected.i + 1) {
         return
       }
+
+      if (this.selectedFoto.type == 'video' && img.data.i == 5){
+        this.showVideoMari = true
+      } else{
+        this.showVideoMari = false
+      }
+
       this.imgSelected = img.data
       if (img.data.i == 5) {
         let index = this.selectedFoto._id
@@ -376,11 +437,6 @@ export default {
       this.slide.val = 50
       this.loadVideo = 0
       this.videoPlaying = this.videosArray[index - 1]
-      if (video._id == 2) {
-        this.videosArray[index].enabled = true
-      } else if (video._id == 3) {
-        this.completePage = true
-      }
     },
     slideStart(){
       this.dragSlide = true

@@ -72,7 +72,7 @@
         &--select {
             display: flex;
             justify-content: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
 
             .select-fotomontaje {
                 width: 80px;
@@ -99,8 +99,7 @@
                 }
 
                 &.disabled {
-                    background-color: rgba(246, 246, 246, .5) !important;
-                    background: rgba(246, 246, 246, .5) !important;
+                    filter: grayscale(1);
                     cursor: not-allowed;
                     box-shadow: none;
                 }
@@ -120,7 +119,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             flex-wrap: wrap;
 
             &--img {
@@ -129,7 +128,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin: 0 .5rem;
+                margin: .5rem;
 
                 img {
                     max-width: 100%;
@@ -147,8 +146,6 @@
                 }
 
                 @media (min-width: 1200px) {
-                    width: 140px;
-                    height: 140px;
                     margin-right: 1.5rem;
                 }
 
@@ -184,9 +181,8 @@
         }
 
         &__lienzo {
-            box-shadow: 4px 4px 7px rgba(0, 0, 0, .55);
-
             &--empty {
+                box-shadow: 4px 4px 7px rgb(0 0 0 / 55%);
                 width: 100%;
                 background-color: rgba(246, 246, 246, .5);
                 height: 200px;
@@ -234,8 +230,39 @@
             }
 
             &--img {
+                margin: auto;
+                &.vertical{
+                    max-width: 700px;
+
+                    &.mari{
+                        height: 408px;
+                        max-height: 100%;
+
+                        @media (min-width: 576px){
+                            height: 640px;
+                        }
+
+                        @media (min-width: 768px){
+                            height: 700px;
+                        }
+
+                        @media (min-width: 1200px){
+                            height: 900px;
+                        }
+
+                        img{
+                            text-align: center;
+                        }
+                    }
+                }
                 img {
                     max-width: 100%;
+                    box-shadow: 4px 4px 7px rgb(0 0 0 / 55%);
+                }
+
+                video{
+                    max-width: 100%;
+                    box-shadow: 4px 4px 7px rgb(0 0 0 / 55%);
                 }
             }
         }
@@ -250,7 +277,7 @@
         &__select{
             display: flex;
             justify-content: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
 
             &--selected{
                 width: 80px;
@@ -277,8 +304,7 @@
                 }
 
                 &.disabled {
-                    background-color: rgba(246, 246, 246, .5) !important;
-                    background: rgba(246, 246, 246, .5) !important;
+                    filter: grayscale(1);
                     cursor: not-allowed;
                     box-shadow: none;
                 }
