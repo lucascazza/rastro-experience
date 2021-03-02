@@ -59,7 +59,7 @@
         h2 {
             color: #fff;
             font-family: SprintSansRegular;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             max-width: 1000px;
             font-size: 1.25rem;
             text-align: center;
@@ -69,14 +69,14 @@
             .reiniciar,
             .ver{
                 color: $yellow;
-                text-transform: uppercase;
+                // text-transform: uppercase;
                 font-size: 1.35rem;
                 font-family: SprintSansLight;
             }
 
             .caja{
                 color: $yellow;
-                text-transform: uppercase;
+                // text-transform: uppercase;
                 font-size: 1.35rem;
                 font-family: OswaldDemiBold;
             }
@@ -98,12 +98,13 @@
             margin: 0;
             margin-bottom: 3.5rem;
             color: $magenta;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             font-size: 1.25rem;
             font-family: SprintSansLight;
 
             .merecer{
                 font-family: oswaldDemiBold;
+                text-transform: uppercase;
             }
         }
     }

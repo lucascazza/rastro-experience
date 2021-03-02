@@ -40,11 +40,12 @@
         h2 {
             color: #fff;
             text-align: center;
-            text-transform: uppercase;
+            // text-transform: uppercase;
         }
 
         h1 {
             font-size: 1.5rem;
+            text-transform: uppercase;
 
             span{
                 color: $magenta;
@@ -58,7 +59,7 @@
 
         h2 {
             font-family: SprintSansRegular;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             font-size: 1.25rem;
             margin-bottom: 2rem;
 
@@ -73,12 +74,13 @@
         p{
             font-size: 1.25rem;
             font-family: SprintSansLight;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             text-align: center;
             color: $yellow;
 
             .codigos{
                 font-family: oswaldDemiBold;
+                text-transform: uppercase;
             }
         }
     }

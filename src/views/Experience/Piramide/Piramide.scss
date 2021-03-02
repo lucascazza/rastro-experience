@@ -63,7 +63,7 @@
         h3{
             color: #fff;
             text-align: center;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             font-family: SprintSansRegular;
             font-size: 1.25rem;
             margin-bottom: 2rem;
@@ -79,13 +79,14 @@
         p{
             font-family: SprintSansLight;
             color: $magenta;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             font-size: 1.25rem;
             text-align: center;
             margin-bottom: 0;
 
             .guia{
                 font-family: oswaldDemiBold;
+                text-transform: uppercase;
             }
         }
 
