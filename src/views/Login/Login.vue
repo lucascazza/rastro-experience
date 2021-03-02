@@ -113,9 +113,11 @@ export default {
         await this.$store.dispatch('user/login', { vm: this, data: this.user })
         this.$router.push({ path: '/' })
         this.loading = false
+        this.$toastr.success('Inicio de sesión exitoso.');
       } catch (err) {
         console.log(err);
         this.loading = false
+        this.$toastr.error('Contraseña incorrecta, volve a intentarlo.');
       }
     },
     playVideo(){
