@@ -13,7 +13,7 @@
       </div>
       <div class="visores__qr--sinvisor col-md-6">
         <h2>VIDEO <span>SIN</span> VISOR</h2>
-        <img src="@/assets/img/visores/qr/qr-sinvisor.svg" alt="Sin visores">
+        <img src="@/assets/img/visores/playsinvisor.svg" alt="Sin visores" @click="goToYoutube()">
       </div>
     </div>
     <div class="visores__qr--btn">
@@ -93,6 +93,9 @@ export default {
       } else {
         this.$toastr.error('Contraseña incorrecta, volve a intentarlo.');
       }
+    },
+    goToYoutube(){
+      window.open('https://youtu.be/h9kye-u47TA', '_blank');
     }
   }
 }

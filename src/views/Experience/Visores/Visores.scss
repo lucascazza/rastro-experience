@@ -118,6 +118,24 @@
             }
         }
 
+        &--sinvisor{
+            h2{
+                margin-bottom: 1.5rem;
+            }
+
+            img{
+                filter: grayscale(.85);
+                cursor: pointer;
+                @media (min-width: 992px){
+                    max-width: 360px;
+                }
+
+                &:hover{
+                    filter: grayscale(0);
+                }
+            }
+        }
+
         &--text {
             margin-bottom: 1.5rem;
 

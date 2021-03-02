@@ -68,6 +68,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
 
         h1 {
             color: #fff;
@@ -86,6 +87,18 @@
             @media (min-width: 1200px) {
                 font-size: 3.5rem;
                 margin-bottom: 4rem;
+            }
+        }
+
+        .button-top{
+            position: absolute;
+            top: 4rem;
+            
+            .v-btn{
+                height: 50px !important;
+                min-width: 50px !important;
+                width: 50px !important;
+                padding: 0 !important;
             }
         }
     }

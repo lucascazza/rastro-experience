@@ -12,22 +12,22 @@
             <div class="webapps__options--options row">
               <div class="col-6 d-flex align-center justify-center" @click="selectOption(false)">
                 <div class="webapps__options--item item-1">
-                  <i class="icon-3d"></i>
+                  <i class="icon-toro"></i>
                 </div>
               </div>
               <div class="col-6 d-flex align-center justify-center" @click="selectOption(true)">
                 <div class="webapps__options--item item-2">
-                  <i class="icon-3d"></i>
+                  <i class="icon-rastro"></i>
                 </div>
               </div> 
               <div class="col-6 d-flex align-center justify-center" @click="selectOption(false)">
                 <div class="webapps__options--item item-3">
-                  <i class="icon-3d"></i>
+                  <i class="icon-punnix"></i>
                 </div>
               </div> 
               <div class="col-6 d-flex align-center justify-center" @click="selectOption(false)">
                 <div class="webapps__options--item item-4">
-                  <i class="icon-3d"></i>
+                  <i class="icon-lobo"></i>
                 </div>
               </div> 
             </div>

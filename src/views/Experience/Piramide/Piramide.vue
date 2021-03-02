@@ -6,7 +6,17 @@
           <div class="piramide__text">
             <h2><span class="name">{{user.name}},</span> ya casi estás listx para abrir la caja. El próximo paso va a ser el <span class="ultimo">último</span> de la experiencia.</h2>
             <h3>Si ya estuviste chusmeando la mochila seguramente viste la <span class="piramidetext">piramide,</span> esa es la llave para el último código.</h3>
-            <p>Te dejamos una <span class="guia">guía</span> para ver cómo se usa la pirámide.</p>
+            <div class="piramide__text--guia">
+              <p>Te dejamos una <span class="guia">guía</span> para ver cómo se usa la pirámide.</p>
+              <v-btn 
+                rounded 
+                large 
+                ripple 
+                color="magenta"
+                @click="dialogGuia = true">
+                Guía
+              </v-btn>
+            </div>
           </div>
           <div class="piramide__qr">
             <img src="@/assets/img/visores/qr/qr-sinvisor.svg" alt="Piramide QR">
@@ -46,6 +56,7 @@
         v-model="code">
       </v-text-field>
     </dialog-code>
+    <dialog-guia :active.sync="dialogGuia"></dialog-guia>
   </div>
 </template>
 
@@ -54,6 +65,7 @@
 import { mapState } from 'vuex';
 import helperApp from '@/mixins/helperApp';
 import DialogCode from '@/components/Dialogs/DialogCode';
+import DialogGuia from '@/components/Dialogs/DialogGuia';
 export default {
   name: 'ExpeciencePiramide',
   metaInfo() {
@@ -63,13 +75,15 @@ export default {
   },
   mixins: [helperApp],
   components: {
-    'dialog-code': DialogCode
+    'dialog-code': DialogCode,
+    'dialog-guia': DialogGuia
   },
   data() {
     return {
       loading: true,
       dialogCode: false,
-      code: ''
+      code: '',
+      dialogGuia: false
     };
   },
   computed: {
@@ -78,7 +92,6 @@ export default {
     })
   },
   beforeMount(){
-    console.log(this.user.step)
     if(this.user.step < 7 ){
       this.$router.replace({ path: '/' })
     }

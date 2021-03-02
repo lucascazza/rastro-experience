@@ -68,8 +68,13 @@ export default {
   },
   methods: {
     scrollBottom() {
-      this.scrolleable = true
-      document.getElementById("codigo").scrollIntoView({ behavior: 'smooth'});
+      if (document.fullscreenElement){
+        document.exitFullscreen();
+      }
+      setTimeout(() => {
+        this.scrolleable = true
+        document.getElementById("codigo").scrollIntoView({ behavior: 'smooth'});
+      }, 500);
     },
     verifyCode(){
       if(this.code == '4507'){
