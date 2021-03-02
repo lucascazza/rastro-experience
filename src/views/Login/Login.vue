@@ -112,7 +112,7 @@ export default {
     scrollBottom() {
       this.endVideo = true
       this.scrolleable = true
-      document.getElementById("form").scrollIntoView(true, { behavior: 'smooth'});
+      document.getElementById("form").scrollIntoView({ behavior: 'smooth'});
     }
   }
 }
