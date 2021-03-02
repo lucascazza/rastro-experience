@@ -1,10 +1,9 @@
 <template>
   <div class="final">
     <div class="final__text content">
-      <h1>Hola de nuevo <br><span class="name">{{user.name}}</span></h1>
-      <h2>Lograste completar el camino y bla bla bla bla bla bla, te acordas el código de recien? es un código maestro y
-        sirve para poder descubrir que hay dentro de la caja. y cosas mas lindas y mejor escritas pero ya estoy
-        cansadito y no tenia mas ganas de pensar y por eso tampoco volvi a poner un tilde :D</h2>
+      <h1 class="text-center">¡Felicidades <span>{{user.name}}!</span></h1>
+      <h2>Pudiste completar el camino y conseguir el código más importante de todos. Con ese código, vas a poder descubrir qué hay dentro de la caja y encontrar esto que nunca querrías que se pierda, pero por suerte eso ya no va a ser un problema.</h2>
+      <p>¡No pierdas más tiempo y abrí la caja!</p>
     </div>
     <div class="final__btn">
       <div class="final__btn">
@@ -16,12 +15,12 @@
           </template>
           <span>¡Felicidades! acá esta de nuevo tú código.</span>
         </v-tooltip>
-        <v-btn rounded x-large ripple color="green" to="/">Volver al inicio</v-btn>
+        <v-btn rounded outlined x-large ripple color="green" to="/">Volver al inicio</v-btn>
       </div>
     </div>
     <dialog-code 
       :active.sync="dialogCode" 
-      title="Tu código maestro es..."
+      title="El código de la caja es..."
       content="743"
       confirm-text="¡Gracias RASTRO!">
     </dialog-code>

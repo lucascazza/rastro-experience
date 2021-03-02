@@ -1,19 +1,12 @@
 <template>
-  <div class="piramide" :class="{'justify-center': showVideo}">
+  <div class="piramide">
     <transition name="fade">
-      <div v-if="showVideo" class="piramide__video">
-        <video ref="video" poster="@/assets/media/poster.jpg" controls autoplay frameborder="0"
-          @ended="showVideo = false">
-          <source src="@/assets/media/manifiesto.mp4" type="video/mp4">
-        </video>
-      </div>
-    </transition>
-    <transition name="fade">
-      <template v-if="!showVideo">
+      <template>
         <div class="piramide__content">
           <div class="piramide__text">
-            <h1><span class="nombre">{{user.name}}</span>, sabemos que no fue fácil, pero si llegaste hasta acá es porque realmente tenés lo necesario.</h1>
-            <h2>La <span class="piramideText">piramide</span> que acabas de ver está en tú mochila, utilizala como lo hariamos <span class="nosotros">nosotros</span> para poder abrir la caja.</h2>
+            <h2><span class="name">{{user.name}},</span> ya casi estás listx para abrir la caja. El próximo paso va a ser el <span class="ultimo">último</span> de la experiencia.</h2>
+            <h3>Si ya estuviste chusmeando la mochila seguramente viste la <span class="piramidetext">piramide,</span> esa es la llave para el último código.</h3>
+            <p>Te dejamos una <span class="guia">guía</span> para ver cómo se usa la pirámide.</p>
           </div>
           <div class="piramide__qr">
             <img src="@/assets/img/visores/qr/qr-sinvisor.svg" alt="Piramide QR">
@@ -76,7 +69,6 @@ export default {
     return {
       loading: true,
       dialogCode: false,
-      showVideo: true,
       code: ''
     };
   },
@@ -86,6 +78,7 @@ export default {
     })
   },
   beforeMount(){
+    console.log(this.user.step)
     if(this.user.step < 7 ){
       this.$router.replace({ path: '/' })
     }

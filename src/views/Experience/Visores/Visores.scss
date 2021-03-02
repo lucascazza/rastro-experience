@@ -8,11 +8,12 @@
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    padding: $padding-content;
+    padding: 4rem $padding-content;
     background-image: url('../../../assets/img/fondos/fondo-4.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    justify-content: space-between;
 
     &::-webkit-scrollbar {
         width: .2em;
@@ -29,38 +30,48 @@
 
     &__text {
         margin-bottom: 4rem;
-        max-width: 900px;
+        max-width: 1000px;
 
-        h1,
         h2 {
             color: #fff;
             text-align: center;
             text-transform: uppercase;
-        }
-
-        .name {
-            font-family: ActOfRejection;
-            color: $green;
-            font-size: 3rem;
-            line-height: 100px;
-        }
-
-        .rastro {
             font-family: SprintSansMedium;
-            color: $yellow;
-            text-transform: uppercase;
-            font-size: 2.25rem;
-        }
-
-        h1 {
-            font-size: 2rem;
-        }
-
-        h2 {
-            font-family: SprintSansRegular;
-            color: $yellow;
-            text-transform: uppercase;
             font-size: 1.5rem;
+            margin-bottom: 1rem;
+
+            .prespectivas {
+                font-family: ActOfRejection;
+                color: $yellow;
+                font-size: 1.7rem;
+            }
+        }
+
+        h3{
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: SprintSansRegular;
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+
+            .busqueda{
+                font-family: OswaldDemiBold;
+                font-style: 1.65rem;
+                color: $yellow;
+            }
+        }
+
+        p{
+            font-family: SprintSansLight;
+            color: $magenta;
+            text-transform: uppercase;
+            font-size: 1.25rem;
+            text-align: center;
+
+            .auriculares{
+                font-family: oswaldDemiBold;
+            }
         }
     }
 

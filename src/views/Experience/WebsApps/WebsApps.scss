@@ -8,7 +8,7 @@
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    padding: $padding-content;
+    padding: 4rem $padding-content;
     background-image: url('../../../assets/img/fondos/fondo-5.svg');
     background-size: cover;
     background-position: center;
@@ -44,59 +44,63 @@
     &__content{
         flex-direction: column;
         justify-content: center;
-
-        @media (min-width: 992px){
-            padding-top: 4rem;
-        }
     }
 
     &__text{
-        margin-bottom: 6rem;
         max-width: 1000px;
+        margin-bottom: 4rem;
 
-        h1,
         h2 {
             color: #fff;
-        }
-
-        h1 {
-            font-size: 1.75rem;
+            text-align: center;
             text-transform: uppercase;
+            font-family: SprintSansMedium;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
-
+            
             .nombre{
-                color: $cyan;
-                font-family: OswaldBold;
-                font-size: 2rem;
+                font-family: OswaldDemiBold;
+                color: $magenta;
+                font-size: 1.65rem;
             }
 
-            .camino{
-                font-family: SprintSansLight;
-                color: $green;
-                font-size: 1.75rem;
+            .caja{
+                font-family: OswaldDemiBold;
+                color: $yellow;
+                font-size: 1.65rem;
             }
         }
 
-        h2 {
+        h3{
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
             font-family: SprintSansRegular;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
 
             .libreta{
                 font-family: ActOfRejection;
-                font-size: 1.85rem;
-                color: $green;
+                font-size: 1.4rem;
+                color: $yellow;
+                line-height: 34px;
+            }
+        }
+
+        p{
+            font-family: SprintSansLight;
+            color: $magenta;
+            text-transform: uppercase;
+            font-size: 1.25rem;
+            text-align: center;
+
+            .frases{
+                font-family: oswaldDemiBold;
             }
         }
     }
 
     &__options{
-        h2{
-            font-family: SprintSansLight;
-            font-size: 1.5rem;
-            color: $yellow;
-            text-align: center;
-        }
-
         &--options{
             padding-top: 3rem;
         }
@@ -149,13 +153,12 @@
     }
 
     &__behance{
-        padding-top: 4rem;
         max-width: 1000px;
         width: 100%;
-        min-height: 92vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        min-height: calc(100vh - 8rem);
 
         img{
             min-width: 300px;
@@ -164,13 +167,18 @@
         }
 
         &--img{
-            margin-bottom: 5rem;
+            filter: grayscale(1);
+            margin-bottom: 4rem;
             display: flex;
             justify-content: center;
+
+            &:hover{
+                filter: grayscale(0);
+            }
         }
 
         &--text{
-            margin-bottom: 5rem;
+            margin-bottom: 4rem;
 
             h2{
                 font-family: SprintSansRegular;
@@ -182,7 +190,7 @@
                 span{
                     font-family: SprintSansBold;
                     color: $yellow;
-                    font-size: 1.8rem;
+                    font-size: 1.65rem;
                 }
             }
         }
