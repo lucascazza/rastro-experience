@@ -57,17 +57,29 @@
             font-family: SprintSansMedium;
             font-size: 1.5rem;
             margin-bottom: 1rem;
+
+            @media (min-width: 1600px){
+                font-size: 1.75rem;
+            }
             
             .nombre{
                 font-family: OswaldDemiBold;
                 color: $magenta;
                 font-size: 1.65rem;
+
+                @media (min-width: 1600px){
+                    font-size: 1.85rem;
+                }
             }
 
             .caja{
                 font-family: OswaldDemiBold;
                 color: $yellow;
                 font-size: 1.65rem;
+
+                @media (min-width: 1600px){
+                    font-size: 1.85rem;
+                }
             }
         }
 
@@ -79,11 +91,19 @@
             font-size: 1.25rem;
             margin-bottom: 2rem;
 
+            @media (min-width: 1600px){
+                font-size: 1.35rem;
+            }
+
             .libreta{
                 font-family: ActOfRejection;
                 font-size: 1.4rem;
                 color: $yellow;
                 line-height: 34px;
+
+                @media (min-width: 1600px){
+                    font-size: 1.5rem;
+                }
             }
         }
 
@@ -93,6 +113,10 @@
             text-transform: uppercase;
             font-size: 1.25rem;
             text-align: center;
+
+            @media (min-width: 1600px){
+                font-size: 1.35rem;
+            }
 
             .frases{
                 font-family: oswaldDemiBold;

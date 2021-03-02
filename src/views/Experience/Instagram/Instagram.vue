@@ -2,7 +2,7 @@
   <div class="instagram">
     <div class="instagram__text content">
       <h1>¿Quiénes somos? ¿Qué hacemos? <span>¿Qué %$@”!& es esto?</span></h1>
-      <h2>En el camino fuimos dejando algunas respuestas, pero ustedes tienen que <span class="rastro">seguir el rastro</span> por su cuenta. Podés quedarte mirando nuestro Instagram pero no te cuelgues mucho, el camino es largo y seguimos adelante.</h2>
+      <h2>En el camino fuimos dejando algunas respuestas, pero ustedes tienen que <br><span class="rastro">seguir el rastro</span> por su cuenta. Podés quedarte mirando nuestro Instagram pero no te cuelgues mucho, el camino es largo y seguimos adelante.</h2>
       <p>Te dejamos algunos <span class="codigos">códigos</span> que te van a permitir seguirnos el ritmo.</p>
     </div>
     <div class="instagram__logo content">
