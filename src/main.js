@@ -9,6 +9,7 @@ import vuetify from './plugins/vuetify';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import App from './App.vue'
 import toastr from 'toastr'
+import vueVimeoPlayer from 'vue-vimeo-player'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -19,6 +20,7 @@ Vue.use(Token);
 Vue.use(api);
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.use(vueVimeoPlayer)
 
 Vue.config.productionTip = false
 

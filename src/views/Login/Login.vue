@@ -1,12 +1,16 @@
 <template>
   <div class="login" :class="{'overflow-hidden': !scrolleable}">
     <div class="login__video">
-      <div class="login__video--video">
-        <video ref="video" muted poster="@/assets/media/poster.jpg" controls autoplay frameborder="0"
+      <!-- <vimeo-player class="login__video--video" :options="options" @ended="scrollBottom()" ref="video" video-id="518640873"/> -->
+      <!-- <div class="login__video--video"> -->
+        <!-- <video ref="video" muted poster="@/assets/media/poster.jpg" controls autoplay frameborder="0"
           @ended="scrollBottom()">
           <source src="@/assets/media/manifiesto.mp4" type="video/mp4">
-        </video>
-      </div>
+        </video> -->
+        
+      <!-- </div> -->
+
+      <iframe id="iframe-vimeo" src="https://player.vimeo.com/video/518640873" frameborder="0" autoplay allowfullscreen allow="autoplay; encrypted-media"></iframe>
     </div>
       <div class="login__signin">
         <div class="login__row">
@@ -68,6 +72,11 @@ export default {
   components: {},
   data() {
     return {
+      options: {
+        autoplay: true,
+        muted: false,
+        playsinline: false
+      },
       endVideo: false,
       scrolleable: false,
       loading: false,
@@ -90,7 +99,26 @@ export default {
     }
   },
   watch: {},
-  mounted() {},
+  mounted() {
+
+    var iframe = document.getElementById('iframe-vimeo');
+    var player = new Vimeo.Player(iframe);
+    let vm = this
+
+    player.on('ended', function() {
+      vm.scrollBottom()
+    });    
+    
+    window.onload = function () {
+      let link = document.createElement("link");
+      link.href = "style.css"; /**** your CSS file ****/
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      console.log(iframe.contentWindow.document)
+      setTimeout(frames[0].document.body.appendChild(link),5000);
+      // iframe.document.head.appendChild(link); /**** 0 is an index of your iframe ****/
+    }
+  },
   methods: {
     async login() {
       this.loading = true
@@ -112,7 +140,9 @@ export default {
     scrollBottom() {
       this.endVideo = true
       this.scrolleable = true
-      document.getElementById("form").scrollIntoView(true, { behavior: 'smooth'});
+      setTimeout(() => {
+        document.getElementById("form").scrollIntoView({ behavior: 'smooth'});
+      }, 100);
     }
   }
 }

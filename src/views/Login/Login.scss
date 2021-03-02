@@ -29,6 +29,8 @@
 
     &__video {
         max-width: 100%;
+        width: 100%;
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -40,7 +42,7 @@
             max-width: 75%;
         }
 
-        video {
+        .vimeo-reproductor {
             outline: none;
             max-width: 100%;
         }
@@ -51,12 +53,21 @@
             justify-content: center;
             display: flex;
             align-items: center;
+        }
 
-            video {
-                outline: none;
+        iframe{
+            outline: none;
+            max-height: 100% !important;
+            position: absolute;
+            top: 0 !important;
+            left: 0 !important;
+            bottom: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+
+            .player{
                 box-shadow: 2px 2px 6px rgba(0, 0, 0, .55);
-                max-height: 100% !important;
-                width: auto;
             }
         }
     }
