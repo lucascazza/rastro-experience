@@ -6,10 +6,12 @@
         <p>Por favor ingrese sus datos</p>
         <div class="register__form--option">
           <label>Nombre</label>
-          <v-text-field 
+          <v-text-field
+            color="magenta"
             solo 
             dense 
             outlined
+            dark
             v-model="user.name"
             :rules="nameRules"  
             type="text">
@@ -18,6 +20,7 @@
         <div class="register__form--option">
           <label>Usuario</label>
           <v-text-field 
+            color="magenta"
             solo 
             dense 
             outlined
@@ -29,24 +32,26 @@
         <div class="register__form--option">
           <label>Contraseña</label>
           <v-text-field 
+            color="magenta"
             solo 
             dense 
             outlined
             v-model="user.password"
             :rules="passwordRules"
-            :append-icon="showPassword ? 'ricon-visible' : 'ricon-invisible-1'"
+            :append-icon="showPassword ? 'icon-ojo' : 'icon-ojocerrado'"
             :type="showPassword ? 'text' : 'password'" 
             @click:append="showPassword = !showPassword"></v-text-field>
         </div>
         <div class="register__form--option">
           <label>Repetir contraseña</label>
           <v-text-field 
+            color="magenta"
             solo 
             dense 
             outlined
             :rules="passwordRepeatRule"
             v-model="checkPassword"
-            :append-icon="showPassword ? 'ricon-visible' : 'ricon-invisible-1'"
+            :append-icon="showPassword ? 'icon-ojo' : 'icon-ojocerrado'"
             :type="showPassword ? 'text' : 'password'" 
             @click:append="showPassword = !showPassword"></v-text-field>
         </div>
@@ -116,6 +121,6 @@ export default {
   mounted() {}
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
     @import './Register';
 </style>

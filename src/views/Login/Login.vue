@@ -28,9 +28,15 @@
                     </v-text-field>
                   </div>
                   <div class="login__form--option">
-                    <v-text-field autocomplete="off" color="magenta" label="Contraseña" hide-details
-                      v-model="user.password" :append-icon="showPassword ? 'ricon-visible' : 'ricon-invisible-1'"
-                      :type="showPassword ? 'text' : 'password'" @click:append="showPassword = !showPassword">
+                    <v-text-field 
+                      autocomplete="off" 
+                      color="magenta" 
+                      label="Contraseña" 
+                      hide-details
+                      v-model="user.password" 
+                      :append-icon="showPassword ? 'icon-ojo' : 'icon-ojocerrado'"
+                      :type="showPassword ? 'text' : 'password'" 
+                      @click:append="showPassword = !showPassword">
                     </v-text-field>
                   </div>
                 </div>

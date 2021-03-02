@@ -15,17 +15,29 @@
         width: 100%;
         max-width: 500px;
         padding: 20px;
+        color: #232323;
+
+        h2,
+        p{
+            color: #232323;
+        }
 
         &--option{
+            color: #232323;
             margin-bottom: 1rem;
             label{
                 display: block;
                 margin-bottom: 0.3rem;
+                color: #232323;
+            }
+
+            .v-text-field.v-text-field--outlined:not(.v-input--is-disabled) input{
+                color: #232323 !important
             }
         }
 
         &--submit{
-            color: white;
+            color: #232323;
 		    width: 100%;
             font-weight: 600;
         }
