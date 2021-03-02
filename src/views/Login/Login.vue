@@ -2,7 +2,7 @@
   <div class="login" :class="{'overflow-hidden': !scrolleable}" id="loginScroll">
     <div class="login__video">
       <div class="login__video--video">
-        <video ref="video" poster="@/assets/media/poster.jpg" controls autoplay frameborder="0" @ended="scrollBottom()">
+        <video ref="video" poster="@/assets/media/posterteaser.jpg" controls autoplay frameborder="0" @ended="scrollBottom()">
           <source src="@/assets/media/teaser.mp4" type="video/mp4">
         </video>
       </div>
