@@ -41,10 +41,18 @@
             font-size: 2.5rem;
             text-transform: uppercase;
 
+            @media (min-width: 1600px){
+                font-size: 3rem;
+            }
+
             span {
                 color: $yellow;
                 font-family: ActOfRejection;
                 font-size: 3rem;
+
+                @media (min-width: 1600px){
+                    font-size: 3.5rem;
+                }
             }
         }
 
