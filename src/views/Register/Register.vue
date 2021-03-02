@@ -38,7 +38,7 @@
             outlined
             v-model="user.password"
             :rules="passwordRules"
-            :append-icon="showPassword ? 'ricon-visible' : 'ricon-invisible-1'"
+            :append-icon="showPassword ? 'icon-ojo' : 'icon-ojocerrado'"
             :type="showPassword ? 'text' : 'password'" 
             @click:append="showPassword = !showPassword"></v-text-field>
         </div>
@@ -51,7 +51,7 @@
             outlined
             :rules="passwordRepeatRule"
             v-model="checkPassword"
-            :append-icon="showPassword ? 'ricon-visible' : 'ricon-invisible-1'"
+            :append-icon="showPassword ? 'icon-ojo' : 'icon-ojocerrado'"
             :type="showPassword ? 'text' : 'password'" 
             @click:append="showPassword = !showPassword"></v-text-field>
         </div>
