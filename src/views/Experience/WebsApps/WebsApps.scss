@@ -218,19 +218,36 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-            .input-code{
+            .input-code {
                 margin-bottom: 2rem;
                 max-width: 400px;
 
-                .v-input__control{
-                    .v-text-field__slot{
-                        input{
-                            font-size: 38px !important;
+                .v-input__control {
+                    .v-text-field__slot {
+                        input {
+                            font-size: 24px !important;
                             text-align: center;
                             font-family: OswaldBold;
                             text-transform: uppercase;
                             font-style: italic;
                             color: $magenta;
+
+                        }
+                    }
+
+                    @media (min-width: 576px){
+                        .v-input__slot{
+                            min-width: 400px !important;
+                        }
+                    }
+                }
+
+                &.v-input--is-label-active {
+                    .v-input__control {
+                        .v-text-field__slot {
+                            input {
+                                font-size: 38px !important;
+                            }
                         }
                     }
                 }

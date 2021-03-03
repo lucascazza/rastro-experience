@@ -17,7 +17,7 @@
       <transition name="fade">
         <div v-if="user.step == 8">
           <h1 class="text-center seguis"><span>{{user.name}},</span>vemos que seguís por acá...</h1>
-          <h2 class="fin">Con el botón <span class="ver">ver recorrido</span> podrás volver a ver cada momento que te perdiste, y con el de <span class="reiniciar">reiniciar experiencia,</span> comenzarás de 0. </h2>
+          <h2 class="fin">Con el botón <span class="ver">ver recorrido</span> podrás volver a ver cada momento que te perdiste,<br>y con el de <span class="reiniciar">reiniciar experiencia,</span> comenzarás de 0. </h2>
           <div class="d-flex flex-column align-center">
             <v-btn color="yellow" x-large ripple rounded to="/experience/instagram">Ver recorrido</v-btn>
             <v-btn color="magenta" outlined x-large ripple @click="restartExperience()" rounded>Reiniciar experiencia</v-btn>

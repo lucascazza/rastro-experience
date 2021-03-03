@@ -21,7 +21,8 @@
           hide-details 
           rounded 
           background-color="white"
-          height="60" 
+          height="60"
+          placeholder="Ingresá el código acá"
           v-model="code">
         </v-text-field>
         <v-tooltip top>

@@ -52,6 +52,7 @@
         hide-details 
         outlined 
         rounded
+        placeholder="Ingresá el código"
         background-color="#dddddd"
         v-model="code">
       </v-text-field>
