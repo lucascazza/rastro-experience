@@ -9,7 +9,7 @@
                 ripple 
                 color="yellow" 
                 @click="confirmClick" 
-                depressed>
+                >
                 {{confirmText}}
             </v-btn>
         </div>
