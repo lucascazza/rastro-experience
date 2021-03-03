@@ -2,7 +2,7 @@
   <div class="final">
     <div class="final__text content">
       <h1 class="text-center">¡Felicidades <span>{{user.name}}!</span></h1>
-      <h2>Pudiste completar el camino y conseguir el código más importante de todos. Con ese código, vas a poder descubrir qué hay dentro de la caja y encontrar esto que nunca querrías que se pierda, pero por suerte eso ya no va a ser un problema.</h2>
+      <h2>Pudiste completar el camino y conseguir el código más importante de todos. Con ese código, vas a poder descubrir qué hay dentro de la <span class="caja">caja</span> y encontrar esto que nunca querrías que se pierda, pero por suerte eso ya no va a ser un problema.</h2>
       <p>¡No pierdas más tiempo y abrí la caja!</p>
     </div>
     <div class="final__btn">
@@ -15,7 +15,7 @@
           </template>
           <span>¡Felicidades! acá esta de nuevo tú código.</span>
         </v-tooltip>
-        <v-btn rounded outlined x-large ripple color="green" to="/">Volver al inicio</v-btn>
+        <v-btn rounded outlined x-large ripple color="magenta" to="/">Volver al inicio</v-btn>
       </div>
     </div>
     <dialog-code 

@@ -41,21 +41,25 @@
             text-align: center;
             text-transform: uppercase;
             font-family: SprintSansMedium;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: $yellow;
+            font-size: 2rem;
+            max-width: 800px;
+            margin: auto;
+            margin-bottom: 1.5rem;
+            line-height: 38px;
         }
 
         h3{
             color: #fff;
             text-align: center;
-            // text-transform: uppercase;
             font-family: SprintSansRegular;
             font-size: 1.25rem;
+            margin: auto;
             margin-bottom: 2rem;
+            max-width: 800px;
+            line-height: 28px;
             
             .esfuerzo{
-                color: $magenta;
+                color: $yellow;
                 font-size: 1.35rem;
                 font-family: OswaldDemiBold;
                 text-transform: uppercase;

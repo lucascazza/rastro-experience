@@ -56,10 +56,11 @@
             text-transform: uppercase;
             font-family: SprintSansMedium;
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 38px;
 
             @media (min-width: 1600px){
-                font-size: 1.75rem;
+                font-size: 2rem;
             }
             
             .nombre{
@@ -68,17 +69,17 @@
                 font-size: 1.65rem;
 
                 @media (min-width: 1600px){
-                    font-size: 1.85rem;
+                    font-size: 2rem;
                 }
             }
 
             .caja{
                 font-family: OswaldDemiBold;
-                color: $yellow;
+                color: $magenta;
                 font-size: 1.65rem;
 
                 @media (min-width: 1600px){
-                    font-size: 1.85rem;
+                    font-size: 2rem;
                 }
             }
         }
@@ -86,37 +87,26 @@
         h3{
             color: #fff;
             text-align: center;
-            // text-transform: uppercase;
             font-family: SprintSansRegular;
             font-size: 1.25rem;
-            margin-bottom: 2rem;
+            margin: auto;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            line-height: 28px;
 
-            @media (min-width: 1600px){
-                font-size: 1.35rem;
-            }
 
             .libreta{
                 font-family: ActOfRejection;
-                font-size: 1.4rem;
+                font-size: 1.35rem;
                 color: $yellow;
-                line-height: 34px;
-
-                @media (min-width: 1600px){
-                    font-size: 1.5rem;
-                }
             }
         }
 
         p{
             font-family: SprintSansLight;
-            color: $magenta;
-            // text-transform: uppercase;
+            color: $cyan;
             font-size: 1.25rem;
             text-align: center;
-
-            @media (min-width: 1600px){
-                font-size: 1.35rem;
-            }
 
             .frases{
                 font-family: oswaldDemiBold;
@@ -212,6 +202,9 @@
                 text-transform: uppercase;
                 font-size: 1.5rem;
                 text-align: center;
+                max-width: 800px;
+                margin: auto;
+                line-height: 30px;
 
                 span{
                     font-family: SprintSansBold;

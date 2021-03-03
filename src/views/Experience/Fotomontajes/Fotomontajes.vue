@@ -2,7 +2,7 @@
   <div class="fotomontajes">
     <div class="fotomontajes__text content">
       <h2>“El todo es más que la suma de sus partes”</h2>
-      <h3>Es importante siempre tener en cuenta el <span class="esfuerzo">esfuerzo</span> que realizamos para llegar a ese objetivo.</h3>
+      <h3>Es importante siempre tener en cuenta el <span class="esfuerzo">esfuerzo</span> <br>que realizamos para llegar a ese objetivo.</h3>
     </div>
     <div class="fotomontajes__dragdrop">
       <div class="fotomontajes__dragdrop--select">

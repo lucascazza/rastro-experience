@@ -66,6 +66,9 @@ export default {
       this.$router.replace({ path: '/' })
     }
   },
+  mounted(){
+    this.$refs.video.requestFullscreen()
+  },
   methods: {
     scrollBottom() {
       if (document.fullscreenElement){

@@ -4,7 +4,7 @@
       <template>
         <div class="piramide__content">
           <div class="piramide__text">
-            <h2><span class="name">{{user.name}},</span> ya casi estás listx para abrir la caja. El próximo paso va a ser el <span class="ultimo">último</span> de la experiencia.</h2>
+            <h2><span class="name">{{user.name}},</span> ya casi estás listx para abrir la caja. <br>El próximo paso va a ser el <span class="ultimo">último</span> <br>de la experiencia.</h2>
             <h3>Si ya estuviste chusmeando la mochila seguramente viste la <span class="piramidetext">piramide,</span> esa es la llave para el último código.</h3>
             <div class="piramide__text--guia">
               <p>Te dejamos una <span class="guia">guía</span> para ver cómo se usa la pirámide.</p>
@@ -12,7 +12,7 @@
                 rounded 
                 large 
                 ripple 
-                color="magenta"
+                color="cyan"
                 @click="dialogGuia = true">
                 Guía
               </v-btn>

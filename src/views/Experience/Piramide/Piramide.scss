@@ -44,45 +44,48 @@
             text-align: center;
             text-transform: uppercase;
             font-family: SprintSansMedium;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin: auto;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            line-height: 38px;
             
             .name{
                 font-family: OswaldDemiBold;
                 color: $magenta;
-                font-size: 1.65rem;
+                font-size: 2rem;
             }
 
             .ultimo{
                 font-family: OswaldDemiBold;
-                color: $yellow;
-                font-size: 1.65rem;
+                color: $magenta;
+                font-size: 2rem;
             }
         }
 
         h3{
             color: #fff;
             text-align: center;
-            // text-transform: uppercase;
             font-family: SprintSansRegular;
             font-size: 1.25rem;
-            margin-bottom: 2rem;
+            margin: auto;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            line-height: 28px;
 
             .piramidetext{
                 font-family: ActOfRejection;
-                font-size: 1.4rem;
+                font-size: 1.35rem;
                 color: $yellow;
-                line-height: 34px;
             }
         }
 
         p{
             font-family: SprintSansLight;
-            color: $magenta;
-            // text-transform: uppercase;
+            color: $cyan;
             font-size: 1.25rem;
             text-align: center;
-            margin-bottom: 0;
+            margin-bottom: .5rem;
 
             .guia{
                 font-family: oswaldDemiBold;
