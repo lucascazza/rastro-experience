@@ -46,6 +46,11 @@
             margin: auto;
             margin-bottom: 1.5rem;
             line-height: 38px;
+
+            .todo{
+                color: $magenta;
+                font-family: oswaldBold;
+            }
         }
 
         h3{
@@ -61,7 +66,7 @@
             .esfuerzo{
                 color: $yellow;
                 font-size: 1.35rem;
-                font-family: OswaldDemiBold;
+                font-family: oswaldBold;
                 text-transform: uppercase;
             }
         }
