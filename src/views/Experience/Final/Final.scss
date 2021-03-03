@@ -53,9 +53,10 @@
             span {
                 color: $magenta;
                 font-size: 2.75rem;
+                font-family: ActOfRejection;
 
                 @media (min-width: 1600px){
-                    font-size: 4rem;
+                    font-size: 4.25rem;
                 }
             }
         }

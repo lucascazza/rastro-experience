@@ -54,7 +54,7 @@
             color: #fff;
             text-align: center;
             text-transform: uppercase;
-            font-family: SprintSansMedium;
+            font-family: SprintSansBold;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             line-height: 38px;
@@ -66,19 +66,10 @@
             .nombre{
                 color: $magenta;
                 font-size: 1.65rem;
-
-                @media (min-width: 1600px){
-                    font-size: 2rem;
-                }
             }
 
             .caja{
                 color: $magenta;
-                font-size: 1.65rem;
-
-                @media (min-width: 1600px){
-                    font-size: 2rem;
-                }
             }
         }
 
@@ -196,7 +187,7 @@
             margin-bottom: 4rem;
 
             h2{
-                font-family: SprintSansRegular;
+                font-family: SprintSansMedium;
                 color: #fff;
                 text-transform: uppercase;
                 font-size: 1.5rem;
@@ -206,7 +197,7 @@
                 line-height: 30px;
 
                 span{
-                    font-family: SprintSansLight;
+                    font-family: SprintSansRegular;
                     color: $yellow;
                     font-size: 1.65rem;
                 }
