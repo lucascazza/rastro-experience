@@ -8,7 +8,7 @@
       <div class="fotomontajes__dragdrop--select">
         <div v-for="(item, i) in fotomontajes" :key="i">
           <div class="select-fotomontaje" @click="selectFotomontaje(item)" :class="[{'disabled': !item.enabled}, {'active': selectedFoto._id == i + 1}]">
-            <img :src="`/fotomontajes/${item.name}/${item.preview}`" :alt="item.name">
+            <p>{{ i + 1 }}</p>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
               :class="[
               {'disabled': !video.enabled},
               {'active': videoPlaying._id == (i + 1)}]">
-              <img :src="`/fotomontajes/vfx/${video.preview}`" :alt="video.name">
+              <p>{{ i + 1 }}</p>
             </div>
           </div>
         </div>
@@ -130,7 +130,7 @@
           </div>
         </transition>
         <transition name="fade">
-          <div v-if="videoPlaying.name == 'milton'" class="vfx__selectVideo">
+          <div v-if="videoPlaying.name == 'paladin'" class="vfx__selectVideo">
             <div class="vfx__btns">
               <div>
                 <v-btn rounded large ripple color="yellow" @click="playVideo()" :disabled="loadVideo != 2"
@@ -152,12 +152,12 @@
             <div class="vfx__videos content">
               <div class="vfx__videos--efectos" :style="{width: slide.val + '%'}" :class="{'drag-slide': dragSlide}">
                 <video ref="video" loop frameborder="0" muted @loadeddata="loadFinish()">
-                  <source src="@/assets/media/vfx/taza/taza-efecto.mp4" type="video/mp4">
+                  <source src="@/assets/media/vfx/paladin/paladin-efectos.mp4" type="video/mp4">
                 </video>
               </div>
               <div class="vfx__videos--sinefectos">
                 <video ref="videoO" loop frameborder="0" muted @loadeddata="loadFinish()">
-                  <source src="@/assets/media/vfx/taza/taza-sinefecto.mp4" type="video/mp4">
+                  <source src="@/assets/media/vfx/paladin/paladin-sinefectos.mp4" type="video/mp4">
                 </video>
               </div>
             </div>
@@ -221,20 +221,17 @@ export default {
         {
           _id: 1,
           name: 'taza',
-          enabled: true,
-          preview: 'taza.jpg'
+          enabled: true
         },
         {
           _id: 2,
           name: 'barco',
-          enabled: false,
-          preview: 'barco.jpg'
+          enabled: false
         },
         {
           _id: 3,
-          name: 'milton',
-          enabled: false,
-          preview: 'milton.jpg'
+          name: 'paladin',
+          enabled: false
         }
       ],
       completePage: false,
@@ -245,34 +242,33 @@ export default {
           type: 'image',
           format: 'horizontal',
           enabled: true,
-          preview: 'alicia.jpg',
           recursos: [{
               src: 'alicia1.jpg',
-              miniSrc: 'alicia1-r.jpg',
+              miniSrc: 'alicia1-r.svg',
               i: 1,
               name: 'Alicia 1'
             },
             {
               src: 'alicia2.jpg',
-              miniSrc: 'alicia2-r.jpg',
+              miniSrc: 'alicia2-r.svg',
               i: 2,
               name: 'Alicia 2'
             },
             {
               src: 'alicia3.jpg',
-              miniSrc: 'alicia3-r.jpg',
+              miniSrc: 'alicia3-r.svg',
               i: 3,
               name: 'Alicia 3'
             },
             {
               src: 'alicia4.jpg',
-              miniSrc: 'alicia4-r.jpg',
+              miniSrc: 'alicia4-r.svg',
               i: 4,
               name: 'Alicia 4'
             },
             {
               src: 'alicia5.jpg',
-              miniSrc: 'alicia5-r.jpg',
+              miniSrc: 'alicia5-r.svg',
               i: 5,
               name: 'Alicia 5'
             }
@@ -284,34 +280,33 @@ export default {
           type: 'video',
           format: 'vertical',
           enabled: false,
-          preview: 'mari.jpg',
           recursos: [{
               src: 'mari1.jpg',
-              miniSrc: 'mari1-r.jpg',
+              miniSrc: 'mari1-r.svg',
               i: 1,
               name: 'Mari 1'
             },
             {
               src: 'mari2.jpg',
-              miniSrc: 'mari2-r.jpg',
+              miniSrc: 'mari2-r.svg',
               i: 2,
               name: 'Mari 2'
             },
             {
               src: 'mari3.jpg',
-              miniSrc: 'mari3-r.jpg',
+              miniSrc: 'mari3-r.svg',
               i: 3,
               name: 'Mari 3'
             },
             {
               src: 'mari4.jpg',
-              miniSrc: 'mari4-r.jpg',
+              miniSrc: 'mari4-r.svg',
               i: 4,
               name: 'Mari 4'
             },
             {
               src: 'mari5.mp4',
-              miniSrc: 'mari5-r.jpg',
+              miniSrc: 'mari5-r.svg',
               i: 5,
               name: 'Mari 5'
             }
@@ -323,34 +318,33 @@ export default {
           type: 'image',
           format: 'vertical',
           enabled: false,
-          preview: 'milton.jpg',
           recursos: [{
               src: 'milton1.jpg',
-              miniSrc: 'milton1-r.jpg',
+              miniSrc: 'milton1-r.svg',
               i: 1,
               name: 'Milton 1'
             },
             {
               src: 'milton2.jpg',
-              miniSrc: 'milton2-r.jpg',
+              miniSrc: 'milton2-r.svg',
               i: 2,
               name: 'Milton 2'
             },
             {
               src: 'milton3.jpg',
-              miniSrc: 'milton3-r.jpg',
+              miniSrc: 'milton3-r.svg',
               i: 3,
               name: 'Milton 3'
             },
             {
               src: 'milton4.jpg',
-              miniSrc: 'milton4-r.jpg',
+              miniSrc: 'milton4-r.svg',
               i: 4,
               name: 'Milton 4'
             },
             {
               src: 'milton5.jpg',
-              miniSrc: 'milton5-r.jpg',
+              miniSrc: 'milton5-r.svg',
               i: 5,
               name: 'Milton 5'
             }

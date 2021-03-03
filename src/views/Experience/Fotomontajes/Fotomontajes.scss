@@ -86,23 +86,30 @@
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+                border-radius: 4px;
 
                 &.active {
-                    box-shadow: 0px 0px 3px 4px rgba(255, 68, 90, .5);
-                    ;
+                    box-shadow: 0px 0px 3px 4px rgba(16, 254, 204, .4);
+                    background-color: $cyan;
                 }
 
                 @media (min-width: 576px) {
                     margin-right: 3rem;
                     width: 140px;
                     height: 140px;
-                    font-size: 4.5rem;
+                    font-size: 5rem;
                 }
 
                 &.disabled {
+                    background-color: #707070 !important;
                     filter: grayscale(1);
                     cursor: not-allowed;
                     box-shadow: none;
+                }
+
+                p{
+                    margin: 0;
+                    font-family: ActOfRejection;
                 }
             }
 
@@ -130,6 +137,9 @@
                 align-items: center;
                 justify-content: center;
                 margin: .5rem;
+                background: #F2F1FE;
+                border: 2px solid transparent;
+                border-radius: 4px;
 
                 img {
                     max-width: 100%;
@@ -151,9 +161,8 @@
                 }
 
                 &.disabled {
-                    background-color: transparent !important;
-                    background: transparent !important;
                     cursor: not-allowed;
+                    background: #777777 !important;
 
                     img {
                         filter: grayscale(1);
@@ -161,21 +170,16 @@
                 }
 
                 &.active {
-                    background-color: transparent !important;
-                    background: transparent !important;
-
-                    img {
-                        border: 2px solid #f6f6f6;
-                    }
+                    background: #F2F1FE !important;
+                    background-color: #F2F1FE !important;
+                    border: 2px solid $magenta;
                 }
 
                 &.seleccionable {
-                    background-color: transparent !important;
-                    background: transparent !important;
-
+                    border: 2px dashed $magenta;
+                    
                     img {
-                        filter: grayscale(.6);
-                        border: 1px dashed #f6f6f6;
+                        filter: grayscale(.5);
                     }
                 }
             }
@@ -292,23 +296,30 @@
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+                border-radius: 4px;
 
                 &.active {
-                    box-shadow: 0px 0px 3px 4px rgba(255, 68, 90, .5);
-                    ;
+                    box-shadow: 0px 0px 3px 4px rgba(16, 254, 204, .4);
+                    background-color: $cyan;
                 }
 
                 @media (min-width: 576px) {
                     margin-right: 3rem;
                     width: 140px;
                     height: 140px;
-                    font-size: 4.5rem;
+                    font-size: 5rem;
                 }
 
                 &.disabled {
+                    background-color: #707070 !important;
                     filter: grayscale(1);
                     cursor: not-allowed;
                     box-shadow: none;
+                }
+
+                p{
+                    margin: 0;
+                    font-family: ActOfRejection;
                 }
             }
 

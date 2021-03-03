@@ -93,12 +93,17 @@
         .button-top{
             position: absolute;
             top: 4rem;
+            display: none;
             
             .v-btn{
                 height: 50px !important;
                 min-width: 50px !important;
                 width: 50px !important;
                 padding: 0 !important;
+            }
+
+            @media (min-width: 992px){
+                display: block;
             }
         }
     }
@@ -175,6 +180,7 @@
 
             @media (max-width: 991px) {
                 align-items: flex-end;
+                margin-bottom: 1.5rem;
             }
 
             h1 {
