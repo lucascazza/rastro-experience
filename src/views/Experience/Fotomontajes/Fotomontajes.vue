@@ -30,6 +30,7 @@
             <div class="selectedFoto__lienzo">
               <div class="selectedFoto__lienzo--empty" v-if="!imgSelected.i">
                 <div class="selectedFoto__lienzo--text">
+                  <i class="icon-move"></i>
                   <h2>Arrastrá acá las imágenes para ir descubriendo lo que esconden.</h2>
                 </div>
               </div>
