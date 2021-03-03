@@ -64,7 +64,6 @@
             }
             
             .nombre{
-                font-family: oswaldBold;
                 color: $magenta;
                 font-size: 1.65rem;
 
@@ -74,7 +73,6 @@
             }
 
             .caja{
-                font-family: oswaldBold;
                 color: $magenta;
                 font-size: 1.65rem;
 
@@ -96,7 +94,8 @@
 
 
             .libreta{
-                font-family: ActOfRejection;
+                font-family: SprintSansLight;
+                text-transform: uppercase;
                 font-size: 1.35rem;
                 color: $yellow;
             }
@@ -207,7 +206,7 @@
                 line-height: 30px;
 
                 span{
-                    font-family: SprintSansBold;
+                    font-family: SprintSansLight;
                     color: $yellow;
                     font-size: 1.65rem;
                 }

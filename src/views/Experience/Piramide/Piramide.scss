@@ -50,13 +50,11 @@
             line-height: 38px;
             
             .name{
-                font-family: oswaldBold;
                 color: $magenta;
                 font-size: 2rem;
             }
 
             .ultimo{
-                font-family: oswaldBold;
                 color: $magenta;
                 font-size: 2rem;
             }
@@ -73,9 +71,10 @@
             line-height: 28px;
 
             .piramidetext{
-                font-family: ActOfRejection;
+                font-family: SprintSansLight;
                 font-size: 1.35rem;
                 color: $yellow;
+                text-transform: uppercase;
             }
         }
 

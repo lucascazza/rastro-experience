@@ -49,7 +49,6 @@
 
             span {
                 color: $magenta;
-                font-family: oswaldBold;
             }
 
             @media (min-width: 1600px) {
@@ -68,7 +67,8 @@
             .rastro {
                 color: $yellow;
                 font-size: 1.35rem;
-                font-family: ActOfRejection;
+                text-transform: uppercase;
+                font-family: SprintSansLight;
             }
         }
 

@@ -4,7 +4,7 @@
       <transition name="fade">
         <div v-if="user.step !== 8">
           <h1 class="text-center">Hola <span class="nombre">{{user.name}}</span> ¿Cómo estás?</h1>
-          <h2>Te trajimos acá porque queremos que recuperes algo que puede perderse fácilmente. Ese algo está dentro de esa linda <span class="caja">caja</span>, pero dártelo y ya haría que no le des la importancia que merece. <br>Por eso queremos mostrarte un recorrido que <span class="nosotros">nosotros ya hicimos</span>, y que sabemos que te va a ayudar.</h2>
+          <h2>Te trajimos acá porque queremos que recuperes algo que puede perderse fácilmente. Ese algo está dentro de esa linda <span class="caja">caja,</span> pero dártelo y ya haría que no le des la importancia que merece. <br>Por eso queremos mostrarte un recorrido que <span class="nosotros">nosotros ya hicimos</span>, y que sabemos que te va a ayudar.</h2>
           <p>Una vez completado van a ser <span class="merecer">merecedores</span> de abrir la caja</p>
           <div class="d-flex justify-center">
             <v-btn v-if="user.step !== 0" :loading="loading" color="yellow" x-large ripple rounded outlined @click="loading = true; continueExperience()">Continuar

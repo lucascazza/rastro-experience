@@ -91,7 +91,7 @@
               </div>
             </div>
             <v-slider @start="slideStart" @end="slideEnd" hide-details class="slide-vfx" v-model="slide.val" :color="slide.color" :track-color="slide.trackColor"></v-slider>
-            <p class="mb-0 text-center"><i class="icon-compare-arrows mr-2"></i>Mové el slide y descrubrí</p>
+            <p class="mb-0 text-center"><i class="icon-compare-arrows mr-2"></i>Mové el slide y descubrí</p>
           </div>
         </transition>
         <transition name="fade">
