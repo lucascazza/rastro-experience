@@ -2,7 +2,7 @@
   <div class="login" :class="{'overflow-hidden': !scrolleable}" id="loginScroll">
     <div class="login__video">
       <div class="login__video--video">
-        <video ref="video" poster="@/assets/media/posterteaser.jpg" controls autoplay frameborder="0" @ended="scrollBottom()">
+        <video ref="video" poster="@/assets/media/posterteaser.jpg" controls frameborder="0" @ended="scrollBottom()">
           <source src="@/assets/media/teaser.mp4" type="video/mp4">
         </video>
       </div>
@@ -66,6 +66,9 @@
         </div>
       </div>
     </div>
+    <div class="img-prelogin" @click="initExperience()" v-if="!init">
+      <img src="@/assets/img/login/pre-login.svg" alt="Pre-Login">
+    </div>
   </div>
 </template>
 
@@ -82,6 +85,7 @@ export default {
   components: {},
   data() {
     return {
+      init: false,
       endVideo: false,
       scrolleable: false,
       loading: false,
@@ -107,6 +111,10 @@ export default {
   watch: {},
   mounted() {},
   methods: {
+    initExperience(){
+      this.init = true
+      this.playVideo()
+    },
     async login() {
       this.loading = true
       try {
@@ -121,10 +129,8 @@ export default {
       }
     },
     playVideo(){
-      this.$refs.video.play()      
-    },
-    playing(){
-      this.$refs.video.requestFullscreen()      
+      this.$refs.video.play()
+      this.$refs.video.requestFullscreen()
     },
     scrollBottom() {
       if (document.fullscreenElement){
