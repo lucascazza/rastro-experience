@@ -4,10 +4,10 @@
       <template>
         <div class="piramide__content">
           <div class="piramide__text">
-            <h2><span class="name">{{user.name}},</span> ya casi estás listx para abrir la caja. <br>El próximo paso va a ser el <span class="ultimo">último</span> <br>de la experiencia.</h2>
-            <h3>Si ya estuviste chusmeando la mochila seguramente viste la <span class="piramidetext">piramide,</span> esa es la llave para el último código.</h3>
+            <h2><span class="name">{{user.name}},</span> ya casi estás listx para abrir la caja. <br>El próximo paso va a ser el <span class="ultimo">último</span> <br>de la experiencia</h2>
+            <h3>Si ya estuviste chusmeando la mochila seguramente viste la <span class="piramidetext">piramide,</span> esa es la llave para el último código</h3>
             <div class="piramide__text--guia">
-              <p>Te dejamos una <span class="guia">guía</span> para ver cómo se usa la pirámide.</p>
+              <p>Te dejamos una <span class="guia">guía</span> para ver cómo se usa la pirámide</p>
               <v-btn 
                 rounded 
                 large 
@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="piramide__qr">
-            <img src="@/assets/img/visores/qr/qr-sinvisor.svg" alt="Piramide QR">
+            <img src="@/assets/img/piramide/qr/qr.svg" alt="Piramide QR">
           </div>
           <div class="piramide__btn">
             <v-tooltip top>
