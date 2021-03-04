@@ -38,7 +38,7 @@
       confirm-text="Confirmar" 
       @confirm="nextStep('webapps', 5)">
     </dialog-confirm>
-    <audio ref="audio" src="@/assets/media/musicajuegos.mp4" startDate="5000" autoplay class="musica"></audio>
+    <audio ref="audio" src="@/assets/media/musicajuegos.mp4" autoplay class="musica"></audio>
     </div>
 </template>
 
