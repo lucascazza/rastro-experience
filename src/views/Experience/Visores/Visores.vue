@@ -1,5 +1,13 @@
 <template>
   <div class="visores">
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on }">
+        <v-btn icon @click="dialogLogout = true" large rounded class="logout" v-on="on">
+          <v-icon color="white">icon-logout</v-icon>
+        </v-btn>
+      </template>
+      <span>Cerrar sesión</span>
+    </v-tooltip>
     <div class="visores__text">
       <h2>Otras <span class="prespectivas">perspectivas</span> te dejan ver nuevas realidades, soluciones, o caminos</h2>
       <h3>No sos la única persona en esta <span class="busqueda">búsqueda</span>, alguien te está buscando y parece tener
@@ -50,6 +58,14 @@
         v-model="code">
       </v-text-field>
     </dialog-code>
+    <dialog-confirm
+      :active.sync="dialogLogout"
+      title="Estas por cerrar la sesión" 
+      content="¿Desea hacerlo?"
+      confirm-text="Confirmar"
+      cancelText="No cerrar"
+      @confirm="logout()">
+    </dialog-confirm>
   </div>
 </template>
 

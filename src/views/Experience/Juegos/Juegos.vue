@@ -1,5 +1,13 @@
 <template>
   <div class="juegos">
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on }">
+        <v-btn icon @click="dialogLogout = true" large rounded class="logout" v-on="on">
+          <v-icon color="white">icon-logout</v-icon>
+        </v-btn>
+      </template>
+      <span>Cerrar sesión</span>
+    </v-tooltip>
     <div style="maxWidth:100%">
       <div class="juegos__text">
         <h2>No todo es buscar codigos y abrir cajas, a veces es necesario <span class="descansar">descansar,</span>
@@ -38,6 +46,15 @@
       confirm-text="Confirmar" 
       @confirm="nextStep('webapps', 5)">
     </dialog-confirm>
+    <dialog-confirm
+      :active.sync="dialogLogout"
+      className="dialog-juegos"
+      title="Estas por cerrar la sesion" 
+      content="¿Desea hacerlo?"
+      confirm-text="Confirmar"
+      cancelText="No cerrar"
+      @confirm="logout()">
+    </dialog-confirm>
     <audio ref="audio" src="@/assets/media/musicajuegos.mp4" autoplay class="musica"></audio>
     </div>
 </template>
@@ -46,7 +63,6 @@
 
 import { mapState } from 'vuex';
 import helperApp from '@/mixins/helperApp';
-import DialogConfirm from '@/components/Dialogs/DialogConfirm';
 export default {
   name: 'ExpecienceJuegos',
   metaInfo() {
@@ -55,9 +71,7 @@ export default {
     }
   },
   mixins: [helperApp],
-  components: {
-    'dialog-confirm': DialogConfirm
-  },
+  components: {},
   data() {
     return {
       loading: true,

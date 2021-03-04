@@ -15,6 +15,10 @@
     background-repeat: no-repeat;
     justify-items: center;
 
+    @media (max-width: 991px){
+        position: relative;
+    }
+
     &::-webkit-scrollbar {
         width: .2em;
     }
@@ -99,7 +103,7 @@
             text-align: center;
 
             .frases{
-                font-family: oswaldBold;
+                font-family: SprintSansMedium;
                 text-transform: uppercase;
             }
         }

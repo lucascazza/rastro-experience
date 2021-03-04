@@ -1,5 +1,13 @@
 <template>
   <div class="fotomontajes">
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on }">
+        <v-btn icon @click="dialogLogout = true" large rounded class="logout" v-on="on">
+          <v-icon color="white">icon-logout</v-icon>
+        </v-btn>
+      </template>
+      <span>Cerrar sesión</span>
+    </v-tooltip>
     <div class="fotomontajes__text content">
       <h2>“El <span class="todo">todo</span> es más que la suma de sus partes”</h2>
       <h3>Es importante siempre tener en cuenta el <span class="esfuerzo">esfuerzo</span> <br>que realizamos para llegar a ese objetivo</h3>
@@ -186,6 +194,14 @@
         <span v-else>Terminá los desafíos para continuar...</span>
       </v-tooltip>
     </div>
+    <dialog-confirm
+      :active.sync="dialogLogout"
+      title="Estas por cerrar la sesion" 
+      content="¿Desea hacerlo?"
+      confirm-text="Confirmar"
+      cancelText="No cerrar"
+      @confirm="logout()">
+    </dialog-confirm>
   </div>
 </template>
 

@@ -1,5 +1,13 @@
 <template>
   <div class="webapps">
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on }">
+        <v-btn icon @click="dialogLogout = true" large rounded class="logout" v-on="on">
+          <v-icon color="white">icon-logout</v-icon>
+        </v-btn>
+      </template>
+      <span>Cerrar sesión</span>
+    </v-tooltip>
     <transition name="fade">
       <template v-if="!showBehance">
         <div class="webapps__content">
@@ -74,6 +82,14 @@
           </div>
       </template>
     </transition>
+    <dialog-confirm
+      :active.sync="dialogLogout"
+      title="Estas por cerrar la sesion" 
+      content="¿Desea hacerlo?"
+      confirm-text="Confirmar"
+      cancelText="No cerrar"
+      @confirm="logout()">
+    </dialog-confirm>
   </div>
 </template>
 

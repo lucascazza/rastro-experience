@@ -1,8 +1,13 @@
 import { mapState } from 'vuex';
+import DialogConfirm from '@/components/Dialogs/DialogConfirm';
 export default {
     data() {
         return {
+            dialogLogout: false
         }
+    },
+    components: {
+        'dialog-confirm': DialogConfirm
     },
     computed: {
         ...mapState({
@@ -33,6 +38,12 @@ export default {
             } catch (err) {
                 console.log(err);
             }
+        },
+        logout(){
+            this.$store.commit('user/clearData');
+            window.setTimeout(() => {
+                this.$router.push({name: "Login"});
+            }, 500);
         }
     }
 }

@@ -14,6 +14,10 @@
     background-position: center;
     background-repeat: no-repeat;
 
+    @media (max-width: 991px){
+        position: relative;
+    }
+
     &::-webkit-scrollbar {
         width: .2em;
     }

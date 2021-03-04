@@ -3,6 +3,15 @@
         <div class="dialog-content" :class="className">
             <h3>{{title}}</h3>
             <h4>{{content}}</h4>
+            <div class="dialog-content__buttons">
+                <v-btn
+                v-if="cancelText"
+                ripple
+                text
+                color="grey" 
+                @click="cancelClick">
+                {{cancelText}}
+            </v-btn>
             <v-btn 
                 rounded 
                 ripple 
@@ -10,6 +19,7 @@
                 @click="confirmClick">
                 {{confirmText}}
             </v-btn>
+            </div>
         </div>
     </v-dialog>
 </template>
@@ -22,7 +32,8 @@
             'className',
             'title',
             'content',
-            'confirmText'
+            'confirmText',
+            'cancelText'
         ],
         computed: {
             showDialog: {
@@ -38,6 +49,10 @@
             confirmClick() {
                 this.showDialog = false;
                 this.$emit('confirm');
+            },
+            cancelClick() {
+                this.showDialog = false;
+                this.$emit('cancel');
             }
         }
     }
@@ -85,6 +100,20 @@
         .v-btn {
             font-family: EarlyGameboy;
         }
+
+        .dialog-content__buttons{
+            .v-btn{
+                font-size: 10px !important;
+                
+                @media (min-width: 768px){
+                    font-size: .875rem !important;
+                }
+            }
+        }
+    }
+
+    &__buttons{
+        margin-top: 1rem;
     }
 }
 </style>

@@ -15,6 +15,10 @@
     background-repeat: no-repeat;
     justify-content: space-between;
 
+    @media (max-width: 991px){
+        position: relative;
+    }
+
     &::-webkit-scrollbar {
         width: .2em;
     }
@@ -29,7 +33,7 @@
     }
 
     &__text {
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         max-width: 1000px;
 
         h2 {
@@ -79,7 +83,7 @@
             margin-bottom: 0;
 
             .auriculares{
-                font-family: oswaldBold;
+                font-family: SprintSansMedium;
                 text-transform: uppercase;
             }
         }

@@ -119,3 +119,24 @@ label {
         max-height: 100vh;
     }
 }
+
+.logout{
+    position: absolute !important;
+    top: 4px;
+    right: 4px;
+
+    i{
+        font-size: 30px !important;
+    }
+
+    @media (min-width: 992px){
+        width: 50px !important;
+        width: 40px !important;
+        top: 1rem;
+        right: 1rem;
+
+        i{
+            font-size: 45px !important;
+        }
+    }
+}

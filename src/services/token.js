@@ -8,7 +8,7 @@ export default {
             return res => {
                 if( router.app._route.matched[0].name !== 'Register' ){
                     if(res.status == 401) {
-                        store.dispatch('clearUserData');
+                        store.commit('user/clearData');
                         router.push({name: 'Login'});
                     } else if(res.body.token) {
                         store.commit('user/setToken', 'Bearer ' + res.body.token);

@@ -1,25 +1,35 @@
 <template>
   <div class="piramide">
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on }">
+        <v-btn icon @click="dialogLogout = true" large rounded class="logout" v-on="on">
+          <v-icon color="white">icon-logout</v-icon>
+        </v-btn>
+      </template>
+      <span>Cerrar sesión</span>
+    </v-tooltip>
     <transition name="fade">
       <template>
         <div class="piramide__content">
           <div class="piramide__text">
-            <h2><span class="name">{{user.name}},</span> ya casi estás listx para abrir la caja. <br>El próximo paso va a ser el <span class="ultimo">último</span> <br>de la experiencia</h2>
-            <h3>Si ya estuviste chusmeando la mochila seguramente viste la <span class="piramidetext">piramide,</span> esa es la llave para el último código</h3>
+            <h2>{{user.name}}, ya casi estás listx <br>para abrir <span class="caja">la caja.</span> El próximo paso<br> será el último</h2>
+            <h3>Si ya estuviste chusmeando la mochila seguramente<br> viste la pirámide...</h3>
             <div class="piramide__text--guia">
-              <p>Te dejamos una <span class="guia">guía</span> para ver cómo se usa la pirámide</p>
-              <v-btn 
+              <p>¡Esa es la <span class="llave">llave</span> para el último código!</p>
+              <v-btn
+                outlined
                 rounded 
                 large 
                 ripple 
-                color="cyan"
+                color="white"
                 @click="dialogGuia = true">
-                Guía
+                <v-icon left class="mr-3">icon-ojo</v-icon>
+                Cómo usar la pirámide
               </v-btn>
             </div>
           </div>
           <div class="piramide__qr">
-            <img src="@/assets/img/piramide/qr/qr.svg" alt="Piramide QR">
+            <img src="@/assets/img/piramide/qr/qr.svg" alt="Pirámide QR">
           </div>
           <div class="piramide__btn">
             <v-tooltip top>
@@ -58,6 +68,14 @@
       </v-text-field>
     </dialog-code>
     <dialog-guia :active.sync="dialogGuia"></dialog-guia>
+    <dialog-confirm
+      :active.sync="dialogLogout"
+      title="Estas por cerrar la sesion" 
+      content="¿Desea hacerlo?"
+      confirm-text="Confirmar"
+      cancelText="No cerrar"
+      @confirm="logout()">
+    </dialog-confirm>
   </div>
 </template>
 
@@ -71,7 +89,7 @@ export default {
   name: 'ExpeciencePiramide',
   metaInfo() {
     return {
-      title: 'Piramide',
+      title: 'Pirámide',
     }
   },
   mixins: [helperApp],

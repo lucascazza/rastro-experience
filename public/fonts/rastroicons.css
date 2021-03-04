@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'rastroicons';
-  src:  url('./rastroicons.eot?rbwl94');
-  src:  url('./rastroicons.eot?rbwl94#iefix') format('embedded-opentype'),
-    url('./rastroicons.ttf?rbwl94') format('truetype'),
-    url('./rastroicons.woff?rbwl94') format('woff'),
-    url('./rastroicons.svg?rbwl94#rastroicons') format('svg');
+  src:  url('./rastroicons.eot?uqm5hf');
+  src:  url('./rastroicons.eot?uqm5hf#iefix') format('embedded-opentype'),
+    url('./rastroicons.ttf?uqm5hf') format('truetype'),
+    url('./rastroicons.woff?uqm5hf') format('woff'),
+    url('./rastroicons.svg?uqm5hf#rastroicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-logout:before {
+  content: "\e91c";
+}
 .icon-3d:before {
   content: "\e900";
 }
