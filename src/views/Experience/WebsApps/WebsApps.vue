@@ -10,23 +10,23 @@
           </div>
           <div class="webapps__options">
             <div class="webapps__options--options row">
-              <div class="col-6 d-flex align-center justify-center" @click="selectOption(false)">
-                <div class="webapps__options--item item-1">
+              <div class="col-6 d-flex align-center justify-center">
+                <div class="webapps__options--item item-1" @click="selectOption(false)">
                   <i class="icon-toro"></i>
                 </div>
               </div>
-              <div class="col-6 d-flex align-center justify-center" @click="selectOption(true)">
-                <div class="webapps__options--item item-2">
+              <div class="col-6 d-flex align-center justify-center">
+                <div class="webapps__options--item item-2" @click="selectOption(true)">
                   <i class="icon-rastro"></i>
                 </div>
               </div> 
-              <div class="col-6 d-flex align-center justify-center" @click="selectOption(false)">
-                <div class="webapps__options--item item-3">
+              <div class="col-6 d-flex align-center justify-center">
+                <div class="webapps__options--item item-3" @click="selectOption(false)">
                   <i class="icon-punnix"></i>
                 </div>
               </div> 
-              <div class="col-6 d-flex align-center justify-center" @click="selectOption(false)">
-                <div class="webapps__options--item item-4">
+              <div class="col-6 d-flex align-center justify-center">
+                <div class="webapps__options--item item-4" @click="selectOption(false)">
                   <i class="icon-lobo"></i>
                 </div>
               </div> 

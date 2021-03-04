@@ -288,14 +288,33 @@
 
             &--img {
                 margin: auto;
+
+                @media (min-width: 1035px){
+                    min-height: 707px;
+                }
+
                 &.vertical{
                     max-width: 700px;
+
+                    @media (min-width: 768px){
+                        min-height: 876px;
+                    }
 
                     &.mari{
                         max-height: 100%;
 
                         img{
                             text-align: center;
+                        }
+
+                        min-height: 410px;
+
+                        @media (min-width: 576px){
+                            min-height: 700px;
+                        }
+
+                        @media (min-width: 768px){
+                            min-height: 881px;
                         }
                     }
                 }
