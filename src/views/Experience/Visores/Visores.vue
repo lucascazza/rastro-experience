@@ -1,13 +1,5 @@
 <template>
   <div class="visores">
-    <v-tooltip bottom>
-      <template v-slot:activator="{ on }">
-        <v-btn icon @click="dialogLogout = true" large rounded class="logout" v-on="on">
-          <v-icon color="white">icon-logout</v-icon>
-        </v-btn>
-      </template>
-      <span>Cerrar sesión</span>
-    </v-tooltip>
     <div class="visores__text">
       <h2>Otras <span class="prespectivas">perspectivas</span> te dejan ver nuevas realidades, soluciones, o caminos</h2>
       <h3>No sos la única persona en esta <span class="busqueda">búsqueda</span>, alguien te está buscando y parece tener
@@ -15,13 +7,10 @@
       <p>Te recomendamos el uso de <span class="auriculares">auriculares</span> para mejorar la experiencia</p>
     </div>
     <div class="visores__qr row">
-      <div class="visores__qr--visor col-md-6">
-        <h2>VIDEO <span>CON</span> VISOR</h2>
+      <div class="visores__qr--visor col-md-12">
+        <h2 class="mb-0">Video <span>con</span> visor</h2>
         <img src="@/assets/img/visores/qr/qr.svg" alt="Visores">
-      </div>
-      <div class="visores__qr--sinvisor col-md-6">
-        <h2>VIDEO <span>SIN</span> VISOR</h2>
-        <img src="@/assets/img/visores/playsinvisor.svg" alt="Sin visores" @click="goToYoutube()">
+        <v-btn rounded outlined color="white" @click="goToYoutube()">¿No tenés visor o te marea usarlo? Miralo en YouTube <v-icon class="ml-3" right>icon-arrow-right</v-icon></v-btn>
       </div>
     </div>
     <div class="visores__qr--btn">
@@ -58,14 +47,6 @@
         v-model="code">
       </v-text-field>
     </dialog-code>
-    <dialog-confirm
-      :active.sync="dialogLogout"
-      title="Estas por cerrar la sesión" 
-      content="¿Desea hacerlo?"
-      confirm-text="Confirmar"
-      cancelText="No cerrar"
-      @confirm="logout()">
-    </dialog-confirm>
   </div>
 </template>
 
@@ -112,7 +93,7 @@ export default {
       }
     },
     goToYoutube(){
-      window.open('https://youtu.be/BUQ_81xx2Sk', '_blank');
+      window.open('https://youtu.be/rU_6Gn3BD9o', '_blank');
     }
   }
 }

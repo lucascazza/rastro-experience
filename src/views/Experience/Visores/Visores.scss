@@ -91,6 +91,7 @@
 
     &__qr {
         width: 100%;
+        margin-bottom: 4rem;
 
         &--visor,
         &--sinvisor {
@@ -100,11 +101,13 @@
             margin-bottom: 1.5rem;
 
             h2 {
-                color: #ddd;
                 text-align: center;
+                font-size: 1.75rem;
+                font-family: SprintSansRegular;
 
                 span {
                     font-family: ActOfRejection;
+                    color: #DDDDDD;
                 }
 
             }

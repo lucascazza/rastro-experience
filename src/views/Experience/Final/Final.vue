@@ -1,13 +1,5 @@
 <template>
   <div class="final">
-    <v-tooltip bottom>
-      <template v-slot:activator="{ on }">
-        <v-btn icon @click="dialogLogout = true" large rounded class="logout" v-on="on">
-          <v-icon color="white">icon-logout</v-icon>
-        </v-btn>
-      </template>
-      <span>Cerrar sesión</span>
-    </v-tooltip>
     <div class="final__content">
       <div class="final__text content">
         <h1 class="text-center">¡Felicidades <span>{{user.name}}!</span></h1>
@@ -36,14 +28,6 @@
       content="743"
       confirm-text="¡Gracias RASTRO!">
     </dialog-code>
-    <dialog-confirm
-      :active.sync="dialogLogout"
-      title="Estas por cerrar la sesión" 
-      content="¿Desea hacerlo?"
-      confirm-text="Confirmar"
-      cancelText="No cerrar"
-      @confirm="logout()">
-    </dialog-confirm>
   </div>
 </template>
 
