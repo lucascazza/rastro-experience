@@ -8,11 +8,11 @@
       <p>Te dejamos algunos <span class="codigos">códigos</span> que te van a permitir seguirnos el ritmo.</p>
     </div>
     <div class="instagram__logo content">
-      <div>
         <div class="instagram__logo--img">
           <img src="@/assets/img/instagram/instagram.svg" alt="Instagram" @click="goToInstagram()">
         </div>
-      </div>
+    </div>
+    <div class="instagram__logo content">
       <div class="instagram__logo--btn">
         <v-text-field 
           class="input-code" 

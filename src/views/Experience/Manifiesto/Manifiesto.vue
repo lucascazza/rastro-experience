@@ -2,9 +2,9 @@
   <div class="manifiesto" :class="{'overflow-hidden': !scrolleable}">
     <div class="manifiesto__video">
       <div class="manifiesto__video--video">
-        <video ref="video" poster="@/assets/media/postermanifiesto2.jpg" controls autoplay frameborder="0"
+        <video ref="video" poster="@/assets/media/postermanifiesto.jpg" controls autoplay frameborder="0"
           @ended="scrollBottom()">
-          <source src="@/assets/media/manifiesto2.mp4" type="video/mp4">
+          <source src="@/assets/media/manifiesto.mp4" type="video/mp4">
         </video>
       </div>
     </div>

@@ -38,8 +38,10 @@
       confirm-text="Confirmar" 
       @confirm="nextStep('webapps', 5)">
     </dialog-confirm>
-  </div>
+    <audio ref="audio" src="@/assets/media/musicajuegos.mp4" startDate="5000" autoplay class="musica"></audio>
+    </div>
 </template>
+
 <script>
 
 import { mapState } from 'vuex';
@@ -71,8 +73,6 @@ export default {
     if(this.user.step < 4 ){
       this.$router.replace({ path: '/' })
     }
-  },
-  methods: {
   }
 }
 </script>
