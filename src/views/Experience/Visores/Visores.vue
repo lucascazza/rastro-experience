@@ -112,7 +112,7 @@ export default {
       }
     },
     goToYoutube(){
-      window.open('https://youtu.be/h9kye-u47TA', '_blank');
+      window.open('https://youtu.be/BUQ_81xx2Sk', '_blank');
     }
   }
 }
