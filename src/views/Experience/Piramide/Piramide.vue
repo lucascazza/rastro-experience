@@ -49,8 +49,9 @@
       confirm-text="Validar código" 
       @confirm="verifyCode()">
       <v-text-field 
-        class="dialog-content__input" 
-        color="#ff445a" 
+        class="dialog-content__input input-code" 
+        color="#ff445a"
+        :disabled="disabledCode" 
         maxlength="3" 
         hide-details 
         outlined 
@@ -86,7 +87,8 @@ export default {
     return {
       dialogCode: false,
       code: '',
-      dialogGuia: false
+      dialogGuia: false,
+      disabledCode: false
     };
   },
   computed: {
@@ -97,6 +99,10 @@ export default {
   beforeMount(){
     if(this.user.step < 7 ){
       this.$router.replace({ path: '/' })
+    }
+    if (this.user.step > 7){
+      this.code = '743'
+      this.disabledCode = true
     }
   },
   mounted(){

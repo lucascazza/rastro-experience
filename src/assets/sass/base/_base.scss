@@ -29,6 +29,7 @@ body {
     overflow-scrolling: touch;
     overflow: hidden;
     background-color: $primary-background !important;
+    display: flex;
 }
 
 .app-content {

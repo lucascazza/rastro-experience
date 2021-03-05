@@ -67,5 +67,11 @@
     .v-btn{
         font-family: SprintSansMedium;
     }
+
+    .input-code {
+        &.v-input--is-disabled {
+            background-color: #dddddd !important;
+        }
+    }
 }
 </style>

@@ -144,3 +144,16 @@
         }
     }
 }
+
+.input-code{
+    &.v-input--is-disabled{
+        .v-input__control{
+            .v-input__slot.white{
+                background-color: #dddddd !important;
+            }
+        }
+        .v-input__control > .v-input__slot{
+            background-color: #dddddd !important;
+        }
+    }
+}

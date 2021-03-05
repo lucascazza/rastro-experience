@@ -11,7 +11,8 @@
       <div class="visores__qr--visor col-md-12">
         <h2 class="mb-0">Video <span>con</span> visor</h2>
         <img src="@/assets/img/visores/qr/qr.svg" alt="Visores">
-        <v-btn rounded outlined color="white" @click="goToYoutube()">¿No tenés visor o te marea usarlo? Miralo en YouTube <v-icon class="ml-3" right>icon-arrow-right</v-icon></v-btn>
+        <v-btn rounded outlined large color="white" @click="goToYoutube()" v-if="isMobile">¿Mirarlo sin visor? Ir a Youtube <v-icon class="ml-3" right>icon-arrow-right</v-icon></v-btn>
+        <v-btn rounded outlined large color="white" @click="goToYoutube()" v-else>¿No tenés visor o te marea usarlo? Miralo en YouTube <v-icon class="ml-3" right>icon-arrow-right</v-icon></v-btn>
       </div>
     </div>
     <div class="visores__qr--btn">
@@ -37,14 +38,14 @@
       confirm-text="Validar código" 
       @confirm="verifyCode()">
       <v-text-field 
-        class="dialog-content__input" 
+        class="dialog-content__input input-code" 
         color="#ff445a" 
         maxlength="4" 
-        hide-details 
+        hide-details
+        :disabled="disabledCode" 
         outlined 
         rounded
         placeholder="Ingresá el código"
-        background-color="#dddddd"
         v-model="code">
       </v-text-field>
     </dialog-code>
@@ -75,12 +76,20 @@ export default {
   },
   computed: {
     ...mapState({
-      user: state => state.user.data
-    })
+      user: state => state.user.data,
+      windowWidth: state => state.user.windowWidth
+    }),
+    isMobile() {
+      return this.windowWidth < 992
+    }
   },
   beforeMount(){
     if(this.user.step < 3 ){
       this.$router.replace({ path: '/' })
+    }
+    if (this.user.step > 3){
+      this.code = '5555'
+      this.disabledCode = true
     }
   },
   mounted(){

@@ -197,5 +197,19 @@
         &.v-text-field.v-text-field--outlined:not(.v-input--is-readonly).v-input--is-focused .v-input__slot {
             border-color: #ff445a !important;
         }
+        
+    }
+}
+
+.input-code{
+    &.v-input--is-disabled{
+        .v-input__control{
+            .v-input__slot.white{
+                background-color: #dddddd !important;
+            }
+        }
+        .v-input__control > .v-input__slot{
+            background-color: #dddddd !important;
+        }
     }
 }

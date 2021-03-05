@@ -12,8 +12,9 @@
       <div class="position-relative">
         <img src="@/assets/img/manifiesto/avanzar.svg" alt="Avanzar" class="img-avanzar">
         <img src="@/assets/img/manifiesto/flecha.svg" alt="Flecha" class="img-flecha">
-        <h1 id="codigo">Ingresá el código</h1>
+        <h1 id="codigo">Ingresá el código <span v-if="codeEnabled">(4507)</span></h1>
         <v-text-field
+          class="input-code"
           color="#ff445a"
           maxlength="4"
           hide-details
@@ -42,7 +43,8 @@ export default {
   data() {
     return {
       scrolleable: false,
-      code: ''
+      code: '',
+      codeEnabled: false
     };
   },
   computed: {
@@ -61,9 +63,12 @@ export default {
       }
     }
   },
-  beforeMount(){
-    if(this.user.step < 2 ){
+  beforeMount() {
+    if (this.user.step < 2) {
       this.$router.replace({ path: '/' })
+    }
+    if (this.user.step > 2){
+      this.codeEnabled = true
     }
   },
   mounted(){

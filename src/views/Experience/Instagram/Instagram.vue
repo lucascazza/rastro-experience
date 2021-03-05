@@ -24,7 +24,8 @@
           background-color="white"
           height="60"
           placeholder="Ingresá el código acá"
-          v-model="code">
+          v-model="code"
+          :disabled="disabledCode">
         </v-text-field>
         <v-tooltip top>
           <template v-slot:activator="{ on }">
@@ -68,7 +69,8 @@ export default {
   components: {},
   data() {
     return {
-      code: ''
+      code: '',
+      disabledCode: false
     };
   },
   computed: {
@@ -79,6 +81,10 @@ export default {
   beforeMount(){
     if(this.user.step < 1 ){
       this.$router.replace({ path: '/' })
+    }
+    if (this.user.step > 1){
+      this.code = '8585'
+      this.disabledCode = true
     }
   },
   mounted(){

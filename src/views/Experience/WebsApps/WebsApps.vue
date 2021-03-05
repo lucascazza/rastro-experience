@@ -46,7 +46,8 @@
             <div class="webapps__behance--btn">
               <v-text-field
                 class="input-code"
-                color="magenta" 
+                color="magenta"
+                :disabled="disabledCode" 
                 maxlength="4" 
                 hide-details 
                 rounded 
@@ -91,7 +92,8 @@ export default {
   data() {
     return {
       showBehance: false,
-      code: ''
+      code: '',
+      disabledCode: false
     };
   },
   computed: {
@@ -102,6 +104,10 @@ export default {
   beforeMount(){
     if(this.user.step < 5 ){
       this.$router.replace({ path: '/' })
+    }
+    if (this.user.step > 5){
+      this.code = '7514'
+      this.disabledCode = true
     }
   },
   mounted(){
