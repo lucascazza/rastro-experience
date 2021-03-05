@@ -84,7 +84,6 @@ export default {
   },
   data() {
     return {
-      loading: true,
       dialogCode: false,
       code: '',
       dialogGuia: false

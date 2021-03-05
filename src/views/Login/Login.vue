@@ -31,7 +31,7 @@
                     color="magenta" 
                     label="Usuario" 
                     hide-details 
-                    v-model="user.userName"
+                    v-model="userLogin.userName"
                     type="text">
                   </v-text-field>
                 </div>
@@ -41,7 +41,7 @@
                     color="magenta" 
                     label="Contraseña" 
                     hide-details
-                    v-model="user.password" 
+                    v-model="userLogin.password" 
                     :append-icon="showPassword ? 'icon-ojo' : 'icon-ojocerrado'"
                     :type="showPassword ? 'text' : 'password'" 
                     @click:append="showPassword = !showPassword">
@@ -91,9 +91,8 @@ export default {
       init: false,
       endVideo: false,
       scrolleable: false,
-      loading: true,
       loadingSesion: false,
-      user: {
+      userLogin: {
         userName: '',
         password: '',
       },
@@ -106,7 +105,7 @@ export default {
       windowWidth: state => state.user.windowWidth
     }),
     submitEnabled() {
-      return this.user.userName.length && this.user.password
+      return this.userLogin.userName.length && this.userLogin.password
     },
     isMobile() {
       return this.windowWidth < 992
@@ -126,7 +125,7 @@ export default {
     async login() {
       this.loadingSesion = true
       try {
-        await this.$store.dispatch('user/login', { vm: this, data: this.user })
+        await this.$store.dispatch('user/login', { vm: this, data: this.userLogin })
         this.$router.push({ path: '/' })
         this.loadingSesion = false
         this.$toastr.success('Inicio de sesión exitoso.');

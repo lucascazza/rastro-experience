@@ -4,7 +4,8 @@ import Loading from '@/components/Loading';
 export default {
     data() {
         return {
-            dialogLogout: false
+            dialogLogout: false,
+            loading: true
         }
     },
     components: {

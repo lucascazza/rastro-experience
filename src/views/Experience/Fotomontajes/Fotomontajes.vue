@@ -211,7 +211,6 @@ export default {
   data() {
     return {
       slide: { val: 50, color: 'cyan', trackColor: 'magenta' },
-      loading: true,
       code: '',
       selectedFoto: {},
       imgSelected: {},

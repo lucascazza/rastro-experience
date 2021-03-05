@@ -60,7 +60,6 @@ export default {
   mixins: [helperApp],
   data() {
     return {
-      loading: true,
       loadingSesion: false
     };
   },

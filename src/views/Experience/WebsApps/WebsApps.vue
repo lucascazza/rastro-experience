@@ -90,7 +90,6 @@ export default {
   mixins: [helperApp],
   data() {
     return {
-      loading: true,
       showBehance: false,
       code: ''
     };

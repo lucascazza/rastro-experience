@@ -58,7 +58,6 @@ export default {
   components: {},
   data() {
     return {
-      loading: true,
       dialogConfirmation: false
     };
   },
