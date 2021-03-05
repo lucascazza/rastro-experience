@@ -1,5 +1,6 @@
 <template>
   <div class="juegos">
+    <loading v-if="loading"></loading>
     <div style="maxWidth:100%">
       <div class="juegos__text">
         <h2>No todo es buscar codigos y abrir cajas, a veces es necesario <span class="descansar">descansar,</span>
@@ -38,7 +39,7 @@
       confirm-text="Confirmar" 
       @confirm="nextStep('webapps', 5)">
     </dialog-confirm>
-    <audio ref="audio" src="@/assets/media/musicajuegos.mp4" autoplay class="musica"></audio>
+    <audio ref="audio" src="@/assets/media/musicajuegos.mp4" muted class="musica"></audio>
     </div>
 </template>
 
@@ -70,6 +71,14 @@ export default {
     if(this.user.step < 4 ){
       this.$router.replace({ path: '/' })
     }
+  },
+  mounted(){
+    setTimeout(() => {
+      this.$refs.audio.play()
+    }, 1500);
+    setTimeout(() => {
+      this.loading = false
+    }, 2000);
   }
 }
 </script>

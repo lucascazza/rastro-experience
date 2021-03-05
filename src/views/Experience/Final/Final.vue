@@ -1,5 +1,6 @@
 <template>
   <div class="final">
+    <loading v-if="loading"></loading>
     <div class="final__content">
       <div class="final__text content">
         <h1 class="text-center">¡Felicidades <span>{{user.name}}!</span></h1>
@@ -62,6 +63,11 @@ export default {
     if(this.user.step < 8 ){
       this.$router.replace({ path: '/' })
     }
+  },
+  mounted(){
+    setTimeout(() => {
+      this.loading = false
+    }, 2000);
   },
   methods: {}
 }

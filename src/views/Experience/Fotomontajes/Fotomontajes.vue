@@ -1,5 +1,6 @@
 <template>
   <div class="fotomontajes">
+    <loading v-if="loading"></loading>
     <div class="fotomontajes__text content">
       <h2>“El <span class="todo">todo</span> es más que la suma de sus partes”</h2>
       <h3>Es importante siempre tener en cuenta el <span class="esfuerzo">esfuerzo</span> <br>que realizamos para llegar a ese objetivo</h3>
@@ -367,6 +368,9 @@ export default {
   mounted() {
     this.selectedFoto = this.fotomontajes[0]
     this.videoPlaying = this.videosArray[0]
+    setTimeout(() => {
+      this.loading = false
+    }, 2000);
   },
   methods: {
     loadFinish() {

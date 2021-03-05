@@ -1,40 +1,39 @@
 <template>
   <div class="webapps">
-    <transition name="fade">
-      <template v-if="!showBehance">
-        <div class="webapps__content">
-          <div class="webapps__text">
-            <h2>¿Ya descansaste lo suficiente, <span class="nombre">{{user.name}}?</span><br> No te duermas que la <span class="caja">caja</span> te espera</h2>
-            <h3>Suponemos que ya te diste cuenta que la mochila tiene cosas útiles para el camino, como la <span class="libreta">libreta</span> que tiene la respuesta para el siguiente paso</h3>
-            <p>La libreta está llena de <span class="frases">frases.</span> Sólo si descubrís cuál nos representa podrás continuar</p>
-          </div>
-          <div class="webapps__options">
-            <div class="webapps__options--options row">
-              <div class="col-6 d-flex align-center justify-center">
-                <div class="webapps__options--item item-1" @click="selectOption(false)">
-                  <i class="icon-toro"></i>
-                </div>
+    <loading v-if="loading"></loading>
+    <template v-if="!showBehance">
+      <div class="webapps__content">
+        <div class="webapps__text">
+          <h2>¿Ya descansaste lo suficiente, <span class="nombre">{{user.name}}?</span><br> No te duermas que la <span class="caja">caja</span> te espera</h2>
+          <h3>Suponemos que ya te diste cuenta que la mochila tiene cosas útiles para el camino, como la <span class="libreta">libreta</span> que tiene la respuesta para el siguiente paso</h3>
+          <p>La libreta está llena de <span class="frases">frases.</span> Sólo si descubrís cuál nos representa podrás continuar</p>
+        </div>
+        <div class="webapps__options">
+          <div class="webapps__options--options row">
+            <div class="col-6 d-flex align-center justify-center">
+              <div class="webapps__options--item item-1" @click="selectOption(false)">
+                <i class="icon-toro"></i>
               </div>
-              <div class="col-6 d-flex align-center justify-center">
-                <div class="webapps__options--item item-2" @click="selectOption(true)">
-                  <i class="icon-rastro"></i>
-                </div>
-              </div> 
-              <div class="col-6 d-flex align-center justify-center">
-                <div class="webapps__options--item item-3" @click="selectOption(false)">
-                  <i class="icon-punnix"></i>
-                </div>
-              </div> 
-              <div class="col-6 d-flex align-center justify-center">
-                <div class="webapps__options--item item-4" @click="selectOption(false)">
-                  <i class="icon-lobo"></i>
-                </div>
-              </div> 
             </div>
+            <div class="col-6 d-flex align-center justify-center">
+              <div class="webapps__options--item item-2" @click="selectOption(true)">
+                <i class="icon-rastro"></i>
+              </div>
+            </div> 
+            <div class="col-6 d-flex align-center justify-center">
+              <div class="webapps__options--item item-3" @click="selectOption(false)">
+                <i class="icon-punnix"></i>
+              </div>
+            </div> 
+            <div class="col-6 d-flex align-center justify-center">
+              <div class="webapps__options--item item-4" @click="selectOption(false)">
+                <i class="icon-lobo"></i>
+              </div>
+            </div> 
           </div>
         </div>
-      </template>
-    </transition>
+      </div>
+    </template>
     <transition name="fade">
       <template v-if="showBehance">
           <div class="webapps__behance">
@@ -105,6 +104,11 @@ export default {
     if(this.user.step < 5 ){
       this.$router.replace({ path: '/' })
     }
+  },
+  mounted(){
+    setTimeout(() => {
+      this.loading = false
+    }, 2000);
   },
   methods: {
     selectOption(option){

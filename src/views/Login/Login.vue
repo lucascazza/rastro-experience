@@ -1,5 +1,6 @@
 <template>
   <div class="login" :class="{'overflow-hidden': !scrolleable}" id="loginScroll">
+    <loading v-if="loading"></loading>
     <div class="login__video">
       <div class="login__video--video">
         <video ref="video" poster="@/assets/media/posterteaser.jpg" controls frameborder="0" @ended="scrollBottom()">
@@ -50,7 +51,7 @@
               <div>
                 <v-btn 
                   rounded 
-                  :loading="loading" 
+                  :loading="loadingSesion" 
                   color="magenta" 
                   type="submit" 
                   large 
@@ -75,6 +76,7 @@
 <script>
 
 import { mapState } from 'vuex';
+import helperApp from '@/mixins/helperApp';
 export default {
   name: 'Login',
   metaInfo() {
@@ -82,13 +84,15 @@ export default {
       title: 'Login',
     }
   },
+  mixins: [helperApp],
   components: {},
   data() {
     return {
       init: false,
       endVideo: false,
       scrolleable: false,
-      loading: false,
+      loading: true,
+      loadingSesion: false,
       user: {
         userName: '',
         password: '',
@@ -109,22 +113,26 @@ export default {
     }
   },
   watch: {},
-  mounted() {},
+  mounted(){
+    setTimeout(() => {
+      this.loading = false
+    }, 2000);
+  },
   methods: {
     initExperience(){
       this.init = true
       this.playVideo()
     },
     async login() {
-      this.loading = true
+      this.loadingSesion = true
       try {
         await this.$store.dispatch('user/login', { vm: this, data: this.user })
         this.$router.push({ path: '/' })
-        this.loading = false
+        this.loadingSesion = false
         this.$toastr.success('Inicio de sesión exitoso.');
       } catch (err) {
         console.log(err);
-        this.loading = false
+        this.loadingSesion = false
         this.$toastr.error('Contraseña incorrecta, volve a intentarlo.');
       }
     },

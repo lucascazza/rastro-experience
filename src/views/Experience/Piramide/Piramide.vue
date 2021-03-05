@@ -1,5 +1,6 @@
 <template>
   <div class="piramide">
+    <loading v-if="loading"></loading>
     <transition name="fade">
       <template>
         <div class="piramide__content">
@@ -98,6 +99,11 @@ export default {
     if(this.user.step < 7 ){
       this.$router.replace({ path: '/' })
     }
+  },
+  mounted(){
+    setTimeout(() => {
+      this.loading = false
+    }, 2000);
   },
   methods: {
     verifyCode() {

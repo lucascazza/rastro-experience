@@ -1,5 +1,6 @@
 <template>
   <div class="visores">
+    <loading v-if="loading"></loading>
     <div class="visores__text">
       <h2>Otras <span class="prespectivas">perspectivas</span> te dejan ver nuevas realidades, soluciones, o caminos</h2>
       <h3>No sos la única persona en esta <span class="busqueda">búsqueda</span>, alguien te está buscando y parece tener
@@ -82,6 +83,11 @@ export default {
     if(this.user.step < 3 ){
       this.$router.replace({ path: '/' })
     }
+  },
+  mounted(){
+    setTimeout(() => {
+      this.loading = false      
+    }, 2000);
   },
   methods: {
     verifyCode() {

@@ -1,5 +1,14 @@
 <template>
   <div class="instagram">
+    <loading v-if="loading"></loading>
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on }">
+        <v-btn icon @click="dialogLogout = true" large rounded class="logout" v-on="on">
+          <v-icon color="white">icon-logout</v-icon>
+        </v-btn>
+      </template>
+      <span>Cerrar sesión</span>
+    </v-tooltip>
     <div class="instagram__text content">
       <h1>¿Quiénes somos? ¿Qué hacemos? <br> <span>¿Qué %$@”!& es esto?</span></h1>
       <h2>En el camino fuimos dejando algunas respuestas, pero ustedes tienen que <br><span class="rastro">seguir el
@@ -41,6 +50,14 @@
         </v-tooltip>
       </div>
     </div>
+    <dialog-confirm
+      :active.sync="dialogLogout"
+      title="Estas por cerrar la sesión" 
+      content="¿Desea hacerlo?"
+      confirm-text="Confirmar"
+      cancelText="No cerrar"
+      @confirm="logout()">
+    </dialog-confirm>
   </div>
 </template>
 
@@ -72,6 +89,11 @@ export default {
     if(this.user.step < 1 ){
       this.$router.replace({ path: '/' })
     }
+  },
+  mounted(){
+    setTimeout(() => {
+      this.loading = false      
+    }, 2000);
   },
   methods: {
     verifyCode() {

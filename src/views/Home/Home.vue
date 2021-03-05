@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <loading v-if="loading"></loading>
     <v-tooltip bottom>
       <template v-slot:activator="{ on }">
         <v-btn icon @click="dialogLogout = true" large rounded class="logout" v-on="on">
@@ -15,9 +16,9 @@
           <h2>Te trajimos acá porque queremos que recuperes algo que puede perderse fácilmente. Ese algo está dentro de esa linda <span class="caja">caja,</span> pero dártelo y ya haría que no le des la importancia que merece. <br>Por eso queremos mostrarte un recorrido que <span class="nosotros">nosotros ya hicimos</span>, y que sabemos que te va a ayudar</h2>
           <p>Una vez completado van a ser <span class="merecer">merecedores</span> de abrir la caja</p>
           <div class="d-flex justify-center">
-            <v-btn v-if="user.step !== 0" :loading="loading" color="yellow" x-large ripple rounded outlined @click="loading = true; continueExperience()">Continuar
+            <v-btn v-if="user.step !== 0" :loading="loadingSesion" color="yellow" x-large ripple rounded outlined @click="loadingSesion = true; continueExperience()">Continuar
               recorrido</v-btn>
-            <v-btn v-if="user.step == 0" :loading="loading" color="yellow" x-large ripple @click="loading = true; nextStep('experience/instagram', 1)"
+            <v-btn v-if="user.step == 0" :loading="loadingSesion" color="yellow" x-large ripple @click="loadingSesion = true; nextStep('experience/instagram', 1)"
               rounded>Comenzar experiencia</v-btn>
           </div>
         </div>
@@ -59,7 +60,8 @@ export default {
   mixins: [helperApp],
   data() {
     return {
-      loading: false
+      loading: true,
+      loadingSesion: false
     };
   },
   computed: {
@@ -68,16 +70,19 @@ export default {
     })
   },
   mounted() {
+    setTimeout(() => {
+      this.loading = false      
+    }, 2000);
     this.loadData()
   },
   methods: {
     async loadData() {
       try {
         await this.$store.dispatch('user/loadData', { vm: this })
-        this.loading = false
+        this.loadingSesion = false
       } catch (err) {
         console.log(err);
-        this.loading = false
+        this.loadingSesion = false
       }
     },
     continueExperience() {

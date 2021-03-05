@@ -1,5 +1,6 @@
 import { mapState } from 'vuex';
 import DialogConfirm from '@/components/Dialogs/DialogConfirm';
+import Loading from '@/components/Loading';
 export default {
     data() {
         return {
@@ -7,7 +8,8 @@ export default {
         }
     },
     components: {
-        'dialog-confirm': DialogConfirm
+        'dialog-confirm': DialogConfirm,
+        'loading': Loading
     },
     computed: {
         ...mapState({
