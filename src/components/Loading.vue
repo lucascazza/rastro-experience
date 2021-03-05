@@ -1,7 +1,7 @@
 <template>
     <div class="loading" :class="{'fade': addClass}">
-        <slot></slot>
         <img src="@/assets/img/loading.gif" alt="Loading">
+        <p>Cargando...</p>
     </div>
 </template>
 
@@ -16,7 +16,7 @@
         mounted(){
             setTimeout(() => {
                 this.addClass = true                
-            }, 1500);
+            }, 2000);
         }
     }
 </script>
@@ -41,6 +41,11 @@
 
         &.fade{
             opacity: 0;
+        }
+
+        p{
+            font-size: 1.25rem;
+            font-family: sprintsansregular;
         }
     }
 </style>

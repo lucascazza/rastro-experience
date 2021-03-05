@@ -78,7 +78,7 @@ export default {
     }, 1500);
     setTimeout(() => {
       this.loading = false
-    }, 2000);
+    }, 2500);
   }
 }
 </script>

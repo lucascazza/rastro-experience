@@ -370,7 +370,7 @@ export default {
     this.videoPlaying = this.videosArray[0]
     setTimeout(() => {
       this.loading = false
-    }, 2000);
+    }, 2500);
   },
   methods: {
     loadFinish() {
