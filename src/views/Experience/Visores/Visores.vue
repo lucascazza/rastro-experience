@@ -34,7 +34,7 @@
     <dialog-code 
       :active.sync="dialogCode" 
       title="¿Encontraste algún código?" 
-      content="Mirá en el meet"
+      :content="user.userInvite ? '' : 'Mirá en el meet'"
       confirm-text="Validar código" 
       @confirm="verifyCode()">
       <v-text-field 
@@ -87,7 +87,7 @@ export default {
     if(this.user.step < 3 ){
       this.$router.replace({ path: '/' })
     }
-    if (this.user.step > 3){
+    if (this.user.step > 3 || this.user.userInvite){
       this.code = '5555'
       this.disabledCode = true
     }

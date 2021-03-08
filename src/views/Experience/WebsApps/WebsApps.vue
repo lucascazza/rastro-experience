@@ -105,7 +105,7 @@ export default {
     if(this.user.step < 5 ){
       this.$router.replace({ path: '/' })
     }
-    if (this.user.step > 5){
+    if (this.user.step > 5 || this.user.userInvite){
       this.code = '7514'
       this.disabledCode = true
     }

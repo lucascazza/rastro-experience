@@ -22,6 +22,11 @@ export default {
         async nextStep(view, number) {
             if (number <= this.user.step) {
                 this.$router.push({ path: view })
+            } else if (this.user.userInvite) {
+                let userUpdate = this.user
+                userUpdate.step = userUpdate.step + 1
+                this.$store.commit('user/setData', userUpdate)
+                this.$router.push({ path: view })               
             } else {
                 let userUpdate = this.user
                 userUpdate.step = userUpdate.step + 1
@@ -36,10 +41,14 @@ export default {
         async restartExperience() {
             let userUpdate = this.user
             userUpdate.step = 0
-            try {
-                await this.$store.dispatch('user/updateStep', { vm: this, data: userUpdate })
-            } catch (err) {
-                console.log(err);
+            if (this.user.userInvite) {
+                this.$store.commit('user/setData', userUpdate)
+            } else {
+                try {
+                    await this.$store.dispatch('user/updateStep', { vm: this, data: userUpdate })
+                } catch (err) {
+                    console.log(err);
+                }
             }
         },
         logout(){

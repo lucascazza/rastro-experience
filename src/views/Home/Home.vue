@@ -72,7 +72,9 @@ export default {
     setTimeout(() => {
       this.loading = false      
     }, 2500);
-    this.loadData()
+    if (!this.user.userInvite){
+      this.loadData()
+    }
   },
   methods: {
     async loadData() {

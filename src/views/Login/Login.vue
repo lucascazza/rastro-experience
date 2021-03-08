@@ -60,6 +60,16 @@
                   :disabled="!submitEnabled">
                   Iniciar sesión
                 </v-btn>
+                <v-btn 
+                  color="magenta" 
+                  outlined 
+                  large 
+                  ripple 
+                  rounded
+                  class="login__form--invite"
+                  @click="dialogName = true">
+                  Iniciar como invitado
+                </v-btn>
                 <!-- <router-link to="/register" class="login__form--register pt-5">No tengo usuario</router-link> -->
               </div>
             </v-form>
@@ -70,6 +80,20 @@
     <div class="img-prelogin" @click="initExperience()" v-if="!init">
       <img src="@/assets/img/login/pre-login.svg" alt="Pre-Login">
     </div>
+    <dialog-name
+      :active.sync="dialogName" 
+      title="Ingresá tú nombre" 
+      confirm-text="Confirmar" 
+      @confirm="loginInvite()">
+      <v-text-field 
+        class="input-name" 
+        color="#ff445a"
+        hide-details
+        outlined 
+        rounded
+        v-model="name">
+      </v-text-field>
+    </dialog-name>
   </div>
 </template>
 
@@ -77,6 +101,7 @@
 
 import { mapState } from 'vuex';
 import helperApp from '@/mixins/helperApp';
+import DialogCode from '@/components/Dialogs/DialogCode';
 export default {
   name: 'Login',
   metaInfo() {
@@ -85,7 +110,9 @@ export default {
     }
   },
   mixins: [helperApp],
-  components: {},
+  components: {
+    'dialog-name': DialogCode
+  },
   data() {
     return {
       init: false,
@@ -97,7 +124,9 @@ export default {
         password: '',
       },
       showPassword: false,
-      enabledScrollTop: false
+      enabledScrollTop: false,
+      dialogName: false,
+      name: ''
     };
   },
   computed: {
@@ -111,13 +140,17 @@ export default {
       return this.windowWidth < 992
     }
   },
-  watch: {},
   mounted(){
     setTimeout(() => {
       this.loading = false
     }, 2500);
   },
   methods: {
+    loginInvite(){
+      this.$store.commit('user/setData', {name: this.name, step: 0, userInvite: true})
+      this.$store.commit('user/setToken', 'invite')
+      this.$router.push({ path: '/' })
+    },
     initExperience(){
       this.init = true
       this.playVideo()
@@ -158,6 +191,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     @import "./Login";
 </style>

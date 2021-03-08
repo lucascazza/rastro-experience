@@ -67,7 +67,7 @@ export default {
     if (this.user.step < 2) {
       this.$router.replace({ path: '/' })
     }
-    if (this.user.step > 2){
+    if (this.user.step > 2 || this.user.userInvite){
       this.codeEnabled = true
     }
   },

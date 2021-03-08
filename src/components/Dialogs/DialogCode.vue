@@ -1,8 +1,8 @@
 <template>
     <v-dialog v-model="showDialog" max-width="450">
         <div class="dialog-content">
-            <h3>{{title}}</h3>
-            <h4>{{content}}</h4>
+            <h3 v-if="title">{{title}}</h3>
+            <h4 v-if="content">{{content}}</h4>
             <slot></slot>
             <v-btn 
                 rounded 
